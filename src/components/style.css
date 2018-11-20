@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'FluxisheElse';
+    font-weight: normal;
+    src: url('../assets/fonts/FluxischElse-Bold.woff') format('woff');
+}
+
+html {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'FluxisheElse', sans-serif;
+    --off-white: #FFE6C2;
+    background-color: var(--off-white);
+}
