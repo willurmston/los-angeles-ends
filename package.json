@@ -5,9 +5,9 @@
   "license": "MIT",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
-    "build": "preact build",
-    "serve": "preact build && preact serve",
-    "dev": "preact watch",
+    "build": "preact build --template src/template.html --no-prerender",
+    "serve": "preact build --template src/template.html && preact serve",
+    "dev": "preact watch --template src/template.html",
     "lint": "eslint src",
     "test": "jest"
   },
@@ -26,10 +26,13 @@
   },
   "dependencies": {
     "emotion": "^9.2.12",
+    "file-loader": "^2.0.0",
+    "intersection-observer": "^0.5.1",
     "markdown-it": "^8.4.2",
     "preact": "^8.2.6",
     "preact-compat": "^3.17.0",
-    "preact-router": "^2.5.7"
+    "preact-router": "^2.6.1",
+    "vh-check": "^2.0.5"
   },
   "jest": {
     "verbose": true,

@@ -1,20 +1,49 @@
-html, body {
-	height: 100%;
-	width: 100%;
-	padding: 0;
-	margin: 0;
-	background: #FAFAFA;
-	font-family: 'Helvetica Neue', arial, sans-serif;
-	font-weight: 400;
-	color: #444;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+@font-face {
+    font-family: 'FluxisheElse';
+    font-weight: normal;
+    src: url('../assets/fonts/FluxischElse-Bold.woff') format('woff');
 }
 
-* {
-	box-sizing: border-box;
+html {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    quotes: "\201C" "\201D";
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: relative;
+    /* COLORS */
+    --off-white: #FFE6C2;
+    --purple: #65008a;
+    --orange: #c94700;
+    --red: #db000b;
+    --pink: #de006f;
+    --blue: #0027a8;
 }
 
-#app {
-	height: 100%;
+p, h1, h2, h3, button {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: normal;
+}
+
+button {
+    background: none;
+    border: none;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+	color: inherit;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+    margin: 0;
+    font-family: 'FluxisheElse', sans-serif;
+    background-color: var(--off-white);
+    font-size: 20px;
 }
