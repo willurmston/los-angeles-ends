@@ -27,6 +27,7 @@ const Header = ({...props}) => {
 			color: var(--${props.color});
 			text-decoration: underline;
 			top: 16px;
+			letter-spacing: inherit;
 			padding: 16px 16px;
 			position: absolute;
 			right: 0;
