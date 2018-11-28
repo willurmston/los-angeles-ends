@@ -5,16 +5,27 @@ export default class VideoSlide extends Component {
     componentDidMount() {
         this.video.defaultMuted = true
         this.setState({
-            muted: true
+            muted: true,
+            loaded: false,
+            firstView: true
         })
     }
 
     componentDidUpdate(prevProps, prevState) {
         if (this.props.isCurrent && this.video.paused) {
+            this.setState({
+                firstView: false
+            })
             this.video.play()
         } else if (!this.props.isCurrent && !this.video.paused) {
             this.video.pause()
         }
+    }
+
+    onload = () => {
+        this.setState({
+            loaded: true
+        })
     }
 
     onplay = () => {
@@ -56,20 +67,6 @@ export default class VideoSlide extends Component {
         }
     }
 
-    zigzag() {
-        return (
-            <svg class="zigzag" viewBox="0 0 338 40" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" >
-                <path
-                    d="M27.6666667,18.9062506 L45.1898646,10.5262825 L63,17.9236336 L80.8101354,10.5262825 L98.3333333,18.9062506 L115.856531,10.5262825 L133.666667,17.9236336 L151.333333,10.5858715 L169,17.9236336 L186.810135,10.5262825 L204.333333,18.9062506 L221.856531,10.5262825 L239.666667,17.9236336 L257.333333,10.5858715 L275,17.9236336 L292.615096,10.607291 L311.224499,17.9225429 L333,8.33553602 L333,50 L5,50 L5,8.06656566 L27.6666667,18.9062506 Z"
-                    stroke="var(--off-white)"
-                    stroke-width="10"
-                    fill="none"
-                    vector-effect="non-scaling-stroke"
-                ></path>
-            </svg>
-        )
-    }
-
     render() {
         const style = css`
             width: 100vw;
@@ -85,6 +82,7 @@ export default class VideoSlide extends Component {
                 width: calc(100% - 60px);
                 border: 10px solid var(--off-white);
                 overflow: hidden;
+                background: var(--off-white);
                 & video {
                     display: block;
                     height: 100%;
@@ -92,6 +90,8 @@ export default class VideoSlide extends Component {
                     object-fit: cover;
                     filter: saturate(0%);
                     mix-blend-mode: multiply;
+                    opacity: ${!this.state.firstView && this.state.loaded ? 1 : 0};
+                    transition: opacity 0.5s 0.3s ease-out;
                 }
                 & button.mute {
                     position: absolute;
@@ -112,6 +112,7 @@ export default class VideoSlide extends Component {
                         src={this.props.slide.file}
                         onplay={this.onplay}
                         onpause={this.onpause}
+                        onloadeddata={this.onload}
                         muted={this.state.muted}
                         playsinline
                         preload
