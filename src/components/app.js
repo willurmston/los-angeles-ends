@@ -88,11 +88,14 @@ export default class App extends Component {
 
     // Animate into song
     enterSong = (song) => {
-        this.scrollToSong(song, () => {
-            setTimeout(() => {
-                route(`/${song.slug}`)
-            }, 700)
-        })
+        setTimeout(() => {
+            route(`/${song.slug}`)
+        }, 350)
+        // this.scrollToSong(song, () => {
+        //     setTimeout(() => {
+        //         route(`/${song.slug}`)
+        //     }, 350)
+        // })
     }
 
     playNextSong = () => {
@@ -102,14 +105,43 @@ export default class App extends Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if (this.state.currentSong === null && prevState.currentSong !== null) {
-            document.scrollingElement.scrollTop = document.querySelector(`.Song#${prevState.currentSong.slug}`).offsetTop
+        if (this.state.currentSong !== prevState.currentSong) {
+            if (this.state.currentSong === null) {
+                // document.scrollingElement.scrollTop = document.querySelector(`.Song#${prevState.currentSong.slug}`).offsetTop
+                // this.forceUpdate()
+                setTimeout(() => {
+                    const targetSong = document.querySelector(`.Song#${prevState.currentSong.slug}`)
+                    const scrollAmt = targetSong.offsetTop - ((window.innerHeight - targetSong.offsetHeight) / 2)
+
+                    TweenLite.to( document.scrollingElement,0.4, {
+                        scrollTop: scrollAmt,
+                        ease: Power2.easeOut,
+                        onComplete: (e) => {
+
+                        }
+                    })
+                }, 200)
+            } else if (prevState.currentSong === null) {
+                const targetSong = document.querySelector(`.Song#${prevState.currentSong.slug}`)
+                const scrollAmt = targetSong.offsetTop - ((window.innerHeight - targetSong.offsetHeight) / 2)
+
+                console.log(scrollAmt, targetSong.offsetHeight,window.innerHeight)
+
+                TweenLite.to( document.scrollingElement, 0.35, {
+                    scrollTop: scrollAmt,
+                    ease: Power2.easeOut,
+                })
+            }
         }
     }
 
     render() {
+        const style = css`
+            height: 100%;
+        `
+
         return (
-            <div class={cx('App')}>
+            <div class={cx('App', style)}>
                 {!this.state.currentSong &&
                     <Header
                         color={content.songs[0].color}

@@ -33,21 +33,6 @@ export default class Song extends Component {
 
     onSongButtonClick = () => {
         this.props.onSongButtonClick(this.props.song)
-        this.setState({
-            playerState: 'loading',
-            intro: true
-        })
-        setTimeout(() => {
-            this.setState({
-                intro: false,
-            })
-            if (this.state.currentSongIndex === 0) {
-                this.setState({
-                    currentSlideIndex: 1
-                })
-            }
-        }, 700)
-        this.player.play()
     }
 
     renderSlide = (slide) => {
@@ -59,8 +44,7 @@ export default class Song extends Component {
                     {...slide}
                     isCurrent={isCurrent}
                     playerState={this.state.playerState}
-                    onPlayButtonClick={this.onSongButtonClick}
-                    showButton={!this.props.isOpen || this.state.intro}
+                    showButtons={this.props.isOpen}
                 />
             )
         } else if (slide.type === 'quote') {
@@ -128,12 +112,6 @@ export default class Song extends Component {
         let playerState = null
 
         if (state === 'playing') {
-            if (this.state.currentSlideIndex === 0 && !this.state.intro) {
-                this.setState({
-                    intro: false
-                })
-                this.nextSlide()
-            }
             playerState = 'playing'
         } else if (state === 'loading') {
             playerState = 'loading'
@@ -187,7 +165,7 @@ export default class Song extends Component {
     }
 
     onclick = e => {
-        if (!this.props.isOpen && e.pageX > window.innerWidth / 2) {
+        if (!this.props.isOpen) {
             this.onSongButtonClick()
         } else {
             e.pageX < window.innerWidth / 2 ? this.prevSlide() : this.nextSlide()
@@ -235,7 +213,7 @@ export default class Song extends Component {
 
     prevSlide = () => {
         const prevIndex = this.state.currentSlideIndex - 1
-        if (prevIndex < 1) {
+        if (prevIndex < 0) {
             route('/')
         } else {
             this.setState({
@@ -263,20 +241,21 @@ export default class Song extends Component {
         const style = css`
             --song-color: var(--${this.props.song.color});
             background: var(--song-color);
-            height: 100vh;
+            height: ${this.props.isOpen ? '100vh' : '100vw'};
             overflow: hidden;
             position: relative;
-            top: ${this.props.isOpen ? 0 : 'auto'};
+            top: 0;
             width: 100vw;
             color: var(--off-white);
             z-index: ${this.props.isOpen ? 1 : 0};
             border-bottom: ${this.props.isOpen ? 'none' : '2px solid var(--song-color)'};
+            transition: height 0.3s ease-out;
             & .slider {
                 display: flex;
                 position: absolute;
-                height: 100%;
+                height: ${this.props.isOpen ? 'calc(100vh - 60px)' : '100%'};
                 width: ${this.state.slides.length * 100}vw;
-                top: 0;
+                top: ${this.props.isOpen ? '60px' : 0};
                 transform: translateX(-${this.props.isOpen ? this.state.currentSlideIndex * 100 : 0}vw);
                 transition: transform 0.35s ease-out;
                 /* z-index: 3; */
