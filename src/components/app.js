@@ -40,6 +40,7 @@ export default class App extends Component {
         this.state.songs = content.songs
         this.state.currentSong = null
         this.state.initialRender = true
+        this.state.playBackgrounds = true
     }
 
     handleRoute = (e) => {
@@ -69,6 +70,22 @@ export default class App extends Component {
         })
     }
 
+    scrollToLinerNotes = () => {
+        this.setState({
+            pauseBackgrounds: true
+        }, () => {
+            TweenLite.to(document.scrollingElement, 1, {
+        		scrollTop: document.querySelector('footer.LinerNotes').offsetTop,
+        		ease: Power2.easeOut,
+                onComplete: (e) => {
+                    this.setState({
+                        pauseBackgrounds: false
+                    })
+                }
+        	})
+        })
+    }
+
     // Animate into song
     enterSong = (song) => {
         this.scrollToSong(song, () => {
@@ -88,13 +105,17 @@ export default class App extends Component {
         return (
             <div class={cx('App')}>
                 {!this.state.currentSong &&
-                    <Header color={content.songs[0].color} />
+                    <Header
+                        color={content.songs[0].color}
+                        onLinerNotesButtonClick={this.scrollToLinerNotes}
+                    />
                 }
                 {!this.state.currentSong && content.songs.map( song =>
                     <Song
                         song={song}
                         isOpen={false}
                         onSongButtonClick={this.enterSong}
+                        pauseBackground={this.state.pauseBackgrounds}
                         key={song.slug}
                     />
                 )}

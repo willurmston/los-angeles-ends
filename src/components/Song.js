@@ -297,7 +297,7 @@ export default class Song extends Component {
                 <BackgroundVideo
                     src={this.props.song.backgroundVideo}
                     color={this.props.song.color}
-                    play={this.state.playBackground}
+                    play={this.state.playBackground && !this.props.pauseBackground}
                     playbackRate={this.props.song.backgroundPlaybackRate}
                 />
                 <Toolbar

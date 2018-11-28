@@ -38,7 +38,7 @@ const Header = ({...props}) => {
 		<header class={headerStyle}>
 			<Logo />
 			<h1>LOS ANGELES ENDS <br/>a record by SIMULCAST</h1>
-			<button>liner notes</button>
+			<button onclick={props.onLinerNotesButtonClick}>liner notes</button>
 		</header>
 	)
 }
