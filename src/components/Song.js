@@ -137,6 +137,8 @@ export default class Song extends Component {
             playerState = 'playing'
         } else if (state === 'loading') {
             playerState = 'loading'
+        } else if (state === 'ended') {
+            playerState = 'ended'
         } else {
             playerState = 'paused'
         }
@@ -151,6 +153,8 @@ export default class Song extends Component {
             this.player.play()
         } else if (this.state.playerState === 'playing') {
             this.player.pause()
+        } else if (this.state.playerState === 'ended') {
+            this.props.playNextSong()
         }
     }
 

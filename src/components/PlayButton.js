@@ -58,6 +58,10 @@ export default ({...props}) => {
                         <rect x="0" y="0" width="36" height="36" fill="#fff" />
                         <path d="M10 10h5v16h-5V10zm11 0h5v16h-5V10z" fill="#000" />
                     </mask>
+                    <mask id="next">
+                        <rect x="0" y="0" width="36" height="36" fill="#fff" />
+                        <path d="M22,17.2 L22,10 L26,10 L26,26 L22,26 L22,18.8 L10,26 L10,10 L22,17.2 Z"fill="#000" />
+                    </mask>
                 </defs>
                 <g fill-rule="evenodd">
                     <circle
@@ -72,4 +76,3 @@ export default ({...props}) => {
         </button>
     )
 }
-

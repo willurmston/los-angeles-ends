@@ -95,6 +95,12 @@ export default class App extends Component {
         })
     }
 
+    playNextSong = () => {
+        const nextSongIndex = (this.state.songs.indexOf(this.state.currentSong) + 1) % (this.state.songs.length)
+        const nextSong = this.state.songs[nextSongIndex]
+        route(`/${nextSong.slug}`)
+    }
+
     componentDidUpdate(prevProps, prevState) {
         if (this.state.currentSong === null && prevState.currentSong !== null) {
             document.scrollingElement.scrollTop = document.querySelector(`.Song#${prevState.currentSong.slug}`).offsetTop
@@ -126,6 +132,7 @@ export default class App extends Component {
                         onSongButtonClick={this.enterSong}
                         currentSlideIndex={this.state.currentSlideIndex || 0}
                         key={this.state.currentSong.slug}
+                        playNextSong={this.playNextSong}
                     />
                 : null}
                 {this.state.currentSong ? null :

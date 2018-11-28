@@ -58,6 +58,8 @@ export default class Toolbar extends Component {
             buttonIcon = 'loading'
         } else if (this.props.playerState === 'playing') {
             buttonIcon = 'pause'
+        } else if (this.props.playerState === 'ended') {
+            buttonIcon = 'next'
         }
 
         return (
