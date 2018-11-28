@@ -15,7 +15,7 @@ const titleSlideStyle = css`
         font-size: 11vw;
         line-height: 1.325;
         letter-spacing: -1px;
-        margin: 0 52px 40% 52px;
+        margin: 0 52px 25% 52px;
         padding: 14px 20px;
         & span {
             display: block;
