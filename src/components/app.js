@@ -141,7 +141,7 @@ export default class App extends Component {
         `
 
         return (
-            <div class={cx('App', style)}>
+            <div class={cx('App', style)} ontouchstart={e => {return true}}>
                 {!this.state.currentSong &&
                     <Header
                         color={content.songs[0].color}
