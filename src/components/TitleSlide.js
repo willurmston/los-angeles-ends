@@ -10,6 +10,10 @@ const titleSlideStyle = css`
     position: relative;
     width: 100vw;
     & h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
         background: var(--off-white);
         color: var(--song-color);
         font-size: 11vw;
@@ -17,6 +21,7 @@ const titleSlideStyle = css`
         letter-spacing: -1px;
         margin: 0 52px 25% 52px;
         padding: 14px 20px;
+        min-height: 180px;
         & span {
             display: block;
             width: 100%;
