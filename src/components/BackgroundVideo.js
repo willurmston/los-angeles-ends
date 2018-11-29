@@ -79,7 +79,6 @@ export default class BackgroundVideo extends Component {
                 object-fit: cover;
                 position: relative;
                 display: block;
-                opacity: 0.5;
             }
             & video {
                 position: absolute;
