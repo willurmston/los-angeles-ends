@@ -2,7 +2,8 @@ module.exports = {
     title: 'Los Angeles Ends',
     songs: [
         require('./through-the-windshield/index.js'),
-        require('./los-angeles-ends/index.js')
+        require('./los-angeles-ends/index.js'),
+        require('./horizon/index.js')
     ],
     links: [
         {

@@ -3,7 +3,7 @@ module.exports = {
     slug: 'through-the-windshield',
     trackID: 499559277,
     titleLayout: 'center',
-    backgroundVideo: require('./through-the-windshield.mp4'),
+    backgroundVideo: require('./windshield-zoom2.mov.mp4'),
     backgroundPlaybackRate: 0.75,
     color: 'purple',
     slides: [

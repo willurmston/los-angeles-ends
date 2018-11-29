@@ -3,7 +3,7 @@ module.exports = {
     slug: 'los-angeles-ends',
     trackID: 499561479,
     titleLayout: 'cascade',
-    backgroundVideo: require('./los-angeles-ends.mp4'),
+    backgroundVideo: require('./los-angeles-ends.mov.mp4'),
     color: 'blue',
     slides: [
         {
