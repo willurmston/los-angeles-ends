@@ -7,7 +7,6 @@ const titleSlideStyle = css`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100%;
     position: relative;
     width: 100vw;
     & h1 {
@@ -20,9 +19,13 @@ const titleSlideStyle = css`
         font-size: 12vw;
         line-height: 1.325;
         letter-spacing: -1px;
-        margin: 0 34px 25% 34px;
+        margin: 0 34px 0 34px;
         padding: 20px 26px;
         min-height: 180px;
+        transition: transform 0.2s;
+        &:active {
+            transform: scale(0.97);
+        }
         & span {
             display: block;
             width: 100%;

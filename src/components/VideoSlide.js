@@ -70,14 +70,13 @@ export default class VideoSlide extends Component {
     render() {
         const style = css`
             width: 100vw;
-            height: 100%;
             position: relative;
             display: flex;
             justify-content: center;
             flex-direction: center;
             & .content {
                 position: relative;
-                margin-top: 100px;
+                margin-top: 30px;
                 height: calc(100vh - 240px);
                 width: calc(100% - 60px);
                 border: 10px solid var(--off-white);

@@ -17,11 +17,11 @@ export default class LyricsSlide extends Component {
     render() {
         const style = css`
             width: 100vw;
-            height: 100%;
             position: relative;
+            overflow: visible;
             & .content {
                 overflow: visible;
-                padding-top: 80px;
+                padding-top: 30px;
                 & p {
                     background: var(--off-white);
                     /* color: var(--song-color); */

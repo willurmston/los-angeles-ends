@@ -5,10 +5,9 @@ export default class NarrationSlide extends Component {
     render() {
         const style = css`
             width: 100vw;
-            height: 100%;
             position: relative;
             & .content {
-                padding-top: 80px;
+                padding-top: 30px;
                 overflow: visible;
                 & p {
                     border: 2px solid var(--song-color);

@@ -9,11 +9,10 @@ export default class QuoteSlide extends Component {
     render() {
         const style = css`
             width: 100vw;
-            height: 100%;
             position: relative;
             & .content {
                 position: relative;
-                margin: 100px 20px;
+                margin: 50px 20px;
                 overflow: visible;
                 & p {
                     display: table;
