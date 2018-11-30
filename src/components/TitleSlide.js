@@ -73,7 +73,7 @@ export default class TitleSlide extends Component {
     }
 
     shouldComponentUpdate(nextProps) {
-        return nextProps.showButtons !== this.props.showButtons
+        return nextProps.songIsOpen !== this.props.songIsOpen
     }
 
     onHomeButtonClick = e => {

@@ -2,8 +2,8 @@ import {h, Component} from 'preact'
 import {css, cx} from 'emotion'
 
 export default class QuoteSlide extends Component {
-    shouldComponentUpdate() {
-        return false
+    shouldComponentUpdate(nextProps) {
+        return this.props !== nextProps
     }
 
     render() {

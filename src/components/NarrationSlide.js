@@ -2,6 +2,10 @@ import {h, Component} from 'preact'
 import {css, cx} from 'emotion'
 
 export default class NarrationSlide extends Component {
+    shouldComponentUpdate(nextProps) {
+        return this.props !== nextProps
+    }
+
     render() {
         const style = css`
             width: 100vw;
