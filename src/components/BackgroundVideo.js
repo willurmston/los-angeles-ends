@@ -8,19 +8,25 @@ export default class BackgroundVideo extends Component {
         this.FPSInterval = 1000 / this.FPS
         this.lastTimeStamp = window.performance.now()
 
+        if (!this.canvas) return
         this.context = this.canvas.getContext('2d')
         if (this.props.playbackRate) this.video.playbackRate = this.props.playbackRate
-        this.video.addEventListener('loadeddata', () => {
-            this.canvas.width = this.video.videoWidth
-            this.canvas.height = this.video.videoHeight
-        })
+        this.video.addEventListener('loadeddata', this.onloadeddata)
         this.video.addEventListener('play', this.start)
         this.video.addEventListener('pause', this.stop)
         this.video.setAttribute('muted', true)
     }
 
+    onloadeddata = () => {
+        this.canvas.width = this.video.videoWidth
+        this.canvas.height = this.video.videoHeight
+    }
+
     componentWillUnmount() {
         this.stop()
+        this.video.removeEventListener('loadeddata', this.onloadeddata)
+        this.video.removeEventListener('play', this.start)
+        this.video.removeEventListener('pause', this.stop)
     }
 
     shouldComponentUpdate() {
@@ -44,8 +50,6 @@ export default class BackgroundVideo extends Component {
     }
 
     paintFrame = (timeStamp = 0) => {
-        if (!this.canvas) return null
-
         this.RAF = requestAnimationFrame(this.paintFrame)
 
         // calc elapsed time since last loop
