@@ -8,6 +8,7 @@ import LyricsSlide from './LyricsSlide'
 import VideoSlide from './VideoSlide'
 import BackgroundVideo from './BackgroundVideo'
 import Toolbar from './Toolbar'
+import HomeButton from './HomeButton'
 
 // Script is loaded in HTML head
 window.SC.initialize({
@@ -273,8 +274,18 @@ export default class Song extends Component {
                 height: 100vh;
                 border-bottom: ${this.props.isOpen ? 'none' : ' 4px solid var(--song-color)'};
                 box-sizing: border-box;
+                & .HomeButton {
+                    position: absolute;
+                    top: 30px;
+                    left: 30px;
+                    & svg {
+                        fill: var(--off-white);
+                    }
+                }
             }
         `
+
+        const bigScreen = window.matchMedia('screen and (min-width: 600px)').matches
 
         return (
             <section
@@ -306,6 +317,11 @@ export default class Song extends Component {
                 >
                     {this.state.slides.map( this.renderSlide )}
                 </div>
+                {bigScreen && this.props.isOpen &&
+                    <HomeButton
+                        onclick={() => route('/')}
+                    />
+                }
             </section>
         )
     }
