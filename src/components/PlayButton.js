@@ -15,6 +15,7 @@ const blink = keyframes`
 
 const style = css`
     position: relative;
+    -webkit-tap-highlight-color: transparent;
     & svg {
         width: 100%;
         height: 100%;

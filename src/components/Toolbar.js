@@ -45,8 +45,14 @@ const style = css`
         right: 12px;
         width: 36px;
         height: 36px;
+        transition: opacity 0.2s;
+        overflow: visible;
         & svg {
             fill: var(--song-color);
+            overflow: visible;
+        }
+        &:active {
+            opacity: 0.5;
         }
     }
 `
