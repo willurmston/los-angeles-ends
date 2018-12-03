@@ -42,9 +42,10 @@ export default class Song extends Component {
             return (
                 <TitleSlide
                     {...slide}
+                    songIsOpen={this.props.isOpen}
                     isCurrent={isCurrent}
                     playerState={this.state.playerState}
-                    showButtons={this.props.isOpen}
+                    songUrl={`/${this.props.song.slug}`}
                 />
             )
         } else if (slide.type === 'quote') {
@@ -241,24 +242,20 @@ export default class Song extends Component {
         const style = css`
             --song-color: var(--${this.props.song.color});
             background: var(--song-color);
-            height: ${this.props.isOpen ? '100vh' : '100vw'};
+            height: ${this.props.isOpen ? '100vh' : '100vw' };
             overflow: hidden;
             position: relative;
-            top: 0;
             width: 100vw;
             color: var(--off-white);
-            z-index: ${this.props.isOpen ? 1 : 0};
-            border-bottom: ${this.props.isOpen ? 'none' : '2px solid var(--song-color)'};
-            transition: height 0.3s ease-out;
+            z-index: ${this.props.isOpen ? 10 : 0};
             & .slider {
                 display: flex;
                 position: absolute;
-                height: ${this.props.isOpen ? 'calc(100vh - 60px)' : '100%'};
+                height: ${this.props.isOpen ? 'calc(100% - 60px)' : '100%'};
                 width: ${this.state.slides.length * 100}vw;
                 top: ${this.props.isOpen ? '60px' : 0};
                 transform: translateX(-${this.props.isOpen ? this.state.currentSlideIndex * 100 : 0}vw);
                 transition: transform 0.35s ease-out;
-                /* z-index: 3; */
                 overflow: hidden;
                 & .slide {
                     max-height: 100%;
@@ -272,7 +269,7 @@ export default class Song extends Component {
 
         return (
             <section
-                class={cx('Song', style)}
+                class={cx('Song', style, this.props.class)}
                 id={this.props.song.slug}
                 ref={element => this.element = element}
                 key={this.props.song.slug}

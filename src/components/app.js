@@ -11,6 +11,7 @@ import Match from 'preact-router/match'
 // import TweenLite from '../../node_modules/gsap/TweenLite'
 const TweenLite = window.TweenLite
 
+import DelayUnmount from './DelayUnmount'
 import Header from './Header'
 import Song from './Song'
 import LinerNotes from './LinerNotes'
@@ -50,23 +51,35 @@ export default class App extends Component {
             })
         } else {
             const matchingSong = this.state.songs.find(song => song.slug === e.current.attributes.songSlug)
-
             if (matchingSong) {
-                this.setState({
-                    currentSong: matchingSong
-                })
+                this.enterSong(matchingSong)
             }
         }
     }
 
-    scrollToSong(song, onComplete) {
-        const offsetTop = document.querySelector(`.Song#${song.slug}`).offsetTop
-        TweenLite.to( document.scrollingElement, 0.35, {
-            scrollTop: offsetTop,
-            ease: Power0.easeNone,
-            onComplete: (e) => {
-                if (onComplete) onComplete()
-            }
+    // Animate into song
+    enterSong = (song) => {
+        const songElement = document.querySelector(`.Song#${song.slug}`)
+        this.setState({
+            currentSong: song
+        })
+        TweenLite.to( document.scrollingElement, 0.7, {
+            scrollTop: songElement.offsetTop,
+            ease: Power2.easeOut
+        })
+    }
+
+    exitSong = (prevSong) => {
+        const songElement = document.querySelector(`.Song#${prevSong.slug}`)
+        const offsetTop = songElement.offsetTop
+        // First, immediately scroll to top of element
+        document.scrollingElement.scrollTop = songElement.offsetTop
+        // Then scroll smoothly and keep the element centered
+        const closedSongHeight = window.innerWidth
+        const targetScroll = offsetTop - (closedSongHeight / 2)
+        TweenLite.to( document.scrollingElement, 0.7, {
+            scrollTop: targetScroll,
+            ease: Power1.easeOut,
         })
     }
 
@@ -76,7 +89,7 @@ export default class App extends Component {
         }, () => {
             TweenLite.to(document.scrollingElement, 1, {
         		scrollTop: document.querySelector('footer.LinerNotes').offsetTop,
-        		ease: Power2.easeOut,
+        		ease: Power1.easeOut,
                 onComplete: (e) => {
                     this.setState({
                         pauseBackgrounds: false
@@ -84,18 +97,6 @@ export default class App extends Component {
                 }
         	})
         })
-    }
-
-    // Animate into song
-    enterSong = (song) => {
-        setTimeout(() => {
-            route(`/${song.slug}`)
-        }, 350)
-        // this.scrollToSong(song, () => {
-        //     setTimeout(() => {
-        //         route(`/${song.slug}`)
-        //     }, 350)
-        // })
     }
 
     playNextSong = () => {
@@ -107,30 +108,7 @@ export default class App extends Component {
     componentDidUpdate(prevProps, prevState) {
         if (this.state.currentSong !== prevState.currentSong) {
             if (this.state.currentSong === null) {
-                // document.scrollingElement.scrollTop = document.querySelector(`.Song#${prevState.currentSong.slug}`).offsetTop
-                // this.forceUpdate()
-                setTimeout(() => {
-                    const targetSong = document.querySelector(`.Song#${prevState.currentSong.slug}`)
-                    const scrollAmt = targetSong.offsetTop - ((window.innerHeight - targetSong.offsetHeight) / 2)
-
-                    TweenLite.to( document.scrollingElement,0.4, {
-                        scrollTop: scrollAmt,
-                        ease: Power2.easeOut,
-                        onComplete: (e) => {
-
-                        }
-                    })
-                }, 200)
-            } else if (prevState.currentSong === null) {
-                const targetSong = document.querySelector(`.Song#${prevState.currentSong.slug}`)
-                const scrollAmt = targetSong.offsetTop - ((window.innerHeight - targetSong.offsetHeight) / 2)
-
-                console.log(scrollAmt, targetSong.offsetHeight,window.innerHeight)
-
-                TweenLite.to( document.scrollingElement, 0.35, {
-                    scrollTop: scrollAmt,
-                    ease: Power2.easeOut,
-                })
+                this.exitSong(prevState.currentSong)
             }
         }
     }
@@ -142,39 +120,43 @@ export default class App extends Component {
 
         return (
             <div class={cx('App', style)} ontouchstart={e => {return true}}>
-                {!this.state.currentSong &&
+                <DelayUnmount
+                    mount={this.state.currentSong === null}
+                    unmountDelay={800}
+                >
                     <Header
                         color={content.songs[0].color}
                         onLinerNotesButtonClick={this.scrollToLinerNotes}
                     />
-                }
-                {!this.state.currentSong && content.songs.map( song =>
-                    <Song
-                        song={song}
-                        isOpen={false}
-                        onSongButtonClick={this.enterSong}
-                        pauseBackground={this.state.pauseBackgrounds}
-                        key={song.slug}
-                    />
-                )}
-                {this.state.currentSong ?
-                    <Song
-                        song={this.state.currentSong}
-                        isOpen={true}
-                        onSongButtonClick={this.enterSong}
-                        currentSlideIndex={this.state.currentSlideIndex || 0}
-                        key={this.state.currentSong.slug}
-                        playNextSong={this.playNextSong}
-                    />
-                : null}
-                {this.state.currentSong ? null :
+                </DelayUnmount>
+                {content.songs.map( (song, index) => {
+                    return (
+                        <DelayUnmount
+                            mount={this.state.currentSong === null || this.state.currentSong === song}
+                            unmountDelay={800}
+                        >
+                            <Song
+                                song={song}
+                                index={index}
+                                isOpen={song === this.state.currentSong}
+                                onSongButtonClick={() => route(`/${song.slug}`)}
+                                pauseBackground={this.state.pauseBackgrounds}
+                                key={song.slug}
+                            />
+                        </DelayUnmount>
+                    )
+                })}
+                <DelayUnmount
+                    mount={this.state.currentSong === null}
+                    unmountDelay={800}
+                >
                     <LinerNotes
                         color={'blue'}
                         accentColor={'pink'}
                         links={content.links}
                         credits={content.credits}
                     />
-                }
+                </DelayUnmount>
                 <Router onChange={this.handleRoute}>
                     <div path="/:songSlug"></div>
                     <div default></div>

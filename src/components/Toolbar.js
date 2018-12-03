@@ -11,7 +11,7 @@ const style = css`
     color: var(--song-color);
     width: 100%;
     z-index: 100;
-    transition: transform 0.3s 0.3s;
+    transition: transform 0.3s 1s;
     will-change: transform;
     &.hidden {
         transition: transform 0.3s;
