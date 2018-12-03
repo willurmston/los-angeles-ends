@@ -257,6 +257,10 @@ export default class Song extends Component {
                 transform: translateX(-${this.props.isOpen ? this.state.currentSlideIndex * 100 : 0}vw);
                 transition: transform 0.35s ease-out;
                 overflow: hidden;
+                @media screen and (min-width: 600px) {
+                    height: 100%;
+                    top: 0;
+                }
                 & .slide {
                     max-height: 100%;
                     position: relative;
@@ -264,6 +268,11 @@ export default class Song extends Component {
                     overflow-y: scroll;
                     -webkit-overflow-scrolling: touch;
                 }
+            }
+            @media screen and (min-width: 600px) {
+                height: 100vh;
+                border-bottom: ${this.props.isOpen ? 'none' : ' 4px solid var(--song-color)'};
+                box-sizing: border-box;
             }
         `
 

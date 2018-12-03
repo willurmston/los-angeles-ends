@@ -50,6 +50,7 @@ export default class TitleSlide extends Component {
             position: relative;
             width: 100vw;
             & a.title {
+                text-decoration: none;
                 -webkit-tap-highlight-color: transparent;
             }
             & h1 {
@@ -66,6 +67,18 @@ export default class TitleSlide extends Component {
                 padding: 20px 26px;
                 min-height: 180px;
                 transition: transform 0.2s;
+                @media screen and (min-width: 600px) {
+                    font-size: 20.5vmin;
+                    line-height: 1.06;
+                    letter-spacing: -1vmin;
+                    background: transparent;
+                    color: var(--off-white);
+                    margin: 0;
+                    padding: 0 20px 0 10px;
+                }
+                @media screen and (min-width: 1500px) {
+                    font-size: 27vmin;
+                }
                 &:active {
                     transform: scale(0.97);
                 }
