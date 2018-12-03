@@ -26,6 +26,7 @@ export default class LinerNotes extends Component {
                 }
             }
             & .credits {
+                background: var(--off-white);
                 padding: 20px 20px;
                 line-height: 1.45;
                 & h2 {
@@ -44,7 +45,7 @@ export default class LinerNotes extends Component {
 
         return (
             <footer
-                class={cx('LinerNotes', style)}
+                class={cx('LinerNotes', style, this.props.class)}
             >
                 <section class="links">
                     {this.props.links.map(link =>
