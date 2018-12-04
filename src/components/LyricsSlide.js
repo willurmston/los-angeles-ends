@@ -35,15 +35,15 @@ export default class LyricsSlide extends Component {
                 & p {
                     background: var(--off-white);
                     display: table;
-                    margin: 0 24px;
-                    padding: 10px 12px 10px 60px;
-                    text-indent: -60px;
+                    margin: 10px 24px;
+                    padding: 10px 12px 10px 12px;
                     color: var(--song-color);
-                    transform: none !important;
                     @media screen and (min-width: 600px) {
                         margin: 0;
                         line-height: 2;
                         padding: 0 20px 0 80px;
+                        text-indent: -60px;
+                        transform: none !important;
                     }
                 }
                 & p:last-child {

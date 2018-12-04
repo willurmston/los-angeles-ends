@@ -22,6 +22,8 @@ export default class QuoteSlide extends Component {
                 overflow: visible;
                 @media screen and (min-width: 600px) {
                     width: 800px;
+                    pointer-events: none;
+                    user-select: none;
                 }
                 & p {
                     display: table;

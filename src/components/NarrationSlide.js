@@ -34,11 +34,11 @@ export default class NarrationSlide extends Component {
                 align-items: center;
             }
             & .content {
-                width: 800px;
                 padding-top: 40px;
                 overflow: visible;
                 flex-direction: column;
                 @media screen and (min-width: 600px) {
+                    width: 800px;
                     padding: 40% 0 150px 0;
                     flex-shrink: 0;
                 }
