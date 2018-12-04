@@ -8,6 +8,8 @@ import LyricsSlide from './LyricsSlide'
 import VideoSlide from './VideoSlide'
 import BackgroundVideo from './BackgroundVideo'
 import Toolbar from './Toolbar'
+import HomeButton from './HomeButton'
+import ArrowCursor from './ArrowCursor'
 
 // Script is loaded in HTML head
 window.SC.initialize({
@@ -29,10 +31,6 @@ export default class Song extends Component {
 
         this.state.currentSlideIndex = 0
         this.state.playerState = 'paused'
-    }
-
-    onSongButtonClick = () => {
-        this.props.onSongButtonClick(this.props.song)
     }
 
     renderSlide = (slide) => {
@@ -166,9 +164,8 @@ export default class Song extends Component {
     }
 
     onclick = e => {
-        if (!this.props.isOpen) {
-            this.onSongButtonClick()
-        } else {
+        if (this.props.onclick) this.props.onclick()
+        if (this.props.isOpen) {
             e.pageX < window.innerWidth / 2 ? this.prevSlide() : this.nextSlide()
         }
     }
@@ -257,6 +254,11 @@ export default class Song extends Component {
                 transform: translateX(-${this.props.isOpen ? this.state.currentSlideIndex * 100 : 0}vw);
                 transition: transform 0.35s ease-out;
                 overflow: hidden;
+                cursor: none;
+                @media screen and (min-width: 600px) {
+                    height: 100%;
+                    top: 0;
+                }
                 & .slide {
                     max-height: 100%;
                     position: relative;
@@ -265,7 +267,26 @@ export default class Song extends Component {
                     -webkit-overflow-scrolling: touch;
                 }
             }
+            @media screen and (min-width: 600px) {
+                height: 100vh;
+                border-bottom: ${this.props.isOpen ? 'none' : ' 4px solid var(--song-color)'};
+                box-sizing: border-box;
+                & .HomeButton {
+                    position: absolute;
+                    top: 30px;
+                    left: 30px;
+                    & svg {
+                        fill: var(--off-white);
+                    }
+                    &:hover svg {
+                        cursor: pointer;
+                        fill: var(--song-color);
+                    }
+                }
+            }
         `
+
+        const bigScreen = window.matchMedia('screen and (min-width: 600px)').matches
 
         return (
             <section
@@ -294,9 +315,30 @@ export default class Song extends Component {
                     ontouchstart={this.props.isOpen && this.ontouchstart}
                     ontouchmove={this.props.isOpen && this.ontouchmove}
                     ontouchend={this.props.isOpen && this.ontouchmove}
+                    onmouseenter={() =>
+                        this.setState({
+                            showArrowCursor: true
+                        })
+                    }
+                    onmouseleave={() =>
+                        this.setState({
+                            showArrowCursor: true
+                        })
+                    }
                 >
                     {this.state.slides.map( this.renderSlide )}
                 </div>
+                {bigScreen &&
+                    <ArrowCursor
+                        visible={this.props.isOpen && this.props.showArrowCursor && this.state.showArrowCursor}
+                        parent={this.element}
+                    />
+                }
+                {bigScreen && this.props.isOpen &&
+                    <HomeButton
+                        onclick={() => route('/')}
+                    />
+                }
             </section>
         )
     }

@@ -88,6 +88,7 @@ export default class BackgroundVideo extends Component {
                 position: absolute;
                 z-index: -2;
                 display: block;
+                top: 0;
             }
         `
 

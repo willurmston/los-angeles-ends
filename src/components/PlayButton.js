@@ -76,6 +76,19 @@ export default class PlayButton extends Component {
                             cy="18"
                             r="18"
                         />
+                        {this.props.progress &&
+                            <rect
+                                x="0"
+                                y="0"
+                                width="36"
+                                height="36"
+                                fill="var(--off-white)"
+                                style={{
+                                    transform: `translateX(${-100 + (this.props.progress * 100)}%)`,
+                                    opacity: 0.4
+                                }}
+                            />
+                        }
                     </g>
                 </svg>
             </button>

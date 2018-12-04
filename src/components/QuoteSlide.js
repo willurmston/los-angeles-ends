@@ -10,10 +10,21 @@ export default class QuoteSlide extends Component {
         const style = css`
             width: 100vw;
             position: relative;
+            @media screen and (min-width: 600px) {
+                font-size: 24px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
             & .content {
                 position: relative;
                 margin: 50px 20px;
                 overflow: visible;
+                @media screen and (min-width: 600px) {
+                    width: 800px;
+                    pointer-events: none;
+                    user-select: none;
+                }
                 & p {
                     display: table;
                     line-height: 1.7;
@@ -22,7 +33,9 @@ export default class QuoteSlide extends Component {
                     padding: 20px 20px;
                     background: var(--song-color);
                     color: var(--off-white);
-                    border-bottom: 2px solid var(--off-white);
+                    @media screen and (min-width: 600px) {
+                        padding: 20px 34px;
+                    }
                 }
                 & p:first-child {
                     margin-top: 0;

@@ -2,6 +2,7 @@ import {h, Component} from 'preact'
 import {route} from 'preact-router'
 import {css, cx} from 'emotion'
 import PlayButton from './PlayButton'
+import HomeButton from './HomeButton'
 
 export default class TitleSlide extends Component {
     words() {
@@ -17,19 +18,6 @@ export default class TitleSlide extends Component {
     onHomeButtonClick = e => {
         e.stopPropagation()
         route('/')
-    }
-
-    homeButton() {
-        return (
-            <button
-                class="home-button"
-                onclick={this.onHomeButtonClick}
-            >
-                <svg width="75" height="65" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M62.13 25.1v37.5a.5.5 0 0 1-.5.5H48.87V31.4a.5.5 0 0 0-.5-.5h-14a.5.5 0 0 0-.5.5v31.7H11.63a.5.5 0 0 1-.5-.5V25.1H1.77a.5.5 0 0 1-.28-.91L36.85.29a.5.5 0 0 1 .56 0l35.37 23.9a.5.5 0 0 1-.28.91H62.13z" fill-rule="nonzero"/>
-                </svg>
-            </button>
-        )
     }
 
     rightButton() {
@@ -50,7 +38,12 @@ export default class TitleSlide extends Component {
             position: relative;
             width: 100vw;
             & a.title {
+                text-decoration: none;
+                cursor: none;
                 -webkit-tap-highlight-color: transparent;
+                @media screen and (min-width: 600px) {
+                    pointer-events: none;
+                }
             }
             & h1 {
                 display: flex;
@@ -66,6 +59,18 @@ export default class TitleSlide extends Component {
                 padding: 20px 26px;
                 min-height: 180px;
                 transition: transform 0.2s;
+                @media screen and (min-width: 600px) {
+                    font-size: 20.5vmin;
+                    line-height: 1.06;
+                    letter-spacing: -1vmin;
+                    background: transparent;
+                    color: var(--off-white);
+                    margin: 0;
+                    padding: 0 20px 0 10px;
+                }
+                @media screen and (min-width: 1500px) {
+                    font-size: 27vmin;
+                }
                 &:active {
                     transform: scale(0.97);
                 }
@@ -111,15 +116,19 @@ export default class TitleSlide extends Component {
             }
         `
 
+        const bigScreen = window.matchMedia('screen and (min-width: 600px)').matches
+
         return (
             <div class={cx('slide', 'TitleSlide', this.props.layout, titleSlideStyle)}>
                 <a class="title" href={!this.props.songIsOpen && this.props.songUrl}>
                     <h1 dangerouslySetInnerHTML={{__html: this.words()}}>
                     </h1>
                 </a>
-                {this.props.songIsOpen &&
+                {!bigScreen && this.props.songIsOpen &&
                     <div class="buttons">
-                        {this.homeButton()}
+                        <HomeButton
+                            onclick={this.onHomeButtonClick}
+                        />
                         {this.rightButton()}
                     </div>
                 }
