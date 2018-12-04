@@ -19,16 +19,32 @@ export default class LyricsSlide extends Component {
             width: 100vw;
             position: relative;
             overflow: visible;
+            @media screen and (min-width: 600px) {
+                font-size: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
             & .content {
                 overflow: visible;
                 padding-top: 30px;
+                @media screen and (min-width: 600px) {
+                    padding-top: 40px;
+                    max-width: 800px;
+                }
                 & p {
                     background: var(--off-white);
-                    /* color: var(--song-color); */
                     display: table;
-                    margin: 16px 24px;
-                    padding: 8px 12px;
+                    margin: 0 24px;
+                    padding: 10px 12px 10px 60px;
+                    text-indent: -60px;
                     color: var(--song-color);
+                    transform: none !important;
+                    @media screen and (min-width: 600px) {
+                        margin: 0;
+                        line-height: 2;
+                        padding: 0 20px 0 80px;
+                    }
                 }
                 & p:last-child {
                     margin-bottom: 60px;
