@@ -74,6 +74,9 @@ export default class VideoSlide extends Component {
             display: flex;
             justify-content: center;
             flex-direction: center;
+            @media screen and (min-width: 600px) {
+                align-items: center;
+            }
             & .content {
                 position: relative;
                 margin-top: 30px;
@@ -82,6 +85,13 @@ export default class VideoSlide extends Component {
                 border: 10px solid var(--off-white);
                 overflow: hidden;
                 background: var(--off-white);
+                @media screen and (min-width: 600px) {
+                    margin-top: -50px;
+                    width: auto;
+                    height: auto;
+                    width: 100%;
+                    max-width: 70vw;
+                }
                 & video {
                     display: block;
                     height: 100%;
@@ -91,6 +101,12 @@ export default class VideoSlide extends Component {
                     mix-blend-mode: multiply;
                     opacity: ${!this.state.firstView && this.state.loaded ? 1 : 0};
                     transition: opacity 0.5s 0.3s ease-out;
+                    @media screen and (min-width: 600px) {
+                        height: 100%;
+                        width: 100%;
+                        max-width: 70vw;
+                        max-height: 70vh;
+                    }
                 }
                 & button.mute {
                     position: absolute;
