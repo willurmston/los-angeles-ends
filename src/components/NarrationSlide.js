@@ -7,20 +7,24 @@ export default class NarrationSlide extends Component {
     }
 
     componentDidMount() {
-
-        const bigScreen = window.matchMedia('screen and (min-width: 600px)').matches
-        if (bigScreen) {
-            const children = this.element.querySelectorAll('p')
-
-            const availableSpace = this.element.querySelector('.content').offsetWidth - 400
-            const interval = availableSpace / children.length
-
-            children.forEach((child, index) => {
-                child.style = `
-                    left: ${interval * index}px;
-                `
-            })
-        }
+        // Narration slides have special dynamic layouts on wider screens
+        const children = this.element.querySelectorAll('p')
+        children.forEach((child, index) => {
+            child.setAttribute('class', css`
+                /* stack top-to-bottom */
+                @media screen and (min-width: 600px) {
+                    margin-top: -34px !important;
+                    margin-right: 0 !important;
+                    margin-left: ${15 * (index - (children.length / 2) + 1)}% !important;
+                }
+                /* stack left-to-right */
+                @media screen and (min-width: 1300px) {
+                    margin-right: -20px !important;
+                    margin-left: 0 !important;
+                    margin-top: ${4 * index}% !important;
+                }
+            `)
+        })
     }
 
     render() {
@@ -32,15 +36,49 @@ export default class NarrationSlide extends Component {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                flex-wrap: wrap;
+                &::before {
+                    content: '';
+                    width: 100%;
+                    height: 60px;
+                    display: block;
+                    flex-shrink: 0;
+                }
+                &::after {
+                    content: '';
+                    width: 100%;
+                    height: 80px;
+                    display: block;
+                    flex-shrink: 0;
+                }
+            }
+            @media screen and (min-width: 1300px) {
+                &::before {
+                    display: none;
+                }
+                &::after {
+                    display: none;
+                }
             }
             & .content {
                 padding-top: 40px;
                 overflow: visible;
-                flex-direction: column;
                 @media screen and (min-width: 600px) {
-                    width: 800px;
-                    padding: 40% 0 150px 0;
-                    flex-shrink: 0;
+                    display: block;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: auto;
+                    flex-shrink: 1;
+                    width: calc(100vw - 200px);
+                }
+                @media screen and (min-width: 1300px) {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: flex-start;
+                    max-width: calc(100vw - 200px);
                 }
                 & p {
                     display: table;
@@ -51,18 +89,22 @@ export default class NarrationSlide extends Component {
                     background: var(--off-white);
                     color: var(--song-color);
                     @media screen and (min-width: 600px) {
-                        padding: 28px 32px;
+                        display: table;
+                        padding: 24px 28px;
                         max-width: 420px;
-                        margin: -24px; 0;
                         position: relative;
                         flex-shrink: 0;
+                        flex-grow: 0;
+                    }
+                    @media screen and (min-width: 1300px) {
+                        display: table;
+                        width: auto;
+                        max-width: 420px;
+                        flex-shrink: 1;
                     }
                 }
                 & p:last-child {
                     margin-bottom: 60px;
-                    @media screen and (min-width: 600px) {
-                        margin-bottom: 150px;
-                    }
                 }
             }
         `
