@@ -14,6 +14,7 @@ const TweenLite = window.TweenLite
 import DelayUnmount from './DelayUnmount'
 import Header from './Header'
 import Song from './Song'
+import ArrowCursor from './ArrowCursor'
 import LinerNotes from './LinerNotes'
 
 // PARSE MARKDOWN
@@ -118,6 +119,8 @@ export default class App extends Component {
             height: 100%;
         `
 
+        const bigScreen = window.matchMedia('screen and (min-width: 600px)').matches
+
         return (
             <div class={cx('App', style)} ontouchstart={e => {return true}}>
                 <DelayUnmount
@@ -129,23 +132,46 @@ export default class App extends Component {
                         onLinerNotesButtonClick={this.scrollToLinerNotes}
                     />
                 </DelayUnmount>
-                {content.songs.map( (song, index) => {
-                    return (
-                        <DelayUnmount
-                            mount={this.state.currentSong === null || this.state.currentSong === song}
-                            unmountDelay={800}
-                        >
-                            <Song
-                                song={song}
-                                index={index}
-                                isOpen={song === this.state.currentSong}
-                                onSongButtonClick={() => route(`/${song.slug}`)}
-                                pauseBackground={this.state.pauseBackgrounds}
-                                key={song.slug}
-                            />
-                        </DelayUnmount>
-                    )
-                })}
+                <div
+                    class="songs"
+                    ref={element => this.songsElement = element}
+                    onmouseenter={() =>
+                        this.setState({
+                            showArrowCursor: true
+                        })
+                    }
+                    onmouseleave={() =>
+                        this.setState({
+                            showArrowCursor: false
+                        })
+                    }
+                >
+                    {content.songs.map( (song, index) => {
+                        return (
+                            <DelayUnmount
+                                mount={this.state.currentSong === null || this.state.currentSong === song}
+                                unmountDelay={800}
+                            >
+                                <Song
+                                    song={song}
+                                    index={index}
+                                    isOpen={song === this.state.currentSong}
+                                    onclick={this.state.currentSong === null ? () => route(`/${song.slug}`) : null}
+                                    pauseBackground={this.state.pauseBackgrounds}
+                                    key={song.slug}
+                                    showArrowCursor={this.state.showArrowCursor}
+                                />
+                            </DelayUnmount>
+                        )
+                    })}
+                    {bigScreen && this.state.currentSong === null &&
+                        <ArrowCursor
+                            visible={this.state.showArrowCursor}
+                            parent={this.songsElement}
+                            direction={'right'}
+                        />
+                    }
+                </div>
                 <DelayUnmount
                     mount={this.state.currentSong === null}
                     unmountDelay={800}
