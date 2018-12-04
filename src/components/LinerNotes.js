@@ -15,15 +15,20 @@ export default class LinerNotes extends Component {
                 padding: 20px 20px;
                 overflow: hidden;
                 @media screen and (min-width: 600px) {
-                    width: 50%;
+                    width: 25%;
+                    min-width: 250px;
                     font-size: 40px;
-                    padding: 40px 50px;
+                    padding: 37px 50px;
+                    text-align: right;
                 }
                 & a {
                     display: table;
                     line-height: 2.67;
                     letter-spacing: 0.02em;
                     @media screen and (min-width: 600px) {
+                        width: 100%;
+                        font-size: 40px;
+                        letter-spacing: 2px;
                         line-height: 1.8;
                         text-decoration: none;
                     }
@@ -56,14 +61,14 @@ export default class LinerNotes extends Component {
                 line-height: 1.45;
                 @media screen and (min-width: 600px) {
                     width: 50%;
-                    padding: 54px 64px;
+                    padding: 62px 64px;
                 }
                 & h2 {
                     letter-spacing: 1px;
                     color: var(--${this.props.accentColor});
                     @media screen and (min-width: 600px) {
                         margin-top: 0;
-                        font-size: 30px;
+                        font-size: 20px;
                         letter-spacing: 4px;
                     }
                 }
