@@ -5,16 +5,28 @@ import Logo from './Logo'
 export default class LinerNotes extends Component {
     render() {
         const style = css`
+            @media screen and (min-width: 600px) {
+                display: flex;
+            }
             & .links {
                 position: relative;
                 background: var(--${this.props.color});
                 color: var(--off-white);
                 padding: 20px 20px;
                 overflow: hidden;
+                @media screen and (min-width: 600px) {
+                    width: 50%;
+                    font-size: 40px;
+                    padding: 40px 50px;
+                }
                 & a {
                     display: table;
                     line-height: 2.67;
                     letter-spacing: 0.02em;
+                    @media screen and (min-width: 600px) {
+                        line-height: 1.8;
+                        text-decoration: none;
+                    }
                 }
                 & svg {
                     width: 260px;
@@ -23,17 +35,40 @@ export default class LinerNotes extends Component {
                     right: -66px;
                     bottom: -90px;
                     fill: var(--off-white);
+                    @media screen and (min-width: 600px) {
+                        /* width: 40vw;
+                        height: 40vw;
+                        right: -12vw;
+                        bottom: -10vw; */
+                        /* width: 40vw; */
+                        /* height: 40vw; */
+                        width: 70px;
+                        height: 70px;
+                        right: auto;
+                        left: 50px;
+                        bottom: 50px;
+                    }
                 }
             }
             & .credits {
                 background: var(--off-white);
                 padding: 20px 20px;
                 line-height: 1.45;
+                @media screen and (min-width: 600px) {
+                    width: 50%;
+                    padding: 54px 64px;
+                }
                 & h2 {
                     letter-spacing: 1px;
                     color: var(--${this.props.accentColor});
+                    @media screen and (min-width: 600px) {
+                        margin-top: 0;
+                        font-size: 30px;
+                        letter-spacing: 4px;
+                    }
                 }
                 & div {
+                    max-width: 550px;
                     color: var(--${this.props.color});
                     & em {
                         font-style: normal;
@@ -54,7 +89,7 @@ export default class LinerNotes extends Component {
                     <Logo />
                 </section>
                 <section class="credits">
-                    <h2>LINER NOTES</h2>
+                    <h2>LOS ANGELES ENDS</h2>
                     <div dangerouslySetInnerHTML={{__html: this.props.credits}}></div>
                 </section>
             </footer>
