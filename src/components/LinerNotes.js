@@ -17,8 +17,8 @@ export default class LinerNotes extends Component {
                 @media screen and (min-width: 600px) {
                     width: 25%;
                     min-width: 250px;
-                    font-size: 40px;
-                    padding: 37px 50px;
+                    font-size: 24px;
+                    padding: 55px 50px;
                     text-align: right;
                 }
                 & a {
@@ -27,7 +27,6 @@ export default class LinerNotes extends Component {
                     letter-spacing: 0.02em;
                     @media screen and (min-width: 600px) {
                         width: 100%;
-                        font-size: 40px;
                         letter-spacing: 2px;
                         line-height: 1.8;
                         text-decoration: none;
@@ -68,7 +67,6 @@ export default class LinerNotes extends Component {
                     color: var(--${this.props.accentColor});
                     @media screen and (min-width: 600px) {
                         margin-top: 0;
-                        font-size: 20px;
                         letter-spacing: 4px;
                     }
                 }
