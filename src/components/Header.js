@@ -4,7 +4,9 @@ import Logo from './Logo'
 import ArrowCursor from './ArrowCursor'
 
 export default class Header extends Component {
-	scrollDown() {
+	scrollDown(e) {
+		if (e.target.tagName === 'BUTTON') return
+		
 		const firstSong = document.querySelector('.Song')
 		console.log(firstSong.offsetTop)
 		TweenLite.to( document.scrollingElement, 1, {
