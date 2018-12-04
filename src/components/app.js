@@ -117,6 +117,9 @@ export default class App extends Component {
     render() {
         const style = css`
             height: 100%;
+            & .songs .Song:nth-child(${this.state.songs.length}) {
+                border-bottom: none;
+            }
         `
 
         const bigScreen = window.matchMedia('screen and (min-width: 600px)').matches
