@@ -97,8 +97,6 @@ export default class VideoSlide extends Component {
                     height: 100%;
                     width: 100%;
                     object-fit: cover;
-                    filter: saturate(0%);
-                    mix-blend-mode: multiply;
                     opacity: ${!this.state.firstView && this.state.loaded ? 1 : 0};
                     transition: opacity 0.5s 0.3s ease-out;
                     @media screen and (min-width: 600px) {
