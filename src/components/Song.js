@@ -332,7 +332,6 @@ export default class Song extends Component {
                     <ArrowCursor
                         visible={this.props.isOpen && this.props.showArrowCursor && this.state.showArrowCursor}
                         parent={this.element}
-                        direction={this.state.currentSlideIndex === 0 ? 'right' : 'both'}
                     />
                 }
                 {bigScreen && this.props.isOpen &&
