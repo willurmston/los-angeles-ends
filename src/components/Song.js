@@ -281,6 +281,10 @@ export default class Song extends Component {
                     & svg {
                         fill: var(--off-white);
                     }
+                    &:hover svg {
+                        cursor: pointer;
+                        fill: var(--song-color);
+                    }
                 }
             }
         `
