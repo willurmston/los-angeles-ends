@@ -10,13 +10,12 @@ All of the components of the site are in `/src/components/`. To follow the struc
 
 ## dither.sh
 
-This is the bash script that dithers videos. To use it:
+This is the bash script that dithers videos. To use it, follow the instructions at the top of the file.
 
-1. Install the dependencies (listed at the top of the file)
-2. Put your video file in the same directory as the script
-3. Run `sh dither.sh my-input-video-file.mp4`
+## Deploying
 
-You can tweak the `GAMMA` value in the script to adjust for the brightness of videos
+1. Run `npm run build`
+2. Upload all of the contents of the `/build` directory to your server, **including** `.htaccess`
 
 ## CLI Commands
 
