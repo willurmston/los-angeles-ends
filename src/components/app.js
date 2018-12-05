@@ -66,7 +66,7 @@ export default class App extends Component {
         this.setState({
             currentSong: song
         })
-        TweenLite.to( document.scrollingElement, 0.7, {
+        TweenLite.to( document.scrollingElement, 0.4, {
             scrollTop: songElement.offsetTop,
             ease: Power2.easeOut
         })
