@@ -264,8 +264,9 @@ export default class Song extends Component {
                 overflow: hidden;
                 cursor: none;
                 @media screen and (min-width: 600px) {
-                    height: 100%;
-                    top: 0;
+                    height: calc(100% - 70px);
+                    transition: transform 0.35s ease-out, top 0.2s ease-out;
+                    top: ${this.props.isOpen ? 0 : `${70 / 2}px`};
                 }
                 & .slide {
                     max-height: 100%;
