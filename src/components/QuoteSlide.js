@@ -21,7 +21,7 @@ export default class QuoteSlide extends Component {
                 margin: 50px 20px;
                 overflow: visible;
                 @media screen and (min-width: 600px) {
-                    width: 800px;
+                    max-width: 800px;
                     pointer-events: none;
                     user-select: none;
                 }
@@ -34,7 +34,7 @@ export default class QuoteSlide extends Component {
                     background: var(--song-color);
                     color: var(--off-white);
                     @media screen and (min-width: 600px) {
-                        padding: 20px 34px;
+                        padding: 30px 40px;
                     }
                 }
                 & p:first-child {
