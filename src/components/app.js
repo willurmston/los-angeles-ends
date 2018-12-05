@@ -55,7 +55,17 @@ export default class App extends Component {
         } else {
             const matchingSong = this.state.songs.find(song => song.slug === e.current.attributes.songSlug)
             if (matchingSong) {
-                this.enterSong(matchingSong)
+                if (this.state.currentSong) {
+                    // If there's already a song open
+                    // First close the song
+                    route('/')
+                    // Then, scroll to next project
+                    setTimeout(() => {
+                        enterSong(matchingSong)
+                    }, 500)
+                } else {
+                    this.enterSong(matchingSong)
+                }
             }
         }
     }
@@ -206,7 +216,7 @@ export default class App extends Component {
                                     song={song}
                                     index={index}
                                     isOpen={song === this.state.currentSong}
-                                    onclick={this.state.currentSong === null ? () => route(`/${song.slug}`) : null}
+                                    onclick={this.state.currentSong === null ? () => route(`/${song.slug}#1`) : null}
                                     pauseBackground={this.state.pauseBackgrounds}
                                     key={song.slug}
                                     showArrowCursor={this.state.showArrowCursor}

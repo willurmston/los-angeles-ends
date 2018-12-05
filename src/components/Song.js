@@ -139,6 +139,7 @@ export default class Song extends Component {
     componentDidUpdate(prevProps, prevState) {
         if (this.player && this.props.isOpen !== prevProps.isOpen) {
             if (this.props.isOpen) {
+                setTimeout(() => this.onhashchange(), 400)
                 this.player.play()
             } else {
                 this.player.pause()
