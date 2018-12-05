@@ -77,13 +77,17 @@ export default class App extends Component {
         const offsetTop = songElement.offsetTop
         // First, immediately scroll to top of element
         document.scrollingElement.scrollTop = songElement.offsetTop
-        // Then scroll smoothly and keep the element centered
-        const closedSongHeight = window.innerWidth
-        const targetScroll = offsetTop - (closedSongHeight / 2)
-        TweenLite.to( document.scrollingElement, 0.7, {
-            scrollTop: targetScroll,
-            ease: Power1.easeOut,
-        })
+
+        if (!window.matchMedia('screen and (min-width: 600px)').matches) {
+            // Then scroll smoothly and keep the element centered
+            const closedSongHeight = window.innerWidth
+            const targetScroll = offsetTop - (closedSongHeight / 2)
+
+            TweenLite.to( document.scrollingElement, 0.7, {
+                scrollTop: targetScroll,
+                ease: Power1.easeOut
+            })
+        }
     }
 
     enterNextSong() {
