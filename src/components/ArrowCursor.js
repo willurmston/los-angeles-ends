@@ -27,7 +27,10 @@ export default class ArrowCursor extends Component {
     onmousemove = e => {
         this.setState({
             x: e.clientX,
-            y: e.clientY
+            y: e.clientY,
+            rotation: this.props.direction === 'right' ?
+                0 : e.clientX > window.innerWidth / 2 ?
+                    0 : 180
         })
     }
 
@@ -37,15 +40,11 @@ export default class ArrowCursor extends Component {
 
     render() {
         if (this.state.x && this.props.visible) {
-            const rotation = this.props.direction === 'right' ?
-                0 : this.state.x > this.props.parent.offsetWidth / 2 ?
-                    0 : 180
-
             return (
                 <div
                     class={cx('ArrowCursor', style)}
                     style={{
-                        transform: `translate3d(${this.state.x}px, ${this.state.y}px, 0) rotateZ(${rotation}deg)`
+                        transform: `translate3d(${this.state.x}px, ${this.state.y}px, 0) rotateZ(${this.state.rotation}deg)`
                     }}
                 >
                     <svg width="82px" height="100px" viewBox="0 0 82 100" version="1.1">

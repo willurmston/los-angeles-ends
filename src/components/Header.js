@@ -7,12 +7,12 @@ export default class Header extends Component {
 	scrollDown(e) {
 		if (e.target.tagName === 'BUTTON') return
 		const firstSong = document.querySelector('.Song')
-		console.log(firstSong.offsetTop)
 		TweenLite.to( document.scrollingElement, 1, {
             scrollTop: firstSong.offsetTop,
             ease: Power2.easeOut
         })
 	}
+
 	render() {
 		const headerStyle = css`
 			position: relative;
@@ -110,6 +110,8 @@ export default class Header extends Component {
 			<header
 				class={cx('Header', headerStyle)}
 				ref={element => this.element = element}
+				onmouseenter={() => this.setState({showArrowCursor: true})}
+				onmouseleave={() => this.setState({showArrowCursor: false})}
 				onclick={this.scrollDown}
 			>
 				<Logo />
@@ -123,8 +125,7 @@ export default class Header extends Component {
 				}
 				{bigScreen &&
 					<ArrowCursor
-						visible={true}
-						parent={this.element}
+						visible={this.state.showArrowCursor }
 						direction={'right'}
 					/>
 				}

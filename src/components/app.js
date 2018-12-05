@@ -124,7 +124,7 @@ export default class App extends Component {
                 return section.offsetTop < document.scrollingElement.scrollTop
             })
         }
-        
+
         if (target) {
             this.setState({
                 pauseBackgrounds: true
@@ -227,7 +227,6 @@ export default class App extends Component {
                     {bigScreen && this.state.currentSong === null &&
                         <ArrowCursor
                             visible={this.state.showArrowCursor}
-                            parent={this.songsElement}
                             direction={'right'}
                         />
                     }

@@ -340,7 +340,6 @@ export default class Song extends Component {
                 {bigScreen &&
                     <ArrowCursor
                         visible={this.props.isOpen && this.props.showArrowCursor && this.state.showArrowCursor}
-                        parent={this.element}
                     />
                 }
                 {bigScreen && this.props.isOpen &&
