@@ -6,6 +6,7 @@ import MarkdownIt from 'markdown-it'
 import content from '../../content/index.js'
 import Router, {route}  from 'preact-router'
 import Match from 'preact-router/match'
+import utils from '../utils'
 // import TweenLite from 'gsap/TweenLite'
 // import { TweenLite } from 'gsap/TweenLite'
 // import TweenLite from '../../node_modules/gsap/TweenLite'
@@ -16,6 +17,7 @@ import Header from './Header'
 import Song from './Song'
 import ArrowCursor from './ArrowCursor'
 import LinerNotes from './LinerNotes'
+import KeyboardListener from './KeyboardListener'
 
 // PARSE MARKDOWN
 const md = MarkdownIt({
@@ -82,6 +84,47 @@ export default class App extends Component {
             scrollTop: targetScroll,
             ease: Power1.easeOut,
         })
+    }
+
+    enterNextSong() {
+        const songSections = Array.from(document.querySelectorAll('div.songs > .Song'))
+        const next = songSections.find(section => {
+            return section.offsetTop >= document.scrollingElement.scrollTop
+        })
+        if (next) {
+            route(`/${next.getAttribute('id')}#1`)
+        }
+    }
+
+    scrollToSong(target) {
+        if (target === 'next') {
+            // Get array of all sections
+            const sections = Array.from(document.querySelectorAll('.Header, div.songs > .Song, .LinerNotes'))
+            target = sections.find(section => {
+                return section.offsetTop > document.scrollingElement.scrollTop
+            })
+        } else if (target === 'prev') {
+            // Get array of all sections
+            const sections = Array.from(document.querySelectorAll('.Header, div.songs > .Song, .LinerNotes'))
+            target = sections.reverse().find(section => {
+                return section.offsetTop < document.scrollingElement.scrollTop
+            })
+        }
+        
+        if (target) {
+            this.setState({
+                pauseBackgrounds: true
+            })
+            TweenLite.to( document.scrollingElement, 0.4, {
+                scrollTop: target.offsetTop,
+                ease: Power1.easeOut,
+                onComplete: (e) => {
+                    this.setState({
+                        pauseBackgrounds: false
+                    })
+                }
+            })
+        }
     }
 
     scrollToLinerNotes = () => {
@@ -190,6 +233,36 @@ export default class App extends Component {
                     <div path="/:songSlug"></div>
                     <div default></div>
                 </Router>
+                <KeyboardListener
+                    onUp={() => {
+                        if(this.state.currentSong === null) {
+                            this.scrollToSong('prev')
+                        } else {
+                            const cycleAmount = this.state.songs.indexOf(this.state.currentSong) - 1
+                            // First, animate home
+                            route('/')
+                            // Then, scroll to next project
+                            setTimeout(() => {
+                                route(`/${utils.cycleArray(this.state.songs, cycleAmount )[0].slug}`, true)
+                            }, 700)
+                        }
+                    }}
+                    onDown={() => {
+                        if(this.state.currentSong === null) {
+                            this.scrollToSong('next')
+                        } else {
+                            const cycleAmount = this.state.songs.indexOf(this.state.currentSong) + 1
+                            // First, animate home
+                            route('/')
+                            // Then, scroll to next project
+                            setTimeout(() => {
+                                route(`/${utils.cycleArray(this.state.songs, cycleAmount )[0].slug}`, true)
+                            }, 500)
+                        }
+                    }}
+                    onRight={this.state.currentSong === null ? () => this.enterNextSong() : null}
+                    onEsc={() => route('/')}
+                />
             </div>
         )
     }

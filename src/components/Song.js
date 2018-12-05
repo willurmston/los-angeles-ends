@@ -10,6 +10,7 @@ import BackgroundVideo from './BackgroundVideo'
 import Toolbar from './Toolbar'
 import HomeButton from './HomeButton'
 import ArrowCursor from './ArrowCursor'
+import KeyboardListener from './KeyboardListener'
 
 // Script is loaded in HTML head
 window.SC.initialize({
@@ -89,7 +90,7 @@ export default class Song extends Component {
 
         // Play or pause the video when it enters or leaves the viewport
         this.observer = new IntersectionObserver(this.onVisibilityChange, {
-            threshold: 0
+            threshold: [0, 0.5, 1]
         })
         this.observer.observe(this.element)
 
@@ -146,6 +147,12 @@ export default class Song extends Component {
 
         if (this.state.currentSlideIndex !== prevState.currentSlideIndex) {
             this.element.querySelectorAll(`.slide`)[this.state.currentSlideIndex].scrollTop = 0
+        }
+
+        if (this.props.pauseBackground !== prevProps.pauseBackground) {
+            this.setState({
+                pauseBackground: this.props.pauseBackground
+            })
         }
     }
 
@@ -300,6 +307,7 @@ export default class Song extends Component {
                     color={this.props.song.color}
                     play={this.state.playBackground && !this.props.pauseBackground}
                     playbackRate={this.props.song.backgroundPlaybackRate}
+                    slug={this.props.song.slug}
                 />
                 <Toolbar
                     currentSlideIndex={this.state.currentSlideIndex}
@@ -337,6 +345,13 @@ export default class Song extends Component {
                 {bigScreen && this.props.isOpen &&
                     <HomeButton
                         onclick={() => route('/')}
+                    />
+                }
+                {this.props.isOpen &&
+                    <KeyboardListener
+                        onRight={this.nextSlide}
+                        onLeft={this.prevSlide}
+                        onEsc={() => route('/')}
                     />
                 }
             </section>

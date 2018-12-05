@@ -6,7 +6,6 @@ import ArrowCursor from './ArrowCursor'
 export default class Header extends Component {
 	scrollDown(e) {
 		if (e.target.tagName === 'BUTTON') return
-		
 		const firstSong = document.querySelector('.Song')
 		console.log(firstSong.offsetTop)
 		TweenLite.to( document.scrollingElement, 1, {
@@ -109,7 +108,7 @@ export default class Header extends Component {
 
 		return (
 			<header
-				class={headerStyle}
+				class={cx('Header', headerStyle)}
 				ref={element => this.element = element}
 				onclick={this.scrollDown}
 			>
