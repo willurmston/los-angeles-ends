@@ -43,6 +43,9 @@ export default class QuoteSlide extends Component {
                 & p:last-child {
                     margin-bottom: 60px;
                     border-bottom: none;
+                    @media screen and (min-width: 600px) {
+                        margin-bottom: 0;
+                    }
                 }
             }
         `
