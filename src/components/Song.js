@@ -260,13 +260,13 @@ export default class Song extends Component {
                 width: ${this.state.slides.length * 100}vw;
                 top: ${this.props.isOpen ? '60px' : 0};
                 transform: translateX(-${this.props.isOpen ? this.state.currentSlideIndex * 100 : 0}vw);
-                transition: transform 0.35s ease-out;
+                transition: transform 0.35s cubic-bezier(.23,.23,.36,.95);
                 overflow: hidden;
                 cursor: none;
                 user-select: none;
                 @media screen and (min-width: 600px) {
                     height: calc(100% - 70px);
-                    transition: transform 0.35s ease-out, top 0.2s ease-out;
+                    transition: transform 0.4s cubic-bezier(.23,.23,.36,.95), top 0.2s cubic-bezier(.23,.23,.36,.95);
                     top: ${this.props.isOpen ? 0 : `${70 / 2}px`};
                 }
                 & .slide {
