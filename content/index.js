@@ -3,7 +3,9 @@ module.exports = {
     songs: [
         require('./through-the-windshield/index.js'),
         require('./los-angeles-ends/index.js'),
-        require('./horizon/index.js')
+        require('./high-occupancy-vehicle/index.js'),
+        require('./horizon/index.js'),
+        require('./almost-right/index.js')
     ],
     links: [
         {

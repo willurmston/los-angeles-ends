@@ -4,7 +4,7 @@ module.exports = {
     trackID: 499561479,
     titleLayout: 'cascade',
     backgroundVideo: require('./los-angeles-ends.mov.mp4'),
-    color: 'blue',
+    color: 'orange',
     slides: [
         {
             type: 'lyrics',
