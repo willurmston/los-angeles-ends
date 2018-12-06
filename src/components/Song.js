@@ -263,6 +263,7 @@ export default class Song extends Component {
                 transition: transform 0.35s ease-out;
                 overflow: hidden;
                 cursor: none;
+                user-select: none;
                 @media screen and (min-width: 600px) {
                     height: calc(100% - 70px);
                     transition: transform 0.35s ease-out, top 0.2s ease-out;
