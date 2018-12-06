@@ -3,7 +3,7 @@ import {css, cx} from 'emotion'
 
 export default class QuoteSlide extends Component {
     shouldComponentUpdate(nextProps) {
-        return this.props !== nextProps
+        return false
     }
 
     render() {

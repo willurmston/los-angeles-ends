@@ -3,6 +3,10 @@ import {css, cx} from 'emotion'
 import Logo from './Logo'
 
 export default class LinerNotes extends Component {
+    shouldComponentUpdate() {
+        return false
+    }
+
     render() {
         const style = css`
             @media screen and (min-width: 600px) {
