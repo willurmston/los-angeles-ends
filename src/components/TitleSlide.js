@@ -120,7 +120,7 @@ export default class TitleSlide extends Component {
 
         return (
             <div class={cx('slide', 'TitleSlide', this.props.layout, titleSlideStyle)}>
-                <a class="title" href={!this.props.songIsOpen && this.props.songUrl}>
+                <a class="title">
                     <h1 dangerouslySetInnerHTML={{__html: this.words()}}>
                     </h1>
                 </a>
