@@ -60,16 +60,20 @@ export default class TitleSlide extends Component {
                 min-height: 180px;
                 transition: transform 0.2s;
                 @media screen and (min-width: 600px) {
-                    font-size: 20.5vmin;
+                    font-size: 18vmin;
                     line-height: 1.06;
                     letter-spacing: -1vmin;
                     background: transparent;
                     color: var(--off-white);
                     margin: 0;
-                    padding: 0 20px 0 10px;
+                    margin: 0 90px 0 90px;
+                    padding: 0 20px 0 4px;
                 }
-                @media screen and (min-width: 1500px) {
-                    font-size: 27vmin;
+                @media screen and (min-width: 1000px) {
+                    font-size: 20vmin;
+                }
+                @media screen and (min-width: 1300px) {
+                    font-size: 24vmin;
                 }
                 &:active {
                     transform: scale(0.97);

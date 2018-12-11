@@ -54,10 +54,10 @@ export default class NarrationSlide extends Component {
             }
             @media screen and (min-width: 1300px) {
                 &::before {
-                    display: none;
+                    height: 40px;
                 }
                 &::after {
-                    display: none;
+                    height: 40px;
                 }
             }
             & .content {

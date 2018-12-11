@@ -11,6 +11,7 @@ import Toolbar from './Toolbar'
 import HomeButton from './HomeButton'
 import ArrowCursor from './ArrowCursor'
 import KeyboardListener from './KeyboardListener'
+import Curtain from './Curtain'
 
 // Script is loaded in HTML head
 window.SC.initialize({
@@ -265,9 +266,9 @@ export default class Song extends Component {
                 cursor: none;
                 user-select: none;
                 @media screen and (min-width: 600px) {
-                    height: calc(100% - 70px);
+                    height: 100%;
                     transition: transform 0.4s cubic-bezier(.23,.23,.36,.95), top 0.2s cubic-bezier(.23,.23,.36,.95);
-                    top: ${this.props.isOpen ? 0 : `${70 / 2}px`};
+                    top: 0;
                 }
                 & .slide {
                     max-height: 100%;
@@ -278,9 +279,18 @@ export default class Song extends Component {
                 }
             }
             @media screen and (min-width: 600px) {
-                height: 100vh;
-                border-bottom: ${this.props.isOpen ? 'none' : ' 4px solid var(--song-color)'};
+                height: calc(100vh - 70px);
                 box-sizing: border-box;
+                &::after {
+                    content: '';
+                    width: 100vw;
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    height: 10px;
+                    background: var(--off-white)
+                    z-index: 1;
+                }
                 & .HomeButton {
                     position: absolute;
                     top: 30px;
@@ -347,6 +357,30 @@ export default class Song extends Component {
                 {bigScreen && this.props.isOpen &&
                     <HomeButton
                         onclick={() => route('/')}
+                    />
+                }
+                {bigScreen &&
+                    <Curtain
+                        side="top"
+                        isOpen={this.props.isOpen}
+                    />
+                }
+                {bigScreen &&
+                    <Curtain
+                        side="right"
+                        isOpen={this.props.isOpen}
+                    />
+                }
+                {bigScreen &&
+                    <Curtain
+                        side="bottom"
+                        isOpen={this.props.isOpen}
+                    />
+                }
+                {bigScreen &&
+                    <Curtain
+                        side="left"
+                        isOpen={this.props.isOpen}
                     />
                 }
                 {this.props.isOpen &&

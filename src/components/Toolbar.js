@@ -11,7 +11,7 @@ const style = css`
     color: var(--song-color);
     width: 100%;
     z-index: 100;
-    transition: transform 0.3s 0.2s;
+    transition: transform 0.4s 0.2s;
     will-change: transform;
     @media screen and (min-width: 600px) {
         display: flex;
@@ -23,7 +23,7 @@ const style = css`
         height: 70px;
     }
     &.hidden {
-        transition: transform 0.3s;
+        transition: transform 0.4s;
         transform: translateY(-100%);
         @media screen and (min-width: 600px) {
             transform: translateY(100%);

@@ -29,11 +29,12 @@ export default class Header extends Component {
 				justify-content: flex-end;
 				text-align: left;
 				padding-left: 20px;
-				height: 80vh;
+				height: 82vh;
 				font-size: 24px;
 				overflow: hidden;
-				border-bottom: 4px solid var(--song-color);
+				margin-bottom: 20px;
 				background: var(--song-color);
+				border-bottom: 2px solid var(--song-color);
 			}
 			& .title {
 				bottom: 8px;
@@ -45,7 +46,7 @@ export default class Header extends Component {
 				@media screen and (min-width: 600px) {
 					color: var(--off-white);
 					position: static;
-					margin-bottom: 26px;
+					margin-bottom: 30px;
 					line-height: 1.09;
 					width: 46vw;
 					z-index: 1;
@@ -86,7 +87,7 @@ export default class Header extends Component {
 					& h2 {
 						position: absolute;
 						left: 20px;
-						bottom: 26px;
+						bottom: 30px;
 					}
 				}
 			}

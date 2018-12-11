@@ -10,6 +10,7 @@ export default class LinerNotes extends Component {
     render() {
         const style = css`
             @media screen and (min-width: 600px) {
+                margin-top: 30px;
                 display: flex;
             }
             & .links {
@@ -19,7 +20,7 @@ export default class LinerNotes extends Component {
                 padding: 20px 20px;
                 overflow: hidden;
                 @media screen and (min-width: 600px) {
-                    width: 25%;
+                    width: 50%;
                     min-width: 250px;
                     font-size: 24px;
                     padding: 55px 50px;
@@ -65,6 +66,7 @@ export default class LinerNotes extends Component {
                 @media screen and (min-width: 600px) {
                     width: 50%;
                     padding: 62px 64px;
+                    border-top: 2px solid var(--blue);
                 }
                 & h2 {
                     letter-spacing: 1px;
