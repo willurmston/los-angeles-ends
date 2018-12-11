@@ -2,6 +2,8 @@ import {h, Component} from 'preact'
 import {css, cx} from 'emotion'
 import Logo from './Logo'
 import ArrowCursor from './ArrowCursor'
+import Map from './Map'
+import RadialBackground from './RadialBackground'
 
 export default class Header extends Component {
 	scrollDown(e) {
@@ -19,51 +21,77 @@ export default class Header extends Component {
 			height: 200px;
 			font-size: 20px;
 			letter-spacing: 1px;
+			--song-color: var(--red);
 			@media screen and (min-width: 600px) {
 				display: flex;
 				flex-direction: column;
 				align-items: flex-start;
-				justify-content: center;
+				justify-content: flex-end;
 				text-align: left;
-				padding-left: 40px;
-				height: calc(100vh - 60px);
+				padding-left: 20px;
+				height: 80vh;
 				font-size: 24px;
-				cursor: none;
+				overflow: hidden;
+				border-bottom: 4px solid var(--song-color);
+				background: var(--song-color);
 			}
-			& h1 {
-				bottom: 16px;
-				color: var(--${this.props.color});
+			& .title {
+				bottom: 8px;
+				color: var(--song-color);
 				left: 16px;
-				line-height: 1.5;
+				line-height: 1.3;
 				margin: 0;
 				position: absolute;
 				@media screen and (min-width: 600px) {
+					color: var(--off-white);
 					position: static;
-					left: 24px;
-					bottom: 24px;
-					line-height: 1.3;
-					& span {
-						display: inline;
-						margin-bottom: 1.1em;
-						padding-bottom: 4px;
-					}
-					& span.big {
-						letter-spacing: 3px;
-						font-size: 60px;
-						&:nth-child(1) {
-							/* border-bottom: 2px solid var(--purple); */
+					margin-bottom: 26px;
+					line-height: 1.09;
+					width: 46vw;
+					z-index: 1;
+					& h1 {
+						text-rendering: optimizeSpeed;
+						font-size: 11vh;
+						margin: 0 0 -10px 0;
+						span {
+							display: block;
 						}
 					}
-					& span.small {
-						padding-right: 14px;
-						letter-spacing: 0.035em;
-						font-size: 24px;
-						margin-left: 4px;
+					& h2 {
+						margin-bottom: 0;
+						margin-left: 0.8vh;
+						font-size: 20px;
+					}
+				}
+				@media screen and (min-width: 1300px) {
+					& h1 {
+						font-size: 15vh;
+					}
+				}
+				@media screen and (min-width: 1500px) {
+					& h1 {
+						/* margin-bottom: -6vh; */
+						& span {
+							&:nth-child(1) {
+								text-align: left;
+							}
+							&:nth-child(2) {
+								text-align: center;
+							}
+							&:nth-child(3) {
+								text-align: right;
+							}
+						}
+					}
+					& h2 {
+						position: absolute;
+						left: 20px;
+						bottom: 26px;
 					}
 				}
 			}
 			& svg.Logo {
-				fill: var(--${this.props.color});
+				fill: var(--song-color);
 				position: absolute;
 				top: 16px;
 				left: 16px;
@@ -80,7 +108,7 @@ export default class Header extends Component {
 				background: none;
 				border: none;
 				cursor: pointer;
-				color: var(--${this.props.color});
+				color: var(--song-color);
 				text-decoration: underline;
 				top: 12px;
 				letter-spacing: inherit;
@@ -88,19 +116,10 @@ export default class Header extends Component {
 				position: absolute;
 				right: 0;
 				@media screen and (min-width: 600px) {
-					/* position: static; */
 					top: auto;
 					bottom: 14px;
 					right: 20px;
 				}
-			}
-			& .ArrowCursor {
-				& svg {
-					transform: scaleY(0.8) rotate(-31.5deg);
-				}
-	            & polygon {
-	                fill: var(--purple);
-	            }
 			}
 		`
 
@@ -112,28 +131,29 @@ export default class Header extends Component {
 				ref={element => this.element = element}
 				onmouseenter={() => this.setState({showArrowCursor: true})}
 				onmouseleave={() => this.setState({showArrowCursor: false})}
-				onclick={this.scrollDown}
 			>
-				<Logo />
-				{bigScreen ?
-					<h1>
-						<span class="big">LOS ANGELES ENDS</span>
-						<br/><span class="small">a record by simulcast</span>
-					</h1>
-				:
-					<h1>LOS ANGELES ENDS<br/>a record by SIMULCAST</h1>
+				{bigScreen &&
+					<RadialBackground />
 				}
 				{bigScreen &&
-					<ArrowCursor
-						visible={this.state.showArrowCursor }
-						direction={'right'}
+					<Map
+						pins={this.props.songs}
+						onPinClick={this.props.onPinClick}
 					/>
 				}
-				<button
-					onclick={this.props.onLinerNotesButtonClick}
-				>
-					liner notes
-				</button>
+				{!bigScreen &&
+					<Logo />
+				}
+				{bigScreen ?
+					<div class="title">
+						<h1><span>LOS</span><span>ANGELES</span><span>ENDS</span></h1>
+						<h2>a record by Simulcast</h2>
+					</div>
+				:
+					<div class="title">
+						<h1>LOS ANGELES ENDS<br/>a record by SIMULCAST</h1>
+					</div>
+				}
 			</header>
 		)
 	}

@@ -110,7 +110,7 @@ export default class App extends Component {
         }
     }
 
-    scrollToSong(target) {
+    scrollToSong = (target, duration = 0.4) => {
         if (target === 'next') {
             // Get array of all sections
             const sections = Array.from(document.querySelectorAll('.Header, div.songs > .Song, .LinerNotes'))
@@ -123,13 +123,16 @@ export default class App extends Component {
             target = sections.reverse().find(section => {
                 return section.offsetTop < document.scrollingElement.scrollTop
             })
+        } else if (target.slug) {
+            // It's a song object, not a DOM node
+            target = document.querySelector(`.Song#${target.slug}`)
         }
 
         if (target) {
             this.setState({
                 pauseBackgrounds: true
             })
-            TweenLite.to( document.scrollingElement, 0.4, {
+            TweenLite.to( document.scrollingElement, duration, {
                 scrollTop: target.offsetTop,
                 ease: Power1.easeOut,
                 onComplete: (e) => {
@@ -188,8 +191,9 @@ export default class App extends Component {
                     unmountDelay={800}
                 >
                     <Header
-                        color={content.songs[0].color}
                         onLinerNotesButtonClick={this.scrollToLinerNotes}
+                        songs={this.state.songs}
+                        onPinClick={this.scrollToSong}
                     />
                 </DelayUnmount>
                 <div
