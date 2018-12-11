@@ -7,22 +7,32 @@ module.exports = {
         require('./horizon/index.js'),
         require('./almost-right/index.js')
     ],
-    links: [
+    listenLinks: [
         {
             href: '',
-            text: 'bandcamp'
+            text: 'Download'
         },
         {
             href: '',
-            text: 'soundcloud'
+            text: 'Spotify'
         },
         {
             href: '',
-            text: 'spotify'
+            text: 'Apple Music'
+        }
+    ],
+    socialLinks: [
+        {
+            href: '',
+            text: 'Twitter'
         },
         {
             href: '',
-            text: 'apple music'
+            text: 'Instagram'
+        },
+        {
+            href: '',
+            text: 'Soundcloud'
         }
     ],
     // Use asterisks around *someone's name* to make it pink

@@ -221,7 +221,7 @@ export default class App extends Component {
                                     index={index}
                                     isOpen={song === this.state.currentSong}
                                     onclick={this.state.currentSong === null ?
-                                        () => route(`/${song.slug}${bigScreen ? '#1' : ''}`) 
+                                        () => route(`/${song.slug}${bigScreen ? '#1' : ''}`)
                                     : null}
                                     pauseBackground={this.state.pauseBackgrounds}
                                     key={song.slug}
@@ -244,7 +244,8 @@ export default class App extends Component {
                     <LinerNotes
                         color={'blue'}
                         accentColor={'pink'}
-                        links={content.links}
+                        listenLinks={content.listenLinks}
+                        socialLinks={content.socialLinks}
                         credits={content.credits}
                     />
                 </DelayUnmount>
