@@ -6,6 +6,8 @@ module.exports = {
     backgroundVideo: require('./hov.mov.mp4'),
     backgroundPlaybackRate: 0.5,
     color: 'red',
+    pinX: '65.5%',
+    pinY: '49%',
     slides: [
         {
             type: 'lyrics',
