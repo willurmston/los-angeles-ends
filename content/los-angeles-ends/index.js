@@ -5,6 +5,8 @@ module.exports = {
     titleLayout: 'cascade',
     backgroundVideo: require('./los-angeles-ends.mov.mp4'),
     color: 'orange',
+    pinX: '68.6%',
+    pinY: '20.9%',
     slides: [
         {
             type: 'lyrics',

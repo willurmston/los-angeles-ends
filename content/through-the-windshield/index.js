@@ -6,6 +6,8 @@ module.exports = {
     backgroundVideo: require('./windshield-zoom2.mov.mp4'),
     backgroundPlaybackRate: 0.75,
     color: 'purple',
+    pinX: '63.2%',
+    pinY: '20.1%',
     slides: [
         {
             type: 'lyrics',

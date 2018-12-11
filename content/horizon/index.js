@@ -6,6 +6,8 @@ module.exports = {
     backgroundVideo: require('./horizon-2.mov.mp4'),
     backgroundPlaybackRate: 1,
     color: 'pink',
+    pinX: '64%',
+    pinY: '89%',
     slides: [
         {
             type: 'lyrics',

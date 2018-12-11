@@ -6,6 +6,8 @@ module.exports = {
     backgroundVideo: require('./almost-right.mp4.mp4'),
     backgroundPlaybackRate: 0.75,
     color: 'blue',
+    pinX: '60%',
+    pinY: '13.5%',
     slides: [
         {
             type: 'lyrics',
