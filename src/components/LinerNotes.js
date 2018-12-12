@@ -33,9 +33,9 @@ const style = css`
             opacity: 0.7;
             & svg {
                 min-height: 100%;
-                right: -140vw;
-                @media screen and (min-width: 600px) {
-                    right: -60vw;
+                right: -140%;
+                @media screen and (min-width: 1000px) {
+                    right: -100%;
                 }
             }
         }
