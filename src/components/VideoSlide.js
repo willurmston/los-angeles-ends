@@ -6,7 +6,7 @@ export default class VideoSlide extends Component {
         this.video.defaultMuted = true
         this.setState({
             muted: true,
-            loaded: false,
+            loaded: this.video.videoWidth ? true : false,
             firstView: true
         })
     }
@@ -98,7 +98,7 @@ export default class VideoSlide extends Component {
                     width: 100%;
                     object-fit: cover;
                     opacity: ${!this.state.firstView && this.state.loaded ? 1 : 0};
-                    transition: opacity 0.5s 0.3s ease-out;
+                    transition: opacity 0.3s 0.3s ease-out;
                     @media screen and (min-width: 600px) {
                         height: 100%;
                         width: 100%;
