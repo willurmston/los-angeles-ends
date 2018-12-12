@@ -32,6 +32,7 @@ const headerStyle = css`
 		line-height: 1.3;
 		margin: 0;
 		position: absolute;
+		pointer-events: none;
 		@media screen and (min-width: 600px) {
 			color: var(--off-white);
 			position: static;
