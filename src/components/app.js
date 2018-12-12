@@ -180,6 +180,10 @@ export default class App extends Component {
             & .songs .Song:nth-child(${this.state.songs.length}) {
                 border-bottom: none;
             }
+            & .LinerNotes {
+                transition: opacity 0.3s;
+                animation: ${this.state.currentSong === this.state.songs[this.state.songs.length - 1] ? 'fade-out both 0.2s' : 'fade-in both 0.3s 0.3s' };
+            }
         `
 
         const bigScreen = window.matchMedia('screen and (min-width: 600px)').matches
