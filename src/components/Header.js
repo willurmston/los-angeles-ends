@@ -131,7 +131,6 @@ export default class Header extends Component {
 				ref={element => this.element = element}
 				onmouseenter={() => this.setState({showArrowCursor: true})}
 				onmouseleave={() => this.setState({showArrowCursor: false})}
-				onmousemove={}
 			>
 				{bigScreen &&
 					<RadialBackground />
