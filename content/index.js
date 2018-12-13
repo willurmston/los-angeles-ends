@@ -36,7 +36,7 @@ module.exports = {
         }
     ],
     // Use asterisks around *someone's name* to make it pink
-    credits: `
+    credits: markdown`
         All songs written, arranged, and produced by [Simulcast](https://here.simulcast.fm/).
 
         Track 1 engineered, mixed, and mastered by *Tristan Rodman* at The Virtual Window in Los Angeles, CA
