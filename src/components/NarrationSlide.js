@@ -13,7 +13,7 @@ export default class NarrationSlide extends Component {
             child.setAttribute('class', css`
                 /* stack top-to-bottom */
                 @media screen and (min-width: 600px) {
-                    margin-top: -34px !important;
+                    margin-top: ${index > 0 ? '-34px' : 0} !important;
                     margin-right: 0 !important;
                     margin-left: ${15 * (index - (children.length / 2) + 1)}% !important;
                 }
@@ -37,28 +37,6 @@ export default class NarrationSlide extends Component {
                 justify-content: center;
                 align-items: center;
                 flex-wrap: wrap;
-                &::before {
-                    content: '';
-                    width: 100%;
-                    height: 60px;
-                    display: block;
-                    flex-shrink: 0;
-                }
-                &::after {
-                    content: '';
-                    width: 100%;
-                    height: 80px;
-                    display: block;
-                    flex-shrink: 0;
-                }
-            }
-            @media screen and (min-width: 1300px) {
-                &::before {
-                    height: 40px;
-                }
-                &::after {
-                    height: 40px;
-                }
             }
             & .content {
                 padding-top: 40px;
@@ -71,6 +49,8 @@ export default class NarrationSlide extends Component {
                     align-items: center;
                     width: auto;
                     flex-shrink: 1;
+                    margin: auto 0;
+                    padding-top: 60px;
                     width: calc(100vw - 200px);
                 }
                 @media screen and (min-width: 1300px) {
@@ -101,6 +81,7 @@ export default class NarrationSlide extends Component {
                         width: auto;
                         max-width: 420px;
                         flex-shrink: 1;
+                        margin-bottom: 60px;
                     }
                 }
                 & p:last-child {
