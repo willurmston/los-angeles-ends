@@ -41,7 +41,7 @@ export default class App extends Component {
                     route('/')
                     // Then, scroll to next project
                     setTimeout(() => {
-                        enterSong(matchingSong)
+                        this.enterSong(matchingSong)
                     }, 500)
                 } else {
                     this.enterSong(matchingSong)
@@ -210,6 +210,7 @@ export default class App extends Component {
                                     pauseBackground={this.state.pauseBackgrounds}
                                     key={song.slug}
                                     showArrowCursor={this.state.showArrowCursor}
+                                    playNextSong={this.playNextSong}
                                 />
                             </DelayUnmount>
                         )
