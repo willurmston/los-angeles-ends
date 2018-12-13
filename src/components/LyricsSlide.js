@@ -43,6 +43,7 @@ export default class LyricsSlide extends Component {
                 & p {
                     padding: 0;
                     color: var(--song-color);
+                    white-space: pre-wrap;
                     & span {
                         background: var(--off-white);
                         padding: 10px 16px;
@@ -56,7 +57,7 @@ export default class LyricsSlide extends Component {
                     margin: 40px 20px;
                     color: var(--song-color);
                     @media screen and (min-width: 600px) {
-                        line-height: 1.45;
+                        line-height: 1.4;
                         margin-bottom: 40px;
                     }
                 }

@@ -33,6 +33,7 @@ export default class QuoteSlide extends Component {
                     padding: 20px 20px;
                     background: var(--song-color);
                     color: var(--off-white);
+                    white-space: pre-wrap;
                     @media screen and (min-width: 600px) {
                         padding: 30px 40px;
                     }

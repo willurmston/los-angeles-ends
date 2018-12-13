@@ -68,6 +68,7 @@ export default class NarrationSlide extends Component {
                     padding: 16px 20px;
                     background: var(--off-white);
                     color: var(--song-color);
+                    white-space: pre-wrap;
                     @media screen and (min-width: 600px) {
                         display: table;
                         padding: 24px 28px;
