@@ -3,10 +3,16 @@ import {css, cx} from 'emotion'
 
 export default class LyricsSlide extends Component {
     componentDidMount() {
-        this.element.querySelectorAll('p').forEach( (p, index) => {
-            p.style.transform = `rotateZ(${ (Math.random() * 8) - 4 }deg)`
-            p.style.transformOrigin = '20% 50%'
-            p.style.transitionDelay = `${index * 0.1}s`
+        const bigScreen = window.matchMedia('screen and (min-width: 600px)').matches
+        this.element.querySelectorAll('p').forEach(p => {
+            const innerHTML = '<span>' + p.innerHTML.replace(/\n/g, '</span><span>') + '</span>'
+            p.innerHTML = innerHTML
+            if (!bigScreen) {
+                p.querySelectorAll('span').forEach((span, index) => {
+                    span.style.transformOrigin = '20% 50%'
+                    span.style.transform = `rotateZ(${ (Math.random() * 8) - 4 }deg)`
+                })
+            }
         })
     }
 
@@ -28,22 +34,30 @@ export default class LyricsSlide extends Component {
             & .content {
                 overflow: visible;
                 padding-top: 30px;
+                height: auto;
                 @media screen and (min-width: 600px) {
+                    margin: auto 0;
                     padding-top: 40px;
-                    max-width: 800px;
+                    max-width: 580px;
                 }
                 & p {
-                    background: var(--off-white);
+                    padding: 0;
+                    color: var(--song-color);
+                    & span {
+                        background: var(--off-white);
+                        padding: 10px 16px;
+                        margin-top: -2px;
+                        display: inline-block;
+                        @media screen and (min-width: 600px) {
+                            padding: 10px 20px;
+                        }
+                    }
                     display: table;
-                    margin: 10px 24px;
-                    padding: 10px 12px 10px 12px;
+                    margin: 40px 20px;
                     color: var(--song-color);
                     @media screen and (min-width: 600px) {
-                        margin: 0;
-                        line-height: 2;
-                        padding: 0 20px 0 80px;
-                        text-indent: -60px;
-                        transform: none !important;
+                        line-height: 1.45;
+                        margin-bottom: 40px;
                     }
                 }
                 & p:last-child {
