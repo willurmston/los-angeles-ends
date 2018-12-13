@@ -1,4 +1,20 @@
+import path from 'path'
+
 export default function(config, env, helpers) {
+    // Use custom markdown-loader for scripts in content folder
+    // It looks for: markdown`My example paragraph`
+    // and replaces with HTML string
+    config.module.loaders.push({
+        enforce: 'pre',
+        test:/\.js/,
+        include: [
+            path.resolve(__dirname, 'content/')
+        ],
+        use: [
+            {loader: '../markdown-loader.js'}
+        ]
+    })
+
     if (env.production) {
         const fileLoader = helpers.getLoadersByName(config, 'file-loader')[0]
         fileLoader.rule.options = {

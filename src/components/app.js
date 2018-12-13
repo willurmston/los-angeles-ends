@@ -2,7 +2,6 @@ import 'preact/debug'
 import 'intersection-observer'
 import {h, Component} from 'preact'
 import {css, cx} from 'emotion'
-import MarkdownIt from 'markdown-it'
 import content from '../../content/index.js'
 import Router, {route}  from 'preact-router'
 import Match from 'preact-router/match'
@@ -18,25 +17,6 @@ import Song from './Song'
 import ArrowCursor from './ArrowCursor'
 import LinerNotes from './LinerNotes'
 import KeyboardListener from './KeyboardListener'
-
-// PARSE MARKDOWN
-const md = MarkdownIt({
-    typographer: true,
-    quotes: '“”‘’'
-})
-
-const markdownToHTML = string => md.render(string.replace(/ +(?= )/g, ''))
-// Parse song markdown
-content.songs.forEach( song => {
-    // Add backgroundVideo
-    song.slides.forEach( slide => {
-        if (Object.keys(slide).includes('markdown')) {
-            slide.markdown = markdownToHTML(slide.markdown)
-        }
-    })
-})
-// Parse liner notes markdown
-content.credits = markdownToHTML(content.credits)
 
 export default class App extends Component {
     constructor(props) {
