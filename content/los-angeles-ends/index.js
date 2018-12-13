@@ -15,11 +15,14 @@ module.exports = {
                 underneath the orange glow so familiar in los angeles
                 as a cloud blooms on the horizon
                 i hear baseball on the radio
+
                 this is the light that will take us with it
+
                 a warm breeze in from the desert
                 with an exhale, i try to let go
                 listen to vin tell me what the sky looks like
                 as the pitch comes in at 3 - 0
+                
                 this is the light that will take us with it
 
                 [i can see clearly now the rain is gone
@@ -48,11 +51,11 @@ module.exports = {
             markdown: markdown`
                 ever since my mom died, october 2009, while the station fire burned in the san gabriels, i've been having nightmares set atop elysian park.
 
-i can see a third of the playing field at dodger stadium, and i’ve taken a picnic and a transistor radio to follow the game. santa ana winds cut the air. then i turn my head and watch as the light grows closer, warmer, brighter.
+                i can see a third of the playing field at dodger stadium, and i’ve taken a picnic and a transistor radio to follow the game. santa ana winds cut the air. then i turn my head and watch as the light grows closer, warmer, brighter.
 
-“i guess that’s it,” i think.
+                “i guess that’s it,” i think.
 
-i wake up in a sweat. it's my fault — it wouldn’t have happened if i hadn’t looked.
+                i wake up in a sweat. it's my fault — it wouldn’t have happened if i hadn’t looked.
             `
         },
         {
@@ -68,32 +71,32 @@ i wake up in a sweat. it's my fault — it wouldn’t have happened if i hadn�
         {
             type: 'quote',
             markdown: markdown`
-            "I was driving east across Sunset. Here and there the familiar buildings of downtown – most prominently, the Library Tower – swung into view behind the hills and the haze. And then though left (“blue”) eye I saw downtown, all of it—  Disappear. As if it had never been.  Obliterated in a flash of light more intense than can be imagined or described. The canonical phrase only hints at what I (monocularly) saw. “Brighter than a thousand suns.”
+                "I was driving east across Sunset. Here and there the familiar buildings of downtown – most prominently, the Library Tower – swung into view behind the hills and the haze. And then though left (“blue”) eye I saw downtown, all of it—  Disappear. As if it had never been.  Obliterated in a flash of light more intense than can be imagined or described. The canonical phrase only hints at what I (monocularly) saw. “Brighter than a thousand suns.”
 
-            I know what happened to downtown and I know what that means. The only thing I do not know is why I, perhaps alone, was given the privilege – if one might call it that – of seeing it before it occurred."
-            – Howard A. Rodman, "BANG", Black Clock
+                I know what happened to downtown and I know what that means. The only thing I do not know is why I, perhaps alone, was given the privilege – if one might call it that – of seeing it before it occurred."
+                – Howard A. Rodman, "BANG", Black Clock
             `
         },
         {
             type: 'narration',
             markdown: markdown`
-            it's 2018 now and i'm revisiting this song as malibu west valley are on fire, uncontained. when i wrote it, depressed by deffered grief, both personal and societal, i was fascinated with the world ending. i was excited, even, by the possibility.
+                it's 2018 now and i'm revisiting this song as malibu west valley are on fire, uncontained. when i wrote it, depressed by deffered grief, both personal and societal, i was fascinated with the world ending. i was excited, even, by the possibility.
 
-i fantasized about los angeles ending because i was ending.
+                i fantasized about los angeles ending because i was ending.
 
-because loss makes the apocalypse feel like an appealing alternative to life.
+                because loss makes the apocalypse feel like an appealing alternative to life.
             `
         },
         {
             type: 'narration',
             markdown: markdown`
-            i drive the 134 as the woolsey fire burns, sun blaring orange through the haze. radiant, beautiful, and terrifying — the exact same shade i wrote this song about. but there's nothing exciting about it at all. i feel instead a sorrow, deep and painful, ripping me from myself.
+                i drive the 134 as the woolsey fire burns, sun blaring orange through the haze. radiant, beautiful, and terrifying — the exact same shade i wrote this song about. but there's nothing exciting about it at all. i feel instead a sorrow, deep and painful, ripping me from myself.
 
-            i don't want this.
+                i don't want this.
 
-            over the summer, j suggested to me that i use "i can see clearly now" as a sample in a simulcast live set. it reads so differently, he said, when you think about it in terms of climate change. it's haunting, prescient.
+                over the summer, j suggested to me that i use "i can see clearly now" as a sample in a simulcast live set. it reads so differently, he said, when you think about it in terms of climate change. it's haunting, prescient.
 
-            i cut the sample in the same day the woolsey fire is finally contained.
+                i cut the sample in the same day the woolsey fire is finally contained.
             `
         },
         {
@@ -107,11 +110,11 @@ because loss makes the apocalypse feel like an appealing alternative to life.
         {
             type: 'narration',
             markdown: markdown`
-            there's something instructive about coming so close to the end and deciding that it's not the way forward. that the world is ending but you are not.
+                there's something instructive about coming so close to the end and deciding that it's not the way forward. that the world is ending but you are not.
 
-            on the best days it feels obvious, on the worst it feels like a lie.
+                on the best days it feels obvious, on the worst it feels like a lie.
 
-            not a fire, not an explosion, just a constant tear in two.
+                not a fire, not an explosion, just a constant tear in two.
             `
         }
     ]

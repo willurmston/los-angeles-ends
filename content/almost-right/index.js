@@ -13,21 +13,14 @@ module.exports = {
             type: 'lyrics',
             markdown: markdown`
                 born to the freeway and radio masts
-
                 raised by my car and a black standard poodle
-
                 crashed turning left, sunset and western
-
                 i was trying to go home
 
                 looked through the windshield, saw both of my parents
-
                 grabbed my keys, got back in the car
-
                 right hand scans the AM bands
-
                 but this time i hit traffic
-
                 and the radio went static
 
                 car stalled, engine silent
