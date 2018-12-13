@@ -36,7 +36,7 @@ export default class BackgroundVideo extends Component {
     componentWillReceiveProps(nextProps) {
         if (nextProps.play && this.video.paused) {
             this.video.play()
-        } else if (!nextProps.play && !this.video.paused) {
+        } else if (!nextProps.play && !this.video.paused && this.video.readyState === 4) {
             this.video.pause()
         }
     }
