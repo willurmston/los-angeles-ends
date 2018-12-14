@@ -23,34 +23,33 @@ module.exports = {
     ],
     socialLinks: [
         {
-            href: '',
+            href: 'http://twitter.com/thisissimulcast',
             text: 'Twitter'
         },
         {
-            href: '',
+            href: 'http://instagram.com/thisissimulcast',
             text: 'Instagram'
         },
         {
-            href: '',
+            href: 'http://soundcloud.com/thisissimulcast',
             text: 'Soundcloud'
         }
     ],
     // Use asterisks around *someone's name* to make it pink
     credits: markdown`
-        All songs written, arranged, and produced by [Simulcast](https://here.simulcast.fm/).
+        All songs written, arranged, engineered, produced, and mixed by *Tristan Rodman*.
 
-        Track 1 engineered, mixed, and mastered by *Tristan Rodman* at The Virtual Window in Los Angeles, CA
+        Tracks 2, 3, 4, and 5 contain material sampled from master recordings mixed by *Seth Manchester* at [Machines With Magnets](http://www.machineswithmagnets.com) in Pawtucket, RI
+        & mastered by *Heba Kadry* at [Timeless Mastering](http://www.timelessmastering.com/hebakadry/) in Brooklyn, NY.
 
-        Tracks 2, 3, 4, and 5 engineered and mixed by *Seth Manchester* at Machines With Magnets in Pawtucket, RI & mastered by *Heba Kadry* at Timeless Mastering in Brooklyn, NY.
+        [*J. Mamana*](https://jmamana.net/) plays synthesizer on track 3 and takes a sick guitar solo on track 4.
+        *Matt Marsico* plays drums on tracks 2, 3, 4, and 5. They also play the wurlitzer stabs on track 4.
+        *Seth Manchester* engineered the drum recordings at Machines With Magnets in Pawtucket, RI.
 
-        *Matt Marsico* plays drums on tracks 2, 3, 4, and 5.
-
-        *J. Mamana* plays synthesizer on track 3.
+        Tracks 2, 4, and 5 feature recordings of the ARP 2500 at Brown University sequenced using [Braid](http://braid.live/), written in Python by [*Brian House*](https://brianhouse.net/).
 
         *[Will Urmston](http://urmston.xyz)* designed and developed this website.
 
-        Dedicated my mother, *Anne Friedberg*, who is listening, somewhere, on the other line.
-
-        Special thanks to.... person one, person two, person three, person four, person five, person six, person seven, person eight, person nine, and person ten.
+        Dedicated my mother, *Anne Friedberg*, who is listening, somewhere, on the other side.
     `
 }

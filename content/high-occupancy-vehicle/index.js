@@ -1,7 +1,8 @@
 module.exports = {
     title: 'High Occupancy Vehicle',
     slug: 'high-occupancy-vehicle',
-    trackID: 499559277,
+    trackID: 544630851,
+    trackSecret: '3Ds-I6dWk',
     titleLayout: 'center',
     backgroundVideo: require('./hov.mov.mp4'),
     backgroundPlaybackRate: 0.5,
@@ -12,18 +13,23 @@ module.exports = {
         {
             type: 'lyrics',
             markdown: markdown`
-                born to the freeway and radio masts
-                raised by my car and a black standard poodle
-                crashed turning left, sunset and western
-                i was trying to go home
+                we were flying down the 105 when the traffic set in
+                the freeway, like a printed circuit, brought us to the end
+                through the windshield it was tail lights forever
+                i told you i didn't know if we'd make your flight
+                stuck in the diamond lane against the sunset we waited
 
-                looked through the windshield, saw both of my parents
-                grabbed my keys, got back in the car
-                right hand scans the AM bands
-                but this time i hit traffic
-                and the radio went static
+                if i didn't want you to leave why did i try so hard to make it seem that way
+                i didn't know how to ask you to stay
 
-                car stalled, engine silent
+                i'm driving east now
+                the sun has gone down, but the light's still hanging on
+                in every building tall enough to reflect it
+                i take my exit and wind up through the foothills
+                alone
+
+                if i didn't want you to leave why did i lie so often to say i'm okay
+                i didn't know how to ask you to stay
             `,
         },
         {
