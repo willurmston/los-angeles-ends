@@ -130,8 +130,6 @@ export default class Header extends Component {
 			<header
 				class={cx('Header', headerStyle)}
 				ref={element => this.element = element}
-				onmouseenter={() => this.setState({showArrowCursor: true})}
-				onmouseleave={() => this.setState({showArrowCursor: false})}
 			>
 				{bigScreen &&
 					<RadialBackground />

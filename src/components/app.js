@@ -1,5 +1,7 @@
 import 'preact/debug'
 import 'intersection-observer'
+import ric from 'request-idle-callback'
+if (!window.requestIdleCallback) ric.requestIdleCallback
 import {h, Component} from 'preact'
 import {css, cx} from 'emotion'
 import content from '../../content/index.js'
@@ -65,25 +67,22 @@ export default class App extends Component {
     exitSong = (prevSong) => {
         const songElement = document.querySelector(`.Song#${prevSong.slug}`)
         const offsetTop = songElement.offsetTop
+        const bigScreen = window.matchMedia('screen and (min-width: 600px)').matches
         // First, immediately scroll to top of element
-        document.scrollingElement.scrollTop = songElement.offsetTop
-
-        if (!window.matchMedia('screen and (min-width: 600px)').matches) {
-            // Then scroll smoothly and keep the element centered
-            const closedSongHeight = window.innerWidth
-            const targetScroll = offsetTop - (closedSongHeight / 2)
-
-            TweenLite.to( document.scrollingElement, 0.7, {
-                scrollTop: targetScroll,
-                ease: Power1.easeOut
-            })
-        }
+        document.scrollingElement.scrollTop = bigScreen ? offsetTop : offsetTop - (window.innerHeight / 4)
     }
 
     enterNextSong() {
         const songSections = Array.from(document.querySelectorAll('div.songs > .Song'))
+        const scrollTop = document.scrollingElement.scrollTop
+        var accumulatedHeight = 0
         const next = songSections.find(section => {
-            return section.offsetTop >= document.scrollingElement.scrollTop
+            if (accumulatedHeight >= scrollTop) {
+                return true
+            } else {
+                accumulatedHeight += section.getBoundingClientRect().height
+                return false
+            }
         })
         if (next) {
             route(`/${next.getAttribute('id')}#1`)
@@ -94,14 +93,24 @@ export default class App extends Component {
         if (target === 'next') {
             // Get array of all sections
             const sections = Array.from(document.querySelectorAll('.Header, div.songs > .Song, .LinerNotes'))
+            // cache scrollTop (causes reflow)
+            const scrollTop = document.scrollingElement.scrollTop
+            var accumulatedHeight = 0
             target = sections.find(section => {
-                return section.offsetTop > document.scrollingElement.scrollTop
+                if (accumulatedHeight >= scrollTop) {
+                    return true
+                } else {
+                    accumulatedHeight += section.getBoundingClientRect().height
+                    return false
+                }
             })
         } else if (target === 'prev') {
             // Get array of all sections
             const sections = Array.from(document.querySelectorAll('.Header, div.songs > .Song, .LinerNotes'))
+            // cache scrollTop (causes reflow)
+            const scrollTop = document.scrollingElement.scrollTop
             target = sections.reverse().find(section => {
-                return section.offsetTop < document.scrollingElement.scrollTop
+                return section.offsetTop < scrollTop
             })
         } else if (target.slug) {
             // It's a song object, not a DOM node

@@ -42,7 +42,9 @@ export default class BackgroundVideo extends Component {
     }
 
     start = () => {
-        this.paintFrame()
+        requestIdleCallback(() => {
+            if (this.video) this.paintFrame()
+        }, {timeout: 1000})
     }
 
     stop = () => {
