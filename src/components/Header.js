@@ -114,6 +114,10 @@ const headerStyle = css`
 `
 
 export default class Header extends Component {
+	shouldComponentUpdate() {
+		return false
+	}
+
 	scrollDown(e) {
 		if (e.target.tagName === 'BUTTON') return
 		const firstSong = document.querySelector('.Song')
