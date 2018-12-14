@@ -12,7 +12,7 @@ export default class VideoSlide extends Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if (this.props.isCurrent && this.video.paused) {
+        if (this.props.isCurrent && !prevProps.isCurrent) {
             this.setState({
                 firstView: false
             })
@@ -48,23 +48,25 @@ export default class VideoSlide extends Component {
     }
 
     muteButton() {
-        if (!this.state.muted) {
-            return (
-                <button class="mute" onclick={this.toggleMute}>
-                    <svg width="37" height="37" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18.5 37a18.5 18.5 0 1 1 0-37 18.5 18.5 0 0 1 0 37zm5.5-8V8l-9.25 5.62H10v9.76h4.75L24 29z" fill="var(--off-white)" fill-rule="nonzero"/>
-                    </svg>
-                </button>
-            )
-        } else {
-            return (
-                <button class="mute" onclick={this.toggleMute}>
+        return (
+            <button
+                class="mute"
+                onclick={this.toggleMute}
+                onmouseenter={this.props.showArrowCursor}
+                onmouseleave={this.props.hideArrowCursor}
+            >
+                {this.state.muted ?
                     <svg width="37" height="37" xmlns="http://www.w3.org/2000/svg">
                         <path d="M18.5 37a18.5 18.5 0 1 1 0-37 18.5 18.5 0 0 1 0 37zm-1.77-12.12L24 29V17.96l-7.27 6.92zm-5.23-1.5L24 11.48V8l-9.91 5.62H9v9.76h2.5zm-2.3 4.18l1.29 1.24L29.6 10.24 28.32 9 9.2 27.56z" fill="var(--off-white)" fill-rule="nonzero"/>
                     </svg>
-                </button>
-            )
-        }
+                :
+                    <svg width="37" height="37" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.5 37a18.5 18.5 0 1 1 0-37 18.5 18.5 0 0 1 0 37zm5.5-8V8l-9.25 5.62H10v9.76h4.75L24 29z" fill="var(--off-white)" fill-rule="nonzero"/>
+                    </svg>
+                }
+
+            </button>
+        )
     }
 
     render() {
@@ -85,6 +87,7 @@ export default class VideoSlide extends Component {
                 border: 10px solid var(--off-white);
                 overflow: hidden;
                 background: var(--off-white);
+                cursor: pointer;
                 @media screen and (min-width: 600px) {
                     margin-top: -50px;
                     width: auto;
@@ -108,10 +111,16 @@ export default class VideoSlide extends Component {
                 }
                 & button.mute {
                     position: absolute;
-                    bottom: 20px;
-                    right: 20px;
+                    width: 80px;
+                    height: 80px;
+                    bottom: 0;
+                    right: 0;
+                    cursor: pointer;
                     & svg {
                         display: block;
+                        position: absolute;
+                        bottom: 20px;
+                        right: 20px;
                     }
                 }
             }
