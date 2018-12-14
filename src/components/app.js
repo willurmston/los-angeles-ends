@@ -1,7 +1,6 @@
 import 'preact/debug'
 import 'intersection-observer'
-import ric from 'request-idle-callback'
-if (!window.requestIdleCallback) ric.requestIdleCallback
+import '../request-idle-callback'
 import whatInput from 'what-input'
 import {h, Component} from 'preact'
 import {css, cx} from 'emotion'
