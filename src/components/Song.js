@@ -284,7 +284,7 @@ export default class Song extends Component {
                     max-height: 100%;
                     position: relative;
                     flex-shrink: 0;
-                    overflow-y: scroll;
+                    overflow-y: auto;
                     -webkit-overflow-scrolling: touch;
                 }
             }
