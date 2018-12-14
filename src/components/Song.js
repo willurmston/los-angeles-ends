@@ -95,7 +95,7 @@ export default class Song extends Component {
         })
         this.observer.observe(this.element)
 
-        SC.stream(`/tracks/${this.props.song.trackID}`).then(player => {
+        SC.stream(`/tracks/${this.props.song.trackID}`, this.props.song.trackSecret || null).then(player => {
             this.player = player
             const duration = this.player.getDuration()
             this.player.on('state-change', this.onPlayerStateChange)
