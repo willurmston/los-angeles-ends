@@ -83,3 +83,8 @@ body {
         opacity: 0;
     }
 }
+
+/* Hide focus ring for mouse users */
+[data-whatintent='mouse'] *:focus {
+    outline: 0 !important;
+}
