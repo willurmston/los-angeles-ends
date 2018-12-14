@@ -43,26 +43,31 @@ const style = css`
         display: flex;
         overflow: hidden;
         flex-wrap: no-wrap;
+        align-items: center;
         margin-left: 10px;
         @media screen and (min-width: 600px) {
             flex-shrink: 1;
             margin-right: 24px;
             max-width: 45vw;
         }
-        & div {
+        & button {
             margin: 0 4px 0 0;
             height: 3px;
             width: 100%;
             flex-shrink: 1;
-            transition: opacity 0.3s;
+            transition: opacity 0.2s;
             background: var(--song-color);
             @media screen and (min-width: 600px) {
                 margin-right: 0;
                 margin-left: 8px;
                 height: 8px;
+                cursor: pointer;
+                &:hover {
+                    height: 12px;
+                }
             }
         }
-        & div.past {
+        & button.past {
             opacity: 0.5;
         }
     }
@@ -122,7 +127,10 @@ export default class Toolbar extends Component {
                     <h2>{this.props.song.title.toUpperCase()}</h2>
                     <nav>
                         {this.props.song.slides.map( (slide, index) =>
-                            <div class={index < this.props.currentSlideIndex && 'past'}></div>
+                            <button
+                                class={index < this.props.currentSlideIndex && 'past'}
+                                onclick={() => this.props.onSegmentClick(index)}
+                            ></button>
                         )}
                     </nav>
                 </div>
@@ -135,7 +143,10 @@ export default class Toolbar extends Component {
                     <h2>{this.props.song.title.toUpperCase()}</h2>
                     <nav>
                         {this.props.song.slides.map( (slide, index) =>
-                            <div class={index < this.props.currentSlideIndex && 'past'}></div>
+                            <button
+                                class={index < this.props.currentSlideIndex && 'past'}
+                                tabindex={-1}
+                            ></button>
                         )}
                     </nav>
                     <PlayButton

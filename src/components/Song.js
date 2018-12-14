@@ -228,6 +228,14 @@ export default class Song extends Component {
         }
     }
 
+    setCurrentSlide = (index) => {
+        this.setState({
+            currentSlideIndex: index
+        }, () => {
+            this.setHash()
+        })
+    }
+
     prevSlide = () => {
         const prevIndex = this.state.currentSlideIndex - 1
         if (prevIndex < 0) {
@@ -329,6 +337,7 @@ export default class Song extends Component {
                     playerState={this.state.playerState}
                     playerProgress={this.state.playerProgress}
                     onPlayButtonClick={this.onPlayButtonClick}
+                    onSegmentClick={this.setCurrentSlide}
                 />
                 <div
                     class="slider"
