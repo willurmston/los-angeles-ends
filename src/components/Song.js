@@ -101,7 +101,7 @@ export default class Song extends Component {
 
         // Play or pause the video when it enters or leaves the viewport
         this.observer = new IntersectionObserver(this.onVisibilityChange, {
-            threshold: [0, 0.5, 1]
+            threshold: [0, 0.25, 0.5, 0.75, 1]
         })
         this.observer.observe(this.element)
 
