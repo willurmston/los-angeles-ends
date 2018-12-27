@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
+    "start": "npm run -s dev",
     "build": "preact build --template src/template.html --no-prerender && cp src/.htaccess build",
     "serve": "preact build --template src/template.html && preact serve",
     "dev": "preact watch --template src/template.html",
@@ -21,7 +21,6 @@
     "eslint": "^4.9.0",
     "eslint-config-synacor": "^2.0.2",
     "identity-obj-proxy": "^3.0.0",
-    "if-env": "^1.0.0",
     "preact-cli": "^2.1.0"
   },
   "dependencies": {
