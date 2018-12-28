@@ -10,7 +10,7 @@ const headerStyle = css`
 	height: 200px;
 	font-size: 20px;
 	letter-spacing: 1px;
-	--song-color: var(--red);
+	--song-color: var(--orange);
 	@media screen and (min-width: 600px) {
 		display: flex;
 		flex-direction: column;
