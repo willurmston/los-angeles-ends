@@ -67,15 +67,16 @@ module.exports = {
             markdown: markdown`
                 i got my license from the glendale dmv in november 2009, a month after my mom died.
 
-                i inherited her car, a 2006 lexus rx400h with a gps named natacha — after anna karina's character in *alphaville*. 
+                i drove to valley parties, mostly, where a certain type of anhedonia could always be amplified.
+
+                i was free, finally. i was also profoundly broken.
+
             `,
         },
         {
             type: 'narration',
             markdown: markdown`
-                i drove to valley parties, mostly, where a certain type of anhedonia could always be amplified.
-
-                i was free, finally. i was also profoundly broken.
+                i inherited my mom's car, a 2006 lexus rx400h with a gps named natacha — after anna karina's character in *alphaville*.
 
                 what i wanted most was the long drive home, alone, blasting music.
             `,
