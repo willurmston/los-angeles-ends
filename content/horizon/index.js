@@ -52,21 +52,7 @@ module.exports = {
                 *Slow pulsing, red tower lights
                 Across a distance, refuge in the dust
                 All my life I can remember longing
-                Looking across the water and seeing lights
-                When I was five or six, we were camping in the islands in July
-                The tall yellow grass and the rose hips fragrant
-                After sunset, island beyond island
-                Undulating and familiar, not far from home
-                With my fragrant, whittled, cedared drift wood dagger in the mildew canvas tent
-                I saw fireworks many miles away but didn't hear them...*
-            `,
-        },
-        {
-            type: 'quote',
-            markdown: markdown`
-                *And I felt a longing, a childish melancholy
-                And then I went to sleep
-                And the aching was buried, dreaming, aging
+                Looking across the water and seeing lights...
                 Reaching for an idea of somewhere other than this place
                 That could fold me in clouded yearning
                 For nowhere actually reachable, the distance was the point*
@@ -118,9 +104,9 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                eight years later, in college, i published an [essay](http://www.theindy.org) processing my mom's death by reading her book together with two arcade fire records she didn't live to hear — *the suburbs* and *reflektor.*
+                eight years later, in college, i published [an essay](https://www.theindy.org/175) processing my mom's death by reading her book together with two arcade fire records she didn't live to hear — *the suburbs* and *reflektor.*
 
-                i'd come to the conclusion that my mom's death, like metaphor, was virtual. *almost* real, but *not quite*.
+                i'd come to the realization that my mom's death, like metaphor, was virtual. *almost* real, but *not quite*.
 
                 like the horizon, just-out-of-reach.
             `,
@@ -138,14 +124,11 @@ module.exports = {
         {
             type: 'quote',
             markdown: markdown`
-                *Thought you would bring me to the resurrector / Turns out it was just a reflektor.*
-                — Arcade Fire, "Reflektor," *Reflektor* (2013)
-
-                *Let's go for a drive, see the town tonight
-                There's nothing to do but I don't mind when I'm with you
-                This town's so strange they built it to change
-                And while we sleep we know the streets get rearranged*
-                – Arcade Fire, "Suburban War," *The Suburbs* (2010)
+                *After life, I think I saw what happens next
+                It was just a glimpse of you, like looking through a window 
+                Or a shallow sea
+                Could you see me?*
+                – Arcade Fire, “Afterlife," *Reflektor* (2013)
             `,
         },
         {

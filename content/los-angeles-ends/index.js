@@ -34,7 +34,7 @@ module.exports = {
         },
         {
             type: 'video',
-            file: require('./miracle-mile-full.mp4')
+            file: require('./miracle-mile-short.mp4')
         },
         {
             type: 'narration',
@@ -63,21 +63,25 @@ module.exports = {
             `
         },
         {
-            type: 'quote',
-            markdown: markdown`
-                ...I know what happened to downtown and I know what that means. The only thing I do not know is why I, perhaps alone, was given the privilege – if one might call it that – of seeing it before it occurred."
-                
-                – Howard A. Rodman, "BANG", *Black Clock* (2016)
-            `
-        },
-        {
             type: 'narration',
             markdown: markdown`
                 in 2015, my dad underwent an eye surgery that split his vision, temporarily, in two.
 
                 afterwards, he wrote a short story in which one eye witnesses los angeles ending, downtown disappearing in a single orange blast.
-
-                to that point, we had never spoken about the similarities.
+            `
+        },
+        {
+            type: 'quote',
+            markdown: markdown`
+                "...I know what happened to downtown and I know what that means. The only thing I do not know is why I, perhaps alone, was given the privilege – if one might call it that – of seeing it before it occurred."
+                
+                – Howard A. Rodman, "BANG", *Black Clock No. 21* (2016)
+            `
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                to that point, we had never spoken about our shared apparitions.
             `
         },
         {
