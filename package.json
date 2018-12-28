@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "npm run -s dev",
+    "start": "npm run -s build",
     "build": "preact build --template src/template.html --no-prerender && cp src/.htaccess build",
     "serve": "preact build --template src/template.html && preact serve",
     "dev": "preact watch --template src/template.html",
