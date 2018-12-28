@@ -12,7 +12,7 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                december 2016 and the sun, set but still glowing over glendale, radiates off the hood of my car.
+                ASDASDSD 2016 and the sun, set but still glowing over glendale, radiates off the hood of my car.
                 a pulsating orange rips through the sky, indexing every time i’ve seen los angeles play the apocalypse’s backdrop.
             `,
         },
