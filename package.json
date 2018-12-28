@@ -21,8 +21,7 @@
   "devDependencies": {
     "eslint": "^4.9.0",
     "eslint-config-synacor": "^2.0.2",
-    "identity-obj-proxy": "^3.0.0",
-    "preact-cli": "^2.1.0"
+    "identity-obj-proxy": "^3.0.0"
   },
   "dependencies": {
     "emotion": "^9.2.12",
@@ -32,6 +31,7 @@
     "preact": "^8.2.6",
     "preact-compat": "^3.17.0",
     "preact-router": "^2.6.1",
+    "preact-cli": "^2.1.0",
     "serve": "^10.1.1",
     "vh-check": "^2.0.5",
     "what-input": "^5.1.3"
