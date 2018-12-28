@@ -1,7 +1,8 @@
 module.exports = {
     title: 'High Occupancy Vehicle',
     slug: 'high-occupancy-vehicle',
-    trackID: 499559277,
+    trackID: 544630851,
+    trackSecret: '3Ds-I6dWk',
     titleLayout: 'center',
     backgroundVideo: require('./hov.mov.mp4'),
     backgroundPlaybackRate: 0.5,
@@ -10,63 +11,142 @@ module.exports = {
     pinY: '49%',
     slides: [
         {
+            type: 'narration',
+            markdown: markdown`
+                january 2015 and i'm in the diamond lane going south on the 110. my partner is in the passenger seat.
+
+                i've just spent a week showing her los angeles — my childhood home, my teenage rhythms, the contours of new abandonment fears as my dad and i grieve the same loss in divergent ways.
+
+                now it's time to say goodbye.
+            `
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                we soar along the harbor corridor, high velocity and light traffic.
+
+                at the judge harry pregerson interchange, where the 110 intersects the 105, we take the carpool ramp.
+
+                its pylons lift us above the city, banking 15 degrees from south to west.
+            `
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                it feels as if there's barely any force at all preventing us from taking off, launching, driving up up up into the stratosphere.
+
+                the vista pans out like cinema, windshield as our camera lens.
+            `
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                we land, softly, onto the 105.
+
+                traffic hits, and as we slow to a stop i rinse the windshield and turn the wipers on.
+
+                i'm too shut off to cry.
+            `
+        },
+        {
+            type: 'video',
+            file: require('./speed.mp4')
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                in *speed*, the 1994 keanu reeves vehicle, a bus cannot go any slower than 50 miles per hour or it will explode.
+
+                it was filmed during the century freeway's construction and climaxes with the bus jumping a gap between unfinished sections of suspended highway.
+            `
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                every time i take the HOV ramp i recite this anecdote. on one recent trip, i turned to wikipedia for the full story and found myself confronting a false memory —
+
+                "The highway section the bus jumped over is the directional ramp from I-105 WB to I-110 NB (not the HOV ramp from I-110 SB to I-105 WB as commonly believed.)"
+            `
+        },
+        {
+            type: 'quote',
+            markdown: markdown`
+                "Some people learn Italian so they can read Dante in the original; I learned to drive so I could read Los Angeles in the original."
+                – Reyner Banham, *Los Angeles: An Architecture of Four Ecologies* (1971)
+            `
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                every time i returned to los angeles, i used the freeway as an anesthetic.
+
+                the house felt uninhabitable, but i could always fight loneliness with a destination.
+            `
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                i made lists of restaurants that jonathan gold had written up, of places where i could find remnants of the red car system, of spots like aroma driving range, in koreatown, where i hit golf balls onto a netting above the parking garage.
+
+                i fell head over heels for the city.
+            `
+        },
+        {
+            type: 'quote',
+            markdown: markdown`
+                "Mere driving on the freeway is in no way the same as participating in it. Anyone can 'drive' on the freeway, and many people with no vocation for it do, hesitating here and resisting there, losing the rhythm of the lane change, thinking about where they came from and where they are going..."
+            `
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                joan didion once described the freeway system as "the only secular communion los angeles has."
+
+                she followed that line with an essay-length indictment of caltrans as it installed carpool lanes across the city.
+            `
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                sometimes i wonder if she was simply lamenting the fact that it encouraged everyone to have a passenger, to no longer drive alone.
+            `
+        },
+        {
+            type: 'quote',
+            markdown: markdown`
+                "...Actual participants think only about where they are. Actual participation requires a total surrender, a concentration so intense as to seem a kind of narcosis, a rapture-of-the-freeway. The mind goes clean. The rhythm takes over. A distortion of time occurs, the same distortion that characterizes the instant before an accident."
+                – Joan Didion, "Bureaucrats," from *The White Album* (1976)
+            `
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                i drive home, eastward, sun setting both in the rearview mirror and in reflection across the library tower. 
+
+                i merge to the right lane, take the directional ramp from I-105 EB to I-110 NB, and wind my way through a shifting feeling of home.
+            `
+        },
+        {
             type: 'lyrics',
             markdown: markdown`
-                born to the freeway and radio masts
-                raised by my car and a black standard poodle
-                crashed turning left, sunset and western
-                i was trying to go home
+                we were flying down the 105 when the traffic set in
+                the freeway, like a printed circuit, brought us to the end
+                through the windshield it was tail lights forever
+                i told you i didn't know if we'd make your flight
+                stuck in the diamond lane against the sunset we waited
 
-                looked through the windshield, saw both of my parents
-                grabbed my keys, got back in the car
-                right hand scans the AM bands
-                but this time i hit traffic
-                and the radio went static
+                if i didn't want you to leave why did i try so hard to make it seem that way
+                i didn't know how to ask you to stay
 
-                car stalled, engine silent
-            `,
-        },
-        {
-            type: 'narration',
-            markdown: markdown`
-                summer 2017 and i’m in town for my dad’s wedding.
+                i'm driving east now
+                the sun has gone down, but the light's still hanging on
+                in every building tall enough to reflect it
+                i take my exit and wind up through the foothills
+                alone
 
-                it’s the night before i return to providence, track this record, and pack up my things. i’ve decided to move back to LA.
-
-                isaac and i are driving back from shatto lanes in my dad’s sedan. it’s 1am and we want tacos al pastor. we’re stopped at the red light going north on western, in the left turn lane waiting for the green. as the light on sunset turns from yellow to red, a car swerves through the intersection and smashes the driver-side door. they speed away, pushing off the side panel. we’re left frozen, turn signal blinking off the taco truck sign.
-
-                the cops come, see my zankou t-shirt, and ask if i work there. they like the shawarma.
+                if i didn't want you to leave why did i lie so often to say i'm okay
+                i didn't know how to ask you to stay
             `
         },
-        {
-            type: 'narration',
-            markdown: markdown`
-                right before [my mom](https://www.latimes.com/local/obituaries/la-me-anne-friedberg14-2009oct14-story.html) moved to los angeles, she was in a car crash too.
-
-                she was on the way back from her father’s funeral and her mother stopped short. not wearing a seatbelt, she flew through the windshield.
-            `
-        },
-        {
-            type: 'quote',
-            markdown: markdown`
-                "So there I was in critical condition with a serious head injury until, as mysterious as it still seems, I returned from comatose near-death to what could only be described as near-life in LA. I was in post-traumatic shock, but also in a form of culture shock. Shards of glass kept coming out of my skin, rising to the surface like diamonds that couldn’t be digested by the flesh. There was too much sunshine, everything was too clean, colors were too bright. I kept trying to see Los Angeles as if it were Hollywood in black and white."
-            `
-        },
-        {
-            type: 'quote',
-            markdown: markdown`
-                "I recuperated at my partner’s family home, one of those capacious Hancock Park houses surrounded by palm trees but designed to look like a Tudor cottage in the Cotswolds. On the other side of the backyard hedge, I was told, was the house from Sunset Boulevard... The back hedge of the house in Sunset Boulevard was now a place where the dog barked at night as if he were calling across the lawns to ghosts that swam there thousands of nights before. Sunset Boulevard was just as far and just as close as it had ever been."
-
-                — Anne Friedberg, "Frame and Fame"
-            `
-        },
-        {
-            type: 'narration',
-            markdown: markdown`
-                i can only think about the deep symbolism of being stuck at the corner of sunset and western, the car crash my mom got on the edge of her move to los angeles, and the feelings of failure that crop up when you try to write yourself out of the narrative your parents had plotted for you.
-
-                it's a printed circuit.
-            `
-        }
     ]
 }
