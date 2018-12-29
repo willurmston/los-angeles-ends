@@ -85,6 +85,10 @@ module.exports = {
             `
         },
         {
+            type: 'video',
+            file: require('./woolsey-fire-small-portrait.mov')
+        },
+        {
             type: 'narration',
             markdown: markdown`
                when i wrote this song, depressed and grieving losses both personal and societal, i was fascinated with the world ending. i was excited, even, by the possibility.
@@ -93,10 +97,6 @@ module.exports = {
 
                because loss makes the apocalypse feel like an appealing alternative to life.
             `
-        },
-        {
-            type: 'video',
-            file: require('./woolsey-fire-small-portrait.mov')
         },
         {
             type: 'narration',

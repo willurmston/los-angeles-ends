@@ -129,6 +129,21 @@ module.exports = {
                 Or a shallow sea
                 Could you see me?*
                 – Arcade Fire, “Afterlife," *Reflektor* (2013)
+
+                
+            `,
+        },
+        {
+            type: 'quote',
+            markdown: markdown`
+                "While writing this book, the freeways that encircle and bisect Los Angeles were under constant construction; the topography of the road reconfigured itself daily."
+                — Anne Friedberg, *Window Shopping* (1993)
+                
+                *Let's go for a drive, see the town tonight
+                There's nothing to do but I don't mind when I'm with you
+                This town's so strange they built it to change
+                And while we sleep we know the streets get rearranged*
+                – Arcade Fire, "Suburban War," *The Suburbs* (2010)
             `,
         },
         {

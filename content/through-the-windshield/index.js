@@ -77,29 +77,9 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                in *city of quartz*, mike davis details a cultural history of los angeles through its development boosters and its cultural cynics.
-
-                he maps a dialectic, a tension between *sunshine* and *noir*.
-
-                i know this tension. i was born into it.
-            `,
-        },
-        {
-            type: 'narration',
-            markdown: markdown`
-                when i left los angeles i was running from a city that had turned blue with grief...
-
-                neither sunshine nor noir, but an oscillation.
-
-                it's one, then the other, then it's both.
-            `,
-        },
-        {
-            type: 'narration',
-            markdown: markdown`
                 like so many before me, i came to los angeles to play myself.
 
-                but then there i was, stalled out at the corner of sunset boulevard and western avenue, an intersection haunted by the spectre of westward expansion, cast in a reboot.
+                but then there i was, stalled out at the corner of sunset boulevard and western avenue, an intersection loaded with the poetry of westward expansion, cast in a reboot.
 
                 and i couldn't even break the frame.
             `

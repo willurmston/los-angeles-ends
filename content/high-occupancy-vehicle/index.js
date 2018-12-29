@@ -71,6 +71,9 @@ module.exports = {
         {
             type: 'quote',
             markdown: markdown`
+                "Living in Southern California, one learns rapidly about machines that mobilize the gaze. The lessons of the everyday are learned through the automobile windshield."
+                — Anne Friedberg, *Window Shopping* (1993)
+
                 "Some people learn Italian so they can read Dante in the original; I learned to drive so I could read Los Angeles in the original."
                 – Reyner Banham, *Los Angeles: An Architecture of Four Ecologies* (1971)
             `
