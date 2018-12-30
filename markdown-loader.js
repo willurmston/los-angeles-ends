@@ -1,10 +1,21 @@
 import MarkdownIt from 'markdown-it'
+import iterator from 'markdown-it-for-inline'
 
 // Set up markdown parser
 const markdown = MarkdownIt({
     typographer: true,
     quotes: '“”‘’',
     breaks: false
+})
+
+// Add target _blank to all links so they open in new tabs
+markdown.use(iterator, 'url_new_win', 'link_open', function (tokens, idx) {
+    var aIndex = tokens[idx].attrIndex('target')
+    if (aIndex < 0) {
+        tokens[idx].attrPush(['target', '_blank'])
+    } else {
+        tokens[idx].attrs[aIndex][1] = '_blank'
+    }
 })
 
 module.exports = moduleString => {
