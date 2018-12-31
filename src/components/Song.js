@@ -184,7 +184,7 @@ export default class Song extends Component {
 
     onclick = e => {
         if (this.props.onclick) this.props.onclick()
-        if (this.props.isOpen) {
+        if (this.props.isOpen && e.target.tagName !== 'A') {
             e.pageX < window.innerWidth / 2 ? this.prevSlide() : this.nextSlide()
         }
     }
@@ -294,6 +294,9 @@ export default class Song extends Component {
                     flex-shrink: 0;
                     overflow-y: auto;
                     -webkit-overflow-scrolling: touch;
+                    & .content > * {
+                        cursor: default;
+                    }
                 }
             }
             @media screen and (min-width: 600px) {
@@ -339,6 +342,11 @@ export default class Song extends Component {
                     onPlayButtonClick={this.onPlayButtonClick}
                     onSegmentClick={this.setCurrentSlide}
                 />
+                {bigScreen &&
+                    <ArrowCursor
+                        visible={this.props.isOpen && this.props.showArrowCursor && this.state.showArrowCursor}
+                    />
+                }
                 <div
                     class="slider"
                     onclick={this.onclick}
@@ -358,11 +366,6 @@ export default class Song extends Component {
                 >
                     {this.state.slides.map( this.renderSlide )}
                 </div>
-                {bigScreen &&
-                    <ArrowCursor
-                        visible={this.props.isOpen && this.props.showArrowCursor && this.state.showArrowCursor}
-                    />
-                }
                 {bigScreen && this.props.isOpen &&
                     <HomeButton
                         onclick={() => route('/')}
