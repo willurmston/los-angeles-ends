@@ -2,7 +2,7 @@ module.exports = {
     title: 'High Occupancy Vehicle',
     slug: 'high-occupancy-vehicle',
     trackID: 544630851,
-    trackSecret: '3Ds-I6dWk',
+    trackSecret: 's-I6dWk',
     titleLayout: 'center',
     backgroundVideo: require('./hov.mov.mp4'),
     backgroundPlaybackRate: 0.5,

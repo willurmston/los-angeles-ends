@@ -2,7 +2,7 @@ module.exports = {
     title: 'Horizon',
     slug: 'horizon',
     trackID: 544630866,
-    trackSecret: '3Ds-zoQ5b',
+    trackSecret: 's-zoQ5b',
     titleLayout: 'center',
     backgroundVideo: require('./horizon-2.mov.mp4'),
     backgroundPlaybackRate: 1,

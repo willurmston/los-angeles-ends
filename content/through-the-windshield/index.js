@@ -2,7 +2,7 @@ module.exports = {
     title: 'Through the Windshield',
     slug: 'through-the-windshield',
     trackID: 544630803,
-    trackSecret: '3Ds-qm1wH',
+    trackSecret: 's-qm1wH',
     titleLayout: 'center',
     backgroundVideo: require('./windshield-zoom2.mov.mp4'),
     backgroundPlaybackRate: 0.75,
