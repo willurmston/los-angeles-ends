@@ -105,7 +105,15 @@ export default class Song extends Component {
                 })
             })
             if (this.props.isOpen)  this.player.play()
-        }).catch(error => console.error(error))
+        }).catch(error => console.error(`Request to stream "${this.props.song.title}" failed`, {
+            ...error,
+            song: {
+                title: this.props.song.title,
+                slug: this.props.song.slug,
+                trackID: this.props.song.trackID,
+                trackSecret: this.props.song.trackSecret
+            }
+        }))
     }
 
     onPlayerStateChange = async (state) => {
