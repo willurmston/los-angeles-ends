@@ -108,7 +108,7 @@ export default class Song extends Component {
         }).catch(error => console.error(error))
     }
 
-    onPlayerStateChange = (state) => {
+    onPlayerStateChange = async (state) => {
         // state is 'playing', 'paused', 'loading', 'ended', 'error' or 'dead'
         let playerState = null
 
@@ -117,7 +117,8 @@ export default class Song extends Component {
         } else if (state === 'loading') {
             playerState = 'loading'
         } else if (state === 'ended') {
-            playerState = 'ended'
+            playerState = 'playing'
+            this.player.play()
         } else {
             playerState = 'paused'
         }
@@ -133,7 +134,7 @@ export default class Song extends Component {
         } else if (this.state.playerState === 'playing') {
             this.player.pause()
         } else if (this.state.playerState === 'ended') {
-            this.props.playNextSong()
+            this.player.play()
         }
     }
 

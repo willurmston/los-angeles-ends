@@ -149,12 +149,6 @@ export default class App extends Component {
         })
     }
 
-    playNextSong = () => {
-        const nextSongIndex = (this.state.songs.indexOf(this.state.currentSong) + 1) % (this.state.songs.length)
-        const nextSong = this.state.songs[nextSongIndex]
-        route(`/${nextSong.slug}`)
-    }
-
     componentDidUpdate(prevProps, prevState) {
         if (this.state.currentSong !== prevState.currentSong) {
             if (this.state.currentSong === null) {
@@ -219,7 +213,6 @@ export default class App extends Component {
                                     pauseBackground={this.state.pauseBackgrounds}
                                     key={song.slug}
                                     showArrowCursor={this.state.showArrowCursor}
-                                    playNextSong={this.playNextSong}
                                 />
                             </DelayUnmount>
                         )
