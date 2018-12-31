@@ -74,16 +74,6 @@ export default class Song extends Component {
                 <VideoSlide
                     slide={slide}
                     isCurrent={isCurrent}
-                    showArrowCursor={ () =>
-                        this.setState({
-                            showArrowCursor: false
-                        })
-                    }
-                    hideArrowCursor={ () =>
-                        this.setState({
-                            showArrowCursor: true
-                        })
-                    }
                 />
             )
         }

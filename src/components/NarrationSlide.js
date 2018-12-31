@@ -69,6 +69,18 @@ export default class NarrationSlide extends Component {
                     background: var(--off-white);
                     color: var(--song-color);
                     white-space: pre-wrap;
+                    & a {
+                        text-decoration: none;
+                        pointer-events: none;
+                        @media screen and (min-width: 600px) {
+                            text-decoration: underline;
+                            pointer-events: all;
+                            &:hover {
+                                color: var(--off-white);
+                                background: var(--song-color);
+                            }
+                        }
+                    }
                     @media screen and (min-width: 600px) {
                         display: table;
                         padding: 24px 28px;

@@ -56,9 +56,17 @@ export default class LyricsSlide extends Component {
                     display: table;
                     margin: 40px 20px;
                     color: var(--song-color);
+                    & a {
+                        text-decoration: none;
+                        pointer-events: none;
+                    }
                     @media screen and (min-width: 600px) {
                         line-height: 1.4;
                         margin-bottom: 40px;
+                        & a:hover {
+                            color: var(--off-white);
+                            background: var(--song-color);
+                        }
                     }
                 }
                 & p:last-child {

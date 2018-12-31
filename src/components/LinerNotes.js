@@ -150,6 +150,14 @@ const style = css`
                 font-style: normal;
                 color: var(--accent-color);
             }
+            & a {
+                @media screen and (min-width: 600px) {
+                    &:hover {
+                        color: var(--off-white);
+                        background: var(--accent-color);
+                    }
+                }
+            }
         }
     }
 `
