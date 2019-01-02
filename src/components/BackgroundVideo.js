@@ -82,8 +82,6 @@ export default class BackgroundVideo extends Component {
     }
 
     render() {
-        const posterScrollDuration = Math.random() * 3 + 1
-
         const style = css`
             background: var(--song-color);
             position: relative;
@@ -108,7 +106,7 @@ export default class BackgroundVideo extends Component {
                     image-rendering: auto;
                     image-rendering: crisp-edges;
                     image-rendering: pixelated;
-                    animation: ${this.state.loaded ? 'none' : `${scrollPoster} ${posterScrollDuration}s infinite both steps(25)`};
+                    animation: ${this.state.loaded ? 'none' : `${scrollPoster} ${2 + (this.props.songIndex % 2)}s infinite both steps(100)`};
                 }
             }
             & canvas {

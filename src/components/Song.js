@@ -331,6 +331,7 @@ export default class Song extends Component {
                     play={this.state.playBackground && !this.props.pauseBackground}
                     playbackRate={this.props.song.backgroundPlaybackRate}
                     slug={this.props.song.slug}
+                    songIndex={this.props.index}
                 />
                 <Toolbar
                     currentSlideIndex={this.state.currentSlideIndex}
