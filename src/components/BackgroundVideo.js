@@ -70,7 +70,7 @@ export default class BackgroundVideo extends Component {
         const elapsed = timeStamp - this.lastTimeStamp
 
         // if enough time has elapsed, draw the next frame
-        if (elapsed > this.FPSInterval) {
+        if (this.canvas && elapsed > this.FPSInterval) {
             const context = this.canvas.getContext('2d')
 
             // Get ready for next frame by setting then=now, but...
