@@ -7,7 +7,7 @@ const style = css`
     --color: var(--blue);
     --accent-color: var(--pink);
     @media screen and (min-width: 600px) {
-        margin-top: 30px;
+        margin-top: 70px;
         display: flex;
         border-top: 2px solid var(--color);
     }
