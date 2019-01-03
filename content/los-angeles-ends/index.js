@@ -68,7 +68,6 @@ module.exports = {
                 in 2015, my dad underwent an eye surgery that split his vision, temporarily, in two.
 
                 afterwards, he wrote a short story in which one eye witnesses los angeles ending, downtown disappearing in a single orange blast.
-            `
         },
         {
             type: 'quote',
@@ -84,6 +83,18 @@ module.exports = {
                 to that point, we had never spoken about our shared apparitions.
             `
         },
+        {
+            type: 'quote',
+            markdown: markdown`
+                "...I know what happened to downtown and I know what that means. The only thing I do not know is why I, perhaps alone, was given the privilege – if one might call it that – of seeing it before it occurred."
+                
+                – Howard A. Rodman, "BANG", *Black Clock No. 21* (2016)
+            `
+        },
+        /*{
+            type: 'video',
+            file: require('./woolsey-fire-small-portrait.mov')
+        }*/,
         {
             type: 'video',
             file: require('./woolsey-fire-small-portrait.mov')
@@ -101,9 +112,9 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                but now it's 2018 and malibu and the west valley are on fire, uncontained.
+                but as i write this it's 2018 and malibu and the west valley are on fire, uncontained.
 
-                i drive the 134 as the woolsey fire burns, sun blaring orange through the haze – radiant, beautiful, terrifying.
+                i drove the 134 as the woolsey fire burned, sun blaring orange through the haze – radiant, beautiful, terrifying.
 
                 the exact shade that ends the city in my song, in my dreams, in my dad's left eye.
             `
@@ -111,9 +122,9 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                there's nothing exciting about it at all.
+                there was nothing exciting about it at all.
 
-                i feel instead a sorrow, deep and painful, ripping me from myself.
+                i felt instead a sorrow, deep and painful, ripping me from myself.
 
                 i no longer want this.
             `
@@ -153,11 +164,11 @@ module.exports = {
                 
                 this is the light that will take us with it
 
-                [i can see clearly now the rain is gone
-                i can see all obstacles in my way
-                gone are the dark clouds that had me blind
-                it's gonna be a bright, bright sun-shining day
-                it's gonna be a bright, bright sun-shining day]
+                [i can see clearly now the rain is gone](https://en.wikipedia.org/wiki/I_Can_See_Clearly_Now)
+                [i can see all obstacles in my way](https://en.wikipedia.org/wiki/I_Can_See_Clearly_Now)
+                [gone are the dark clouds that had me blind](https://en.wikipedia.org/wiki/I_Can_See_Clearly_Now)
+                [it's gonna be a bright, bright sun-shining day](https://en.wikipedia.org/wiki/I_Can_See_Clearly_Now)
+                [it's gonna be a bright, bright sun-shining day](https://en.wikipedia.org/wiki/I_Can_See_Clearly_Now)
             `,
         }
     ]

@@ -69,17 +69,24 @@ module.exports = {
         {
             type: 'quote',
             markdown: markdown`
+                "...While writing this book, the freeways that encircle and bisect Los Angeles were under constant construction; the topography of the road reconfigured itself daily. As the new 'Century Freeway' loomed apocalyptically into the future, one could not help but draw parallels between the end of this century and the end of the last." 
+                — Anne Friedberg, *Window Shopping* (1993)
+            `
+        },
+        {
+            type: 'quote',
+            markdown: markdown`
                 *We watched the end of the century
                 Compressed on a tiny screen
                 A dead star collapsing and we could see
                 Something was ending*
-                — Arcade Fire, "Deep Blue," *The Suburbs*
+                — Arcade Fire, "Deep Blue," (*The Suburbs*, 2010)
 
                 *Let's go for a drive, see the town tonight
                 There's nothing to do but I don't mind when I'm with you
                 This town’s so strange they built it to change
                 And while we sleep we know the streets get rearranged*
-                — Arcade Fire, "Suburban War," *The Suburbs*
+                — Arcade Fire, "Suburban War," (*The Suburbs*, 2010)
             `
         },
         {
@@ -92,17 +99,27 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                the 105, finished in october 1993, five months after i was born, is technically named the glenn anderson freeway, for a democratic representative from san pedro who advocated for the freeway's construction and who died shortly after its completion.
+                the 105, finished in october 1993, five months after i was born, is technically named the glenn anderson freeway, for a democratic representative from san pedro who died shortly after its completion.
 
-                or the el segundo freeway, for its western terminus. or the norwalk freweay, for its eastern edge.
+                or the el segundo freeway, for its western terminus. or the norwalk freweay, for county at its eastern edge.
 
-                more commonly, it's called the century freeway, a name pregnant with modernism, expansion, progress.
+                most often, it's called the century freeway, a name pregnant with modernism, expansion, progress.
             `
         },
         {
             type: 'narration',
             markdown: markdown`
                 when the century freeway opened, the los angeles freeway system was declared complete.
+
+                drafted at the peak of the 20th century, the 105 was finished exactly at the moment frederic jameson published *postmodernism, or, the cultural logic of late capitalism*.
+
+                in it, he argues that ________.
+            `
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                construction of the 105 displaced over 25,000 people.
 
                 the route, drafted at the peak of the 20th century, was finished exactly at the moment frederic jameson put language to the transition between modernism and its post–.
 
@@ -122,25 +139,25 @@ module.exports = {
             `
         },
         {
+            type: 'video',
+            file: require('./speed.mp4')
+        },
+        {
             type: 'narration',
             markdown: markdown`
-                read a certain way, *speed* takes up the transit politics of los angeles, public transit imperiled by highway construction. 
+                in *speed*, the 1994 keanu reeves vehicle, a bus cannot go any slower than 50 miles per hour or it will explode.
 
-                its climax, in the tunnels for the metro red line, the bus finally comes to a halt.
-
-                one more sentence here!
+                it was filmed during the century freeway's construction and ushers in the third act by having the bus jump a gap between unfinished sections of suspended highway.
             `
         },
         {
             type: 'narration',
             markdown: markdown`
-                but los angeles depends on the vehicle as a mode of sectatorship.
+                *speed* is a movie about the act of driving los angeles, where each drive is a narrative and each freeway named for a peripheral character.
 
-                each drive is a narrative, each freeway named for a peripheral character.
+                think of o.j. simpson, the shot from above. that was in 1994, when i was 1. 
 
-                it's how i learned to fashion myself into a protagonist, the leading character in my own story.
-
-                it's how i learned to structure time.
+                i remember watching car chases on local news, then watching *nightcrawler* fictionalize that world. mediated back and forth between modes of capturing reality and modes of representing reality. the windshield does both! 
             `
         },
         {

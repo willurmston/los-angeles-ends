@@ -56,7 +56,7 @@ module.exports = {
                 Reaching for an idea of somewhere other than this place
                 That could fold me in clouded yearning
                 For nowhere actually reachable, the distance was the point*
-                – Mount Eerie, "Soria Moria," from *A Crow Looked At Me* (2017)
+                – Mount Eerie, "Soria Moria," (*A Crow Looked At Me*, 2017)
             `,
         },
         {
@@ -114,7 +114,7 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                in the conclusion to my mom's book, she writes about the death of french philosopher gilles deleuze, who threw himself from the window of his apartment.
+                in the conclusion to *the virtual window*, my mom writes about the death of french philosopher gilles deleuze, who threw himself from the window of his apartment.
                 
                 deleuze wrote frequently about the distinction between the space of the screen and the space outside of it — what he called the *hors-champ*, “a more radical elsewhere, outside homogenous space and time.”
                 
@@ -179,8 +179,8 @@ module.exports = {
                 where the flatness ends
                 and i'm not quite there yet
 
-                [but the truth is i don't think of that dust as you
-                you are the sunset]
+                [but the truth is i don't think of that dust as you](https://genius.com/Mount-eerie-seaweed-lyrics)
+                [you are the sunset](https://genius.com/Mount-eerie-seaweed-lyrics)
 
                 bummer driving in the dead of night
                 when the light pollution blinds me from every star
