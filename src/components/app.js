@@ -56,7 +56,7 @@ export default class App extends Component {
     enterSong = (song) => {
         const songElement = document.querySelector(`.Song#${song.slug}`)
         TweenLite.to( document.scrollingElement, 0.4, {
-            scrollTop: songElement.offsetTop,
+            scrollTop: utils.offset(songElement).top,
             ease: Power2.easeOut,
             onComplete: () => {
                 this.setState({
@@ -68,7 +68,7 @@ export default class App extends Component {
 
     exitSong = (prevSong) => {
         const songElement = document.querySelector(`.Song#${prevSong.slug}`)
-        const offsetTop = songElement.offsetTop
+        const offsetTop = utils.offset(songElement).top
         const bigScreen = window.matchMedia('screen and (min-width: 600px)').matches
         // First, immediately scroll to top of element
         document.scrollingElement.scrollTop = bigScreen ? offsetTop : offsetTop - (window.innerHeight / 4)
