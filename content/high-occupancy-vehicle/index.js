@@ -2,7 +2,7 @@ module.exports = {
     title: 'High Occupancy Vehicle',
     slug: 'high-occupancy-vehicle',
     trackID: 544630851,
-    trackSecret: '3Ds-I6dWk',
+    trackSecret: 's-I6dWk',
     titleLayout: 'center',
     backgroundVideo: require('./hov.mov.mp4'),
     backgroundPlaybackRate: 0.5,
@@ -15,7 +15,7 @@ module.exports = {
             markdown: markdown`
                 january 2015 and i'm in the diamond lane going south on the 110. my partner is in the passenger seat.
 
-                i've just spent a week showing her los angeles — my childhood home, my teenage rhythms, the contours of new abandonment fears as my dad and i grieve the same loss in divergent ways.
+                i've just spent a week showing her los angeles — the house i grew up in, the places i drove to escape it, the routes i took to dull the pain of losing one parent to cancer and another to grief.
 
                 now it's time to say goodbye.
             `
@@ -23,29 +23,98 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                we soar along the harbor corridor, high velocity and light traffic.
+                we hit the judge harry pregerson interchange, where the 110 intersects the 105, and take the carpool ramp.
 
-                at the judge harry pregerson interchange, where the 110 intersects the 105, we take the carpool ramp.
+                its pylons lift us up and above the city, banking 15 degrees from south to west.
 
-                its pylons lift us above the city, banking 15 degrees from south to west.
+                los angeles pans out as if in cinemascope, windshield as the camera lens.
+            `
+        },
+        {
+            type: 'quote',
+            markdown: markdown`
+                "Everyday life is a fuel for thought: the private mobility of driving transforms the windshield into a synoptic vista, and the fifty-two-mile commute between the sprawling transurban metropolis of Los Angeles and the university-as-theme-park of the University of California at Irvine became, for me, a consistently speculative hour..."
             `
         },
         {
             type: 'narration',
             markdown: markdown`
-                it feels as if there's barely any force at all preventing us from taking off, launching, driving up up up into the stratosphere.
+                when i was growing up, my mom commuted three or four days a week to irvine, where she taught critical theory and film history.
 
-                the vista pans out like cinema, windshield as our camera lens.
+                she took the 5 to and from orange county, and i internalized its landmarks in relation to their ETA.
+
+                john wayne airport meant she was just leaving work, disneyland meant an hour away, the citadel outlet mall meant 45 minutes, get the table set for dinner.
             `
         },
         {
             type: 'narration',
             markdown: markdown`
-                we land, softly, onto the 105.
+                i listened to *the suburbs* for the first time while tracing her commute, on the way to an angels game in anaheim.
 
-                traffic hits, and as we slow to a stop i rinse the windshield and turn the wipers on.
+                isaac and i were in the diamond lane on the 5, zipping past congestion in norwalk.
 
-                i'm too shut off to cry.
+                it was summer 2010, and for the first time i opened up about the flood of blue that colored every day.
+            `
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                in 2010 and 2011, i drove *the suburbs* endlessly.
+
+                when i was most frozen by grief, it was the only way i could thaw into tears.
+
+                it made me feel like a character, a protagonist in my own story shot through the windshield.
+            `
+        },
+        {
+            type: 'quote',
+            markdown: markdown`
+                "...While writing this book, the freeways that encircle and bisect Los Angeles were under constant construction; the topography of the road reconfigured itself daily. As the new 'Century Freeway' loomed apocalyptically into the future, one could not help but draw parallels between the end of this century and the end of the last." 
+                — Anne Friedberg, *Window Shopping* (1993)
+            `
+        },
+        {
+            type: 'quote',
+            markdown: markdown`
+                *We watched the end of the century
+                Compressed on a tiny screen
+                A dead star collapsing and we could see
+                Something was ending*
+                — Arcade Fire, "Deep Blue," (*The Suburbs*, 2010)
+
+                *Let's go for a drive, see the town tonight
+                There's nothing to do but I don't mind when I'm with you
+                This town’s so strange they built it to change
+                And while we sleep we know the streets get rearranged*
+                — Arcade Fire, "Suburban War," (*The Suburbs*, 2010)
+            `
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                the 105, finished in october 1993, five months after i was born, is technically named the glenn anderson freeway, for a democratic representative from san pedro who died shortly after its completion.
+
+                or the el segundo freeway, for its western terminus. or the norwalk freweay, for county at its eastern edge.
+
+                most often, it's called the century freeway, a name pregnant with modernism, expansion, progress.
+            `
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                when the century freeway opened, the los angeles freeway system was declared complete.
+
+                drafted at the peak of the 20th century, the 105 was finished exactly at the moment frederic jameson published *postmodernism, or, the cultural logic of late capitalism*.
+
+                in it, he argues that ________.
+            `
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                construction of the 105 displaced over 25,000 people.
+
+                it also demolished the childhood homes of both the beach boys and the carpenters.
             `
         },
         {
@@ -57,73 +126,34 @@ module.exports = {
             markdown: markdown`
                 in *speed*, the 1994 keanu reeves vehicle, a bus cannot go any slower than 50 miles per hour or it will explode.
 
-                it was filmed during the century freeway's construction and climaxes with the bus jumping a gap between unfinished sections of suspended highway.
+                it was filmed during the century freeway's construction and ushers in the third act by having the bus jump a gap between unfinished sections of suspended highway.
             `
         },
         {
             type: 'narration',
             markdown: markdown`
-                every time i take the HOV ramp i recite this anecdote. on one recent trip, i turned to wikipedia for the full story and found myself confronting a false memory —
+                *speed* is a movie about the act of driving los angeles, where each drive is a narrative and each freeway named for a peripheral character.
 
-                "The highway section the bus jumped over is the directional ramp from I-105 WB to I-110 NB (not the HOV ramp from I-110 SB to I-105 WB as commonly believed.)"
+                think of o.j. simpson, the shot from above. that was in 1994, when i was 1. 
+
+                i remember watching car chases on local news, then watching *nightcrawler* fictionalize that world. mediated back and forth between modes of capturing reality and modes of representing reality. the windshield does both! 
             `
         },
         {
             type: 'quote',
             markdown: markdown`
                 "Some people learn Italian so they can read Dante in the original; I learned to drive so I could read Los Angeles in the original."
-                – Reyner Banham, *Los Angeles: An Architecture of Four Ecologies* (1971)
+                — Reyner Banham, *Los Angeles: An Architecture of Four Ecologies* (1971)
             `
         },
         {
             type: 'narration',
             markdown: markdown`
-                every time i returned to los angeles, i used the freeway as an anesthetic.
+                i drop my partner off at LAX and drive home, eastward, sun setting both in the rearview mirror and in reflection across the library tower.
 
-                the house felt uninhabitable, but i could always fight loneliness with a destination.
-            `
-        },
-        {
-            type: 'narration',
-            markdown: markdown`
-                i made lists of restaurants that jonathan gold had written up, of places where i could find remnants of the red car system, of spots like aroma driving range, in koreatown, where i hit golf balls onto a netting above the parking garage.
+                i rinse the windshield and turn the wipers on. i'm too shut off to cry.
 
-                i fell head over heels for the city.
-            `
-        },
-        {
-            type: 'quote',
-            markdown: markdown`
-                "Mere driving on the freeway is in no way the same as participating in it. Anyone can 'drive' on the freeway, and many people with no vocation for it do, hesitating here and resisting there, losing the rhythm of the lane change, thinking about where they came from and where they are going..."
-            `
-        },
-        {
-            type: 'narration',
-            markdown: markdown`
-                joan didion once described the freeway system as "the only secular communion los angeles has."
-
-                she followed that line with an essay-length indictment of caltrans as it installed carpool lanes across the city.
-            `
-        },
-        {
-            type: 'narration',
-            markdown: markdown`
-                sometimes i wonder if she was simply lamenting the fact that it encouraged everyone to have a passenger, to no longer drive alone.
-            `
-        },
-        {
-            type: 'quote',
-            markdown: markdown`
-                "...Actual participants think only about where they are. Actual participation requires a total surrender, a concentration so intense as to seem a kind of narcosis, a rapture-of-the-freeway. The mind goes clean. The rhythm takes over. A distortion of time occurs, the same distortion that characterizes the instant before an accident."
-                – Joan Didion, "Bureaucrats," from *The White Album* (1976)
-            `
-        },
-        {
-            type: 'narration',
-            markdown: markdown`
-                i drive home, eastward, sun setting both in the rearview mirror and in reflection across the library tower. 
-
-                i merge to the right lane, take the directional ramp from I-105 EB to I-110 NB, and wind my way through a shifting feeling of home.
+                i merge to the right lane, take the directional ramp from I-105 EB to I-110 NB, and wind my way north towards a reconfigured feeling of home.
             `
         },
         {

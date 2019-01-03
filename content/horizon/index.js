@@ -2,7 +2,7 @@ module.exports = {
     title: 'Horizon',
     slug: 'horizon',
     trackID: 544630866,
-    trackSecret: '3Ds-zoQ5b',
+    trackSecret: 's-zoQ5b',
     titleLayout: 'center',
     backgroundVideo: require('./horizon-2.mov.mp4'),
     backgroundPlaybackRate: 1,
@@ -52,25 +52,11 @@ module.exports = {
                 *Slow pulsing, red tower lights
                 Across a distance, refuge in the dust
                 All my life I can remember longing
-                Looking across the water and seeing lights
-                When I was five or six, we were camping in the islands in July
-                The tall yellow grass and the rose hips fragrant
-                After sunset, island beyond island
-                Undulating and familiar, not far from home
-                With my fragrant, whittled, cedared drift wood dagger in the mildew canvas tent
-                I saw fireworks many miles away but didn't hear them...*
-            `,
-        },
-        {
-            type: 'quote',
-            markdown: markdown`
-                *And I felt a longing, a childish melancholy
-                And then I went to sleep
-                And the aching was buried, dreaming, aging
+                Looking across the water and seeing lights...
                 Reaching for an idea of somewhere other than this place
                 That could fold me in clouded yearning
                 For nowhere actually reachable, the distance was the point*
-                – Mount Eerie, "Soria Moria," from *A Crow Looked At Me* (2017)
+                – Mount Eerie, "Soria Moria," (*A Crow Looked At Me*, 2017)
             `,
         },
         {
@@ -118,9 +104,9 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                eight years later, in college, i published an [essay](http://www.theindy.org) processing my mom's death by reading her book together with two arcade fire records she didn't live to hear — *the suburbs* and *reflektor.*
+                eight years later, in college, i published [an essay](https://www.theindy.org/175) processing my mom's death by reading her book together with two arcade fire records she didn't live to hear — *the suburbs* and *reflektor.*
 
-                i'd come to the conclusion that my mom's death, like metaphor, was virtual. *almost* real, but *not quite*.
+                i'd come to the realization that my mom's death, like metaphor, was virtual. *almost* real, but *not quite*.
 
                 like the horizon, just-out-of-reach.
             `,
@@ -128,7 +114,7 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                in the conclusion to my mom's book, she writes about the death of french philosopher gilles deleuze, who threw himself from the window of his apartment.
+                in the conclusion to *the virtual window*, my mom writes about the death of french philosopher gilles deleuze, who threw himself from the window of his apartment.
                 
                 deleuze wrote frequently about the distinction between the space of the screen and the space outside of it — what he called the *hors-champ*, “a more radical elsewhere, outside homogenous space and time.”
                 
@@ -138,9 +124,21 @@ module.exports = {
         {
             type: 'quote',
             markdown: markdown`
-                *Thought you would bring me to the resurrector / Turns out it was just a reflektor.*
-                — Arcade Fire, "Reflektor," *Reflektor* (2013)
+                *After life, I think I saw what happens next
+                It was just a glimpse of you, like looking through a window 
+                Or a shallow sea
+                Could you see me?*
+                – Arcade Fire, “Afterlife," *Reflektor* (2013)
 
+                
+            `,
+        },
+        {
+            type: 'quote',
+            markdown: markdown`
+                "While writing this book, the freeways that encircle and bisect Los Angeles were under constant construction; the topography of the road reconfigured itself daily."
+                — Anne Friedberg, *Window Shopping* (1993)
+                
                 *Let's go for a drive, see the town tonight
                 There's nothing to do but I don't mind when I'm with you
                 This town's so strange they built it to change
@@ -181,8 +179,8 @@ module.exports = {
                 where the flatness ends
                 and i'm not quite there yet
 
-                [but the truth is i don't think of that dust as you
-                you are the sunset]
+                [but the truth is i don't think of that dust as you](https://genius.com/Mount-eerie-seaweed-lyrics)
+                [you are the sunset](https://genius.com/Mount-eerie-seaweed-lyrics)
 
                 bummer driving in the dead of night
                 when the light pollution blinds me from every star

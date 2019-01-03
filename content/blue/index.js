@@ -1,7 +1,8 @@
 module.exports = {
     title: 'Blue',
     slug: 'blue',
-    trackID: 499559277,
+    trackID: 548303973,
+    trackSecret: 's-NvfPD',
     titleLayout: 'center',
     backgroundVideo: require('./almost-right.mp4.mp4'),
     backgroundPlaybackRate: 0.75,
@@ -40,6 +41,11 @@ module.exports = {
         {
             type: 'quote',
             markdown: markdown`
+                *In the suburbs, I, I learned to drive
+                And you told me we'd never survive
+                Grab your mother's keys, we're leaving*
+                – Arcade Fire, "The Suburbs" (*The Suburbs*, 2010)
+
                 "To be in L.A. without a car is to be at the mercy of whoever will give you a ride. In this way, it both is and isn’t a teenager’s town."
                 – Dayna Tortorici, ["Los Angeles Plays Itself"](https://nplusonemag.com/online-only/city-by-city/los-angeles-plays-itself/), *n+1* (2015)
             `,
@@ -49,7 +55,7 @@ module.exports = {
             markdown: markdown`
                 i was fifteen when my mom was diagnosed with cancer. it was the year i learned how to drive.
 
-                i remember my first time behind the wheel, in a silver prius owned by melrose driving school, heading down western to 3rd street, across 3rd to la cienega, up la cienega to sunset, west on sunset to coldwater, up coldwater to mulholland, across the cahuenga pass and back towards beachwood.
+                i remember my first time behind the wheel, in a silver prius owned by melrose driving school, heading down western to 3rd street, across 3rd to la cienega, up la cienega to sunset, west on sunset to coldwater, then up coldwater to mulholland, tracing the line between the los angeles basin and the san fernando valley.
 
                 i'm not sure that i said a single word.
             `,
@@ -67,15 +73,16 @@ module.exports = {
             markdown: markdown`
                 i got my license from the glendale dmv in november 2009, a month after my mom died.
 
-                i inherited her car, a 2006 lexus rx400h with a gps named natacha — after anna karina's character in *alphaville*. 
+                i drove to valley parties, mostly, where a certain type of anhedonia could always be amplified.
+
+                i was free, finally. i was also profoundly broken.
+
             `,
         },
         {
             type: 'narration',
             markdown: markdown`
-                i drove to valley parties, mostly, where a certain type of anhedonia could always be amplified.
-
-                i was free, finally. i was also profoundly broken.
+                i inherited my mom's car, a 2006 lexus rx400h with a gps named natacha — after anna karina's character in *alphaville*.
 
                 what i wanted most was the long drive home, alone, blasting music.
             `,
@@ -113,7 +120,7 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                as i was finishing this record, sifting through clutter at my parents house, i found a note from a high school classmate.
+                as i was finishing this record, cleaning out my childhood bedroom, i found a note from a high school classmate.
 
                 "somehow, being your passenger was the closest i'd gotten to achieving a deeper conversation with you," they wrote.
             `,
