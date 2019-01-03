@@ -209,19 +209,15 @@ export default class Song extends Component {
 
         if (Math.abs(end.y - start.y) > 10) return
 
-        // if swiped down
+        // if swiped left
         if (end.x < start.x) {
             if (start.x - end.x > 10) {
-                this.setState({
-                    currentSlideIndex: Math.min(this.state.slides.length - 1, this.state.currentSlideIndex + 1)
-                }, this.setHash)
+                this.nextSlide()
                 this.lastTouchStart.wasTriggered = true
             }
         } else {
             if (end.x - start.x > 10) {
-                this.setState({
-                    currentSlideIndex: Math.max(0, this.state.currentSlideIndex - 1)
-                }, this.setHash)
+                this.prevSlide()
                 this.lastTouchStart.wasTriggered = true
             }
         }
