@@ -55,12 +55,14 @@ export default class App extends Component {
     // Animate into song
     enterSong = (song) => {
         const songElement = document.querySelector(`.Song#${song.slug}`)
-        this.setState({
-            currentSong: song
-        })
         TweenLite.to( document.scrollingElement, 0.4, {
             scrollTop: songElement.offsetTop,
-            ease: Power2.easeOut
+            ease: Power2.easeOut,
+            onComplete: () => {
+                this.setState({
+                    currentSong: song
+                })
+            }
         })
     }
 
