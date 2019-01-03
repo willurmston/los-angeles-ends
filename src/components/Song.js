@@ -116,7 +116,7 @@ export default class Song extends Component {
         }))
     }
 
-    onPlayerStateChange = async (state) => {
+    onPlayerStateChange = (state) => {
         // state is 'playing', 'paused', 'loading', 'ended', 'error' or 'dead'
         let playerState = null
 
