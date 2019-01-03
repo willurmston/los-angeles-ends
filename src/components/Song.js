@@ -360,7 +360,7 @@ export default class Song extends Component {
                         })
                     }
                 >
-                    {this.state.slides.map( this.renderSlide )}
+                    {this.props.isOpen ? this.state.slides.map( this.renderSlide ) : this.renderSlide(this.state.slides[0]) }
                 </div>
                 {bigScreen && this.props.isOpen &&
                     <HomeButton
