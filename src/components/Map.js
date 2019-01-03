@@ -18,6 +18,7 @@ const style = css`
     & a {
         display: block;
         position: absolute;
+        text-decoration: none;
         & .label {
             background: var(--off-white);
             color: var(--song-color);
@@ -79,7 +80,7 @@ export default class Map extends Component {
                             left: `calc(${song.pinX})`,
                             top: `calc(${song.pinY} - 64px)`,
                         }}
-                        onclick={() => this.props.onPinClick(song, 0.6 * this.props.pins.indexOf(song) )}
+                        href={`/${song.slug}`}
                     >
                         <div class="label">{song.title}</div>
                         <div class="line"></div>
