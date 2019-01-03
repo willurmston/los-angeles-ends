@@ -208,7 +208,7 @@ export default class App extends Component {
                                     index={index}
                                     isOpen={song === this.state.currentSong}
                                     onclick={this.state.currentSong === null ?
-                                        () => route(`/${song.slug}${bigScreen ? '#1' : ''}`)
+                                        () => route(`/${song.slug}`)
                                     : null}
                                     pauseBackground={this.state.pauseBackgrounds}
                                     key={song.slug}
