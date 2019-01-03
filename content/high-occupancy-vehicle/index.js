@@ -90,6 +90,13 @@ module.exports = {
             `
         },
         {
+            type: 'quote',
+            markdown: markdown`
+                "...While writing this book, the freeways that encircle and bisect Los Angeles were under constant construction; the topography of the road reconfigured itself daily. As the new 'Century Freeway' loomed apocalyptically into the future, one could not help but draw parallels between the end of this century and the end of the last." 
+                — Anne Friedberg, *Window Shopping* (1993)
+            `
+        },
+        {
             type: 'narration',
             markdown: markdown`
                 the 105, finished in october 1993, five months after i was born, is technically named the glenn anderson freeway, for a democratic representative from san pedro who died shortly after its completion.
@@ -114,7 +121,21 @@ module.exports = {
             markdown: markdown`
                 construction of the 105 displaced over 25,000 people.
 
-                it also demolished the childhood homes of both the beach boys and the carpenters.
+                the route, drafted at the peak of the 20th century, was finished exactly at the moment frederic jameson put language to the transition between modernism and its post–.
+
+                its construction displaced over 25,000 people and demolished the childhood homes of both the beach boys and the carpenters.
+            `
+        },
+        {
+            type: 'video',
+            file: require('./speed.mp4')
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                in *speed*, the 1994 keanu reeves vehicle, a bus cannot go any slower than 50 miles per hour or it will explode.
+
+                it was filmed during the century freeway's construction and ushers in the third by having the bus jump a gap between unfinished sections of suspended highway.
             `
         },
         {

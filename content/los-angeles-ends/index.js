@@ -68,6 +68,13 @@ module.exports = {
                 in 2015, my dad underwent an eye surgery that split his vision, temporarily, in two.
 
                 afterwards, he wrote a short story in which one eye witnesses los angeles ending, downtown disappearing in a single orange blast.
+        },
+        {
+            type: 'quote',
+            markdown: markdown`
+                "...I know what happened to downtown and I know what that means. The only thing I do not know is why I, perhaps alone, was given the privilege – if one might call it that – of seeing it before it occurred."
+                
+                – Howard A. Rodman, "BANG", *Black Clock No. 21* (2016)
             `
         },
         {
@@ -88,6 +95,10 @@ module.exports = {
             type: 'video',
             file: require('./woolsey-fire-small-portrait.mov')
         }*/,
+        {
+            type: 'video',
+            file: require('./woolsey-fire-small-portrait.mov')
+        },
         {
             type: 'narration',
             markdown: markdown`
