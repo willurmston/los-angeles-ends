@@ -74,16 +74,6 @@ export default class Song extends Component {
                 <VideoSlide
                     slide={slide}
                     isCurrent={isCurrent}
-                    showArrowCursor={ () =>
-                        this.setState({
-                            showArrowCursor: false
-                        })
-                    }
-                    hideArrowCursor={ () =>
-                        this.setState({
-                            showArrowCursor: true
-                        })
-                    }
                 />
             )
         }
@@ -115,10 +105,18 @@ export default class Song extends Component {
                 })
             })
             if (this.props.isOpen)  this.player.play()
-        }).catch(error => console.error(error))
+        }).catch(error => console.error(`Request to stream "${this.props.song.title}" failed`, {
+            ...error,
+            song: {
+                title: this.props.song.title,
+                slug: this.props.song.slug,
+                trackID: this.props.song.trackID,
+                trackSecret: this.props.song.trackSecret
+            }
+        }))
     }
 
-    onPlayerStateChange = (state) => {
+    onPlayerStateChange = async (state) => {
         // state is 'playing', 'paused', 'loading', 'ended', 'error' or 'dead'
         let playerState = null
 
@@ -127,7 +125,8 @@ export default class Song extends Component {
         } else if (state === 'loading') {
             playerState = 'loading'
         } else if (state === 'ended') {
-            playerState = 'ended'
+            playerState = 'playing'
+            this.player.play()
         } else {
             playerState = 'paused'
         }
@@ -143,7 +142,7 @@ export default class Song extends Component {
         } else if (this.state.playerState === 'playing') {
             this.player.pause()
         } else if (this.state.playerState === 'ended') {
-            this.props.playNextSong()
+            this.player.play()
         }
     }
 
@@ -184,7 +183,7 @@ export default class Song extends Component {
 
     onclick = e => {
         if (this.props.onclick) this.props.onclick()
-        if (this.props.isOpen) {
+        if (this.props.isOpen && e.target.tagName !== 'A') {
             e.pageX < window.innerWidth / 2 ? this.prevSlide() : this.nextSlide()
         }
     }
@@ -294,6 +293,9 @@ export default class Song extends Component {
                     flex-shrink: 0;
                     overflow-y: auto;
                     -webkit-overflow-scrolling: touch;
+                    & .content > * {
+                        cursor: default;
+                    }
                 }
             }
             @media screen and (min-width: 600px) {
@@ -329,6 +331,7 @@ export default class Song extends Component {
                     play={this.state.playBackground && !this.props.pauseBackground}
                     playbackRate={this.props.song.backgroundPlaybackRate}
                     slug={this.props.song.slug}
+                    songIndex={this.props.index}
                 />
                 <Toolbar
                     currentSlideIndex={this.state.currentSlideIndex}
@@ -339,6 +342,11 @@ export default class Song extends Component {
                     onPlayButtonClick={this.onPlayButtonClick}
                     onSegmentClick={this.setCurrentSlide}
                 />
+                {bigScreen &&
+                    <ArrowCursor
+                        visible={this.props.isOpen && this.props.showArrowCursor && this.state.showArrowCursor}
+                    />
+                }
                 <div
                     class="slider"
                     onclick={this.onclick}
@@ -358,11 +366,6 @@ export default class Song extends Component {
                 >
                     {this.state.slides.map( this.renderSlide )}
                 </div>
-                {bigScreen &&
-                    <ArrowCursor
-                        visible={this.props.isOpen && this.props.showArrowCursor && this.state.showArrowCursor}
-                    />
-                }
                 {bigScreen && this.props.isOpen &&
                     <HomeButton
                         onclick={() => route('/')}

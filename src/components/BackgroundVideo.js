@@ -1,5 +1,14 @@
 import {h, Component} from 'preact'
-import {css, cx} from 'emotion'
+import {css, cx, keyframes} from 'emotion'
+
+const scrollPoster = keyframes`
+    0% {
+        transform: translate3d(0,0,0);
+    }
+    to {
+        transform: translate3d(-100%, 0, 0);
+    }
+`
 
 export default class BackgroundVideo extends Component {
     componentDidMount() {
@@ -18,6 +27,9 @@ export default class BackgroundVideo extends Component {
     }
 
     onloadeddata = () => {
+        this.setState({
+            loaded: true
+        })
         this.canvas.width = this.video.videoWidth
         this.canvas.height = this.video.videoHeight
     }
@@ -29,8 +41,8 @@ export default class BackgroundVideo extends Component {
         this.video.removeEventListener('pause', this.stop)
     }
 
-    shouldComponentUpdate() {
-        return false
+    shouldComponentUpdate(nextProps, nextState) {
+        return nextState.loaded !== this.state.loaded
     }
 
     componentWillReceiveProps(nextProps) {
@@ -74,6 +86,29 @@ export default class BackgroundVideo extends Component {
             background: var(--song-color);
             position: relative;
             top: 0;
+            & div.poster {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-image: url('assets/noise.png');
+                background-size: auto 100%;
+                image-rendering: auto;
+                image-rendering: crisp-edges;
+                image-rendering: pixelated;
+                & img {
+                    position: relative;
+                    height: 100%;
+                    width: auto;
+                    flex-shrink: 0;
+                    image-rendering: auto;
+                    image-rendering: crisp-edges;
+                    image-rendering: pixelated;
+                    animation: ${this.state.loaded ? 'none' : `${scrollPoster} ${2 + (this.props.songIndex % 2)}s infinite both steps(100)`};
+                }
+            }
             & canvas {
                 height: 100vh;
                 image-rendering: auto;
@@ -84,18 +119,25 @@ export default class BackgroundVideo extends Component {
                 width: 100vw;
                 object-fit: cover;
                 position: relative;
-                display: block;
+                opacity: ${this.state.loaded ? 1 : 0};
+                transition: opacity 0.5s;
             }
             & video {
                 position: absolute;
                 z-index: -2;
                 display: block;
                 top: 0;
+                opacity: 0;
             }
         `
 
         return (
-            <div class={cx('BackgroundVideo', style)}>
+            <div class={cx('BackgroundVideo', style, this.state.loaded && 'loaded')}>
+                <div class="poster">
+                    <img src="assets/background-poster.png"/>
+                    <img src="assets/background-poster.png"/>
+                    <img src="assets/background-poster.png"/>
+                </div>
                 <canvas
                     ref={canvas => this.canvas = canvas}
                 ></canvas>

@@ -35,11 +35,15 @@ const style = css`
         @media screen and (min-width: 600px) {
             flex-shrink: 0;
             font-size: 30px;
-            margin: 0 auto 0 16px;
+            margin: 0 16px 0 20px;
+        }
+        @media screen and (min-width: 1000px) {
+            font-size: 33px;
+            margin: 0 20px 0 24px;
         }
     }
     & nav {
-        width: calc(100% - 100px);
+        width: calc(100% - 70px);
         display: flex;
         overflow: hidden;
         flex-wrap: no-wrap;
@@ -48,7 +52,7 @@ const style = css`
         @media screen and (min-width: 600px) {
             flex-shrink: 1;
             margin-right: 24px;
-            max-width: 45vw;
+            margin-left: 0;
         }
         & button {
             margin: 0 4px 0 0;
@@ -81,7 +85,7 @@ const style = css`
         overflow: visible;
         & svg {
             fill: var(--song-color);
-            overflow: visible;
+            overflow: hidden;
         }
         &:active {
             opacity: 0.5;
@@ -90,8 +94,8 @@ const style = css`
             position: static;
             flex-shrink: 0;
             margin-left: 14px;
-            width: 48px;
-            height: 48px;
+            width: 46px;
+            height: 46px;
             transition: opacity 0.05s;
             &:hover {
                 cursor: pointer;

@@ -22,8 +22,6 @@ export default class QuoteSlide extends Component {
                 overflow: visible;
                 @media screen and (min-width: 600px) {
                     max-width: 800px;
-                    pointer-events: none;
-                    user-select: none;
                 }
                 & p {
                     display: table;
@@ -36,6 +34,18 @@ export default class QuoteSlide extends Component {
                     white-space: pre-wrap;
                     @media screen and (min-width: 600px) {
                         padding: 30px 40px;
+                    }
+                    & a {
+                        text-decoration: none;
+                        pointer-events: none;
+                        @media screen and (min-width: 600px) {
+                            text-decoration: underline;
+                            pointer-events: all;
+                            &:hover {
+                                color: var(--song-color);
+                                background: var(--off-white);
+                            }
+                        }
                     }
                 }
                 & p:first-child {

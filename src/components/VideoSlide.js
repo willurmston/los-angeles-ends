@@ -52,8 +52,6 @@ export default class VideoSlide extends Component {
             <button
                 class="mute"
                 onclick={this.toggleMute}
-                onmouseenter={this.props.showArrowCursor}
-                onmouseleave={this.props.hideArrowCursor}
             >
                 {this.state.muted ?
                     <svg width="37" height="37" xmlns="http://www.w3.org/2000/svg">
@@ -87,7 +85,6 @@ export default class VideoSlide extends Component {
                 border: 10px solid var(--off-white);
                 overflow: hidden;
                 background: var(--off-white);
-                cursor: pointer;
                 @media screen and (min-width: 600px) {
                     margin-top: -50px;
                     width: auto;
@@ -115,7 +112,7 @@ export default class VideoSlide extends Component {
                     height: 80px;
                     bottom: 0;
                     right: 0;
-                    cursor: pointer;
+                    cursor: pointer !important;
                     & svg {
                         display: block;
                         position: absolute;

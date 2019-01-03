@@ -10,12 +10,12 @@ const style = css`
         margin-top: 30px;
         display: flex;
         border-top: 2px solid var(--color);
-        display: flex;
     }
     @media screen and (min-width: 1000px) {
         margin-left: 70px;
         margin-right: 70px;
         margin-bottom: 90px;
+        align-items: flex-start;
     }
     & .links {
         position: relative;
@@ -58,7 +58,7 @@ const style = css`
             padding: 32px 32px;
             display: flex;
             flex-direction: column;
-            align-items: flex-end;
+            align-items: flex-start;
         }
         @media screen and (min-width: 1000px) {
             padding: 64px 64px;
@@ -112,13 +112,11 @@ const style = css`
             display: none;
             @media screen and (min-width: 600px) {
                 display: block;
-                position: absolute;
+                position: relative;
                 fill: var(--off-white);
                 width: 70px;
                 height: 70px;
-                right: auto;
-                left: 30px;
-                bottom: 30px;
+                left: -4px;
             }
         }
     }
@@ -129,6 +127,7 @@ const style = css`
         @media screen and (min-width: 600px) {
             width: 50%;
             padding: 32px 32px;
+            border-left: 2px solid var(--color);
         }
         @media screen and (min-width: 1000px) {
             padding: 62px 64px;
@@ -149,6 +148,14 @@ const style = css`
             & em {
                 font-style: normal;
                 color: var(--accent-color);
+            }
+            & a {
+                @media screen and (min-width: 600px) {
+                    &:hover {
+                        color: var(--off-white);
+                        background: var(--accent-color);
+                    }
+                }
             }
         }
     }
