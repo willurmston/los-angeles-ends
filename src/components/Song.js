@@ -267,7 +267,6 @@ export default class Song extends Component {
             position: relative;
             width: 100vw;
             color: var(--off-white);
-            z-index: ${this.props.isOpen ? 10 : 0};
             & .slider {
                 display: flex;
                 position: absolute;
