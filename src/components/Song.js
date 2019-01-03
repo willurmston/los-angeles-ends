@@ -259,6 +259,7 @@ export default class Song extends Component {
 
     render() {
         const style = css`
+            display: ${this.props.isVisible ? 'block' : 'none'};
             --song-color: var(--${this.props.song.color});
             background: var(--song-color);
             height: ${this.props.isOpen ? '100vh' : '100vw' };
