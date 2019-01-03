@@ -199,26 +199,21 @@ export default class App extends Component {
                         })
                     }
                 >
-                    {content.songs.map( (song, index) => {
-                        return (
-                            <DelayUnmount
-                                mount={this.state.currentSong === null || this.state.currentSong === song}
-                                unmountDelay={800}
-                            >
+                    { content.songs.map( (song, index) => {
+                            return (
                                 <Song
                                     song={song}
                                     index={index}
                                     isOpen={song === this.state.currentSong}
-                                    onclick={this.state.currentSong === null ?
-                                        () => route(`/${song.slug}`)
-                                    : null}
+                                    isVisible={this.state.currentSong === null || song === this.state.currentSong}
+                                    onclick={() => route(`/${song.slug}`)}
                                     pauseBackground={this.state.pauseBackgrounds}
-                                    key={song.slug}
                                     showArrowCursor={this.state.showArrowCursor}
+                                    key={song.slug}
                                 />
-                            </DelayUnmount>
-                        )
-                    })}
+                            )
+                        })
+                    }
                     {bigScreen && this.state.currentSong === null &&
                         <ArrowCursor
                             visible={this.state.showArrowCursor}
