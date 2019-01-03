@@ -23,7 +23,7 @@ export default class TitleSlide extends Component {
     rightButton() {
         return (
             <button>
-                <svg width="51" height="65" xmlns="http://www.w3.org/2000/svg">
+                <svg width="51" height="65" viewBox="0 0 51 65" xmlns="http://www.w3.org/2000/svg">
                     <path d="M48.64 32.15L3.53 3.95A1 1 0 0 0 2 4.8v56.4a1 1 0 0 0 1.53.84l45.11-28.2a1 1 0 0 0 0-1.69z" fill-rule="nonzero"/>
                 </svg>
             </button>
@@ -45,6 +45,26 @@ export default class TitleSlide extends Component {
                     pointer-events: none;
                 }
             }
+            & .play-song-button {
+                margin-top: 26px;
+                margin-bottom: -20px;
+                width: 50px;
+                height: 50px;
+                margin-left: auto;
+                margin-right: auto;
+                & svg {
+                    width: 48px;
+                    height: 48px;
+                    & path {
+                        fill: var(--off-white);
+                    }
+                }
+            }
+            & .PlaySongButton {
+                position: relative;
+                right: 0;
+                margin: 1px 34px 0;
+            }
             & h1 {
                 display: flex;
                 justify-content: center;
@@ -58,7 +78,6 @@ export default class TitleSlide extends Component {
                 margin: 0 34px 0 34px;
                 padding: 20px 26px;
                 min-height: 180px;
-                transition: transform 0.2s;
                 @media screen and (min-width: 600px) {
                     font-size: 18vmin;
                     line-height: 1.06;
@@ -74,9 +93,6 @@ export default class TitleSlide extends Component {
                 }
                 @media screen and (min-width: 1300px) {
                     font-size: 24vmin;
-                }
-                &:active {
-                    transform: scale(0.97);
                 }
                 & span {
                     display: block;
@@ -128,6 +144,11 @@ export default class TitleSlide extends Component {
                     <h1 dangerouslySetInnerHTML={{__html: this.words()}}>
                     </h1>
                 </a>
+                { !bigScreen && !this.props.songIsOpen &&
+                    <div class="play-song-button">
+                        {this.rightButton()}
+                    </div>
+                }
                 {!bigScreen && this.props.songIsOpen &&
                     <div class="buttons">
                         <HomeButton
