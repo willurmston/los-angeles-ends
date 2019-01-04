@@ -72,7 +72,7 @@ module.exports = {
         },
         {
             type: 'video',
-            file: require('./sunset-boulevard-new.mp4')
+            file: require('./sb-volume.mp4')
         },
         {
             type: 'narration',

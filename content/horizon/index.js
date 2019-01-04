@@ -100,7 +100,7 @@ module.exports = {
         },
         {
             type: 'video',
-            file: require('./charlies-angels.mp4')
+            file: require('./charlies-angels-volume.mp4')
         },
         {
             type: 'narration',

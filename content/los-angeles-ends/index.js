@@ -37,7 +37,7 @@ module.exports = {
         },
         {
             type: 'video',
-            file: require('./miracle-mile-short.mp4')
+            file: require('./miracle-mile-volume.mp4')
         },
         {
             type: 'narration',

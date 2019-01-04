@@ -119,7 +119,7 @@ module.exports = {
         },
         {
             type: 'video',
-            file: require('./speed.mp4')
+            file: require('./speed-volume.mp4')
         },
         {
             type: 'narration',

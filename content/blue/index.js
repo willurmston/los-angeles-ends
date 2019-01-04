@@ -92,7 +92,7 @@ module.exports = {
         },
         {
             type: 'video',
-            file: require('./magnolia.mp4')
+            file: require('./magnolia-volume.mp4')
         },
         {
             type: 'narration',
