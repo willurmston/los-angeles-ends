@@ -41,7 +41,7 @@ module.exports = {
         {
             type: 'quote',
             markdown: markdown`
-                "So there I was in critical condition with a serious head injury until, as mysterious as it still seems, I returned from comatose near-death to what could only be described as near-life in LA. I was in post-traumatic shock, but also in a form of culture shock. Shards of glass kept coming out of my skin, rising to the surface like diamonds that couldn’t be digested by the flesh. There was too much sunshine, everything was too clean, colors were too bright. I kept trying to see Los Angeles as if it were Hollywood in black and white..."
+                "Two weeks before I moved to Los Angeles I was in a brutal automobile crash — a traumatic form of epistemological break. In a sudden mangle of glass and steel, I went through the windshield. It was as if I had to go through that glass in order to live in Los Angeles. Normally, the windshield acts as a corrective lens framing the world as it reels by and as a transparent protective skin that prevents us from entering the frame. Once I found myself on the other side, inside the frame, reality and fantasy slid into each other in a peculiarly confusing blur..."
             `
         },
         {

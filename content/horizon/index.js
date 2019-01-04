@@ -13,23 +13,44 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                april 2017 and i'm at the hollywood forever cemetery. phil elverum walks on stage, alone save for his acoustic guitar and a small potted plant.
+                april 2017 and i'm coming home to help my dad clean out the house.
+
+                jerry brown declares california's drought over on the day i arrive.
+
+                the state had gone dry in the six years i was away.
             `,
         },
         {
             type: 'narration',
             markdown: markdown`
-                "death is real," he strums.
+                on the plane i watch as brian wilson borrows the words of leonard cohen, dead five months prior, to describe a united states military strike against syria.
 
-                "someone's there and then they're not. it's not for singing about, it's not for making into art."
+                "i'm guided by the beauty of our weapons," he says.
+
+                the next night, i go to the hollywood forever cemetery.
+            `,
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                phil elverum walks on stage, alone save for his acoustic guitar and a small potted plant.
+
+                "death is real," he strums. "someone's there and then they're not. it's not for singing about, it's not for making into art."
 
                 the room, entirely silent, reverberates every word.
             `,
         },
         {
+            type: 'quote',
+            markdown: markdown`
+                "The Hassidim tell a story about the world to come that says everything there will be just as it is here. Just as our room is now, so it will be in the world to come; where our baby sleeps now, there too it will sleep in the other world. And the clothes we wear in this world, those too we will wear there. Everything will be as it is now, just a little different."
+                – Ben Lerner, *10:04*, (2014)
+            `,
+        },
+        {
             type: 'narration',
             markdown: markdown`
-                on *a crow looked at me*, released in march 2017, elverum writes about his wife, genevieve castree, passing away of cancer.
+                on *a crow looked at me*, released in march 2017, phil elverum writes about his wife, [genevieve castree](https://www.drawnandquarterly.com/bubble), dying of cancer.
 
                 her death was sudden — violent and destructive with little regard for processing the end.
 
@@ -39,11 +60,11 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                the record unfurls like a real-time document of elverum's grief, in oscillation between stoic acceptance and pained refusal.
+                the record unfurls like a real-time document of elverum's grief, written and recorded in the fallout, in oscillation between acceptance and refusal.
 
-                it contains both a resignation that "death is real" and a refusal of fate  — "i reject nature. i disagree."
+                its songwriting devastates with specifics: the loneliness of taking out the garbage at night, the chill of proximity when the deceased show up in our dreams, the melancholy that sets in when looking out at the horizon.
 
-                the oscillation, like grief itself, generates a single tone.
+                *a crow looked at me* validated feelings i'd written off as incomprehensible. it taught me how to grieve.
             `,
         },
         {
@@ -62,19 +83,19 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                when i heard those lines for the first time, i broke into tears.
+                after my mom died, the horizon line became a constant fantasy.
 
-                i knew that feeling. i'd tried to write that song.
+                there had to be another world on the other side, one that contained her.
+
+                one just as it is now, but a little different.
             `,
         },
         {
             type: 'narration',
             markdown: markdown`
-                after death, the horizon becomes a fantasy.
+                i was certain that if i could get to the edge of my field of vision — as far away as i could see, as far away as i could perceive — that i could reach her.
 
-                it feels like longing because you think that if you can get from where you are to the horizon — as far away as you can see, as far away as you can perceive — that maybe you can reach the person you've lost.
-
-                maybe you can bring them back.
+                maybe i could bring her back.
             `,
         },
         {
@@ -104,9 +125,9 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                eight years later, in college, i published [an essay](https://www.theindy.org/175) processing my mom's death by reading her book together with two arcade fire records she didn't live to hear — *the suburbs* and *reflektor.*
+                in college, i published [an essay](https://www.theindy.org/175) processing my mom's death by reading her book together with two arcade fire records she didn't live to hear — *the suburbs* and *reflektor.*
 
-                i'd come to the realization that my mom's death, like metaphor, was virtual. *almost* real, but *not quite*.
+                i'd started to view my mom's death as virtual, through a window. *almost* real, but *not quite*.
 
                 like the horizon, just-out-of-reach.
             `,
@@ -129,27 +150,14 @@ module.exports = {
                 Or a shallow sea
                 Could you see me?*
                 – Arcade Fire, “Afterlife," *Reflektor* (2013)
-
-
-            `,
-        },
-        {
-            type: 'quote',
-            markdown: markdown`
-                "While writing this book, the freeways that encircle and bisect Los Angeles were under constant construction; the topography of the road reconfigured itself daily."
-                — Anne Friedberg, *Window Shopping* (1993)
-
-                *Let's go for a drive, see the town tonight
-                There's nothing to do but I don't mind when I'm with you
-                This town's so strange they built it to change
-                And while we sleep we know the streets get rearranged*
-                – Arcade Fire, "Suburban War," *The Suburbs* (2010)
             `,
         },
         {
             type: 'narration',
             markdown: markdown`
-                the day after seeing the mount eerie show, i took my mom's lexus down the habor corridor. i wanted to drive into the horizon, to get just-out-of-reach, to break outside of the screen.
+                the day after seeing the mount eerie show, i took my mom's lexus down the habor corridor.
+
+                i wanted to drive into the horizon, to get just-out-of-reach, to break outside of the screen.
 
                 i drove for an hour and ended up at sunken city, a stretch of san pedro that tumbled into the ocean in a 1929 landslide.
             `,

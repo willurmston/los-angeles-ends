@@ -27,7 +27,7 @@ module.exports = {
 
                 its pylons lift us up and above the city, banking 15 degrees from south to west.
 
-                los angeles pans out as if in [cinemascope](https://www.youtube.com/watch?v=aTx0RJr2Agc), windshield as the camera lens.
+                los angeles pans out as if in cinemascope, windshield as the camera lens.
             `
         },
         {

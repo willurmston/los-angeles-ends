@@ -44,7 +44,7 @@ module.exports = {
                 *In the suburbs, I, I learned to drive
                 And you told me we'd never survive
                 Grab your mother's keys, we're leaving*
-                – Arcade Fire, "The Suburbs" (*The Suburbs*, 2010)
+                – Arcade Fire, "The Suburbs", *The Suburbs* (2010)
 
                 "To be in L.A. without a car is to be at the mercy of whoever will give you a ride. In this way, it both is and isn’t a teenager’s town."
                 – Dayna Tortorici, ["Los Angeles Plays Itself"](https://nplusonemag.com/online-only/city-by-city/los-angeles-plays-itself/), *n+1* (2015)
@@ -55,7 +55,17 @@ module.exports = {
             markdown: markdown`
                 i was fifteen when my mom was diagnosed with cancer. it was the year i learned how to drive.
 
-                i remember my first time behind the wheel, in a silver prius owned by melrose driving school, heading down western to 3rd street, across 3rd to la cienega, up la cienega to sunset, west on sunset to coldwater, then up coldwater to mulholland, tracing the line between the los angeles basin and the san fernando valley.
+                growing up in beachwood canyon, there was nowhere in the neighborhood to walk and only one bus that could take me into the city.
+
+                it stopped ten minutes away, came every half hour, and took twenty minutes to get down the hill. driving was the only way out.
+            `,
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                i remember my first time behind the wheel, in a silver prius owned by melrose driving school.
+
+                i went down western to 3rd street, across 3rd to la cienega, up la cienega to sunset, west on sunset to coldwater, then up coldwater to mulholland, tracing the line between the los angeles basin and the san fernando valley.
 
                 i'm not sure that i said a single word.
             `,
@@ -63,28 +73,62 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                growing up in beachwood canyon, there was nowhere in the neighborhood to walk and only one bus that could take me into the city. it stopped ten minutes away, came every half hour, and took twenty minutes to get down the hill.
-
-                driving was the only way out.
-            `,
-        },
-        {
-            type: 'narration',
-            markdown: markdown`
                 i got my license from the glendale dmv in november 2009, a month after my mom died.
 
-                i drove to valley parties, mostly, where a certain type of anhedonia could always be amplified.
+                i inherited her car, a 2006 lexus rx400h with a gps named natacha — after anna karina's character in *alphaville*.
 
-                i was free, finally. i was also profoundly broken.
-
+                i took it to valley parties, mostly, where a certain type of anhedonia could always be amplified.
             `,
         },
         {
             type: 'narration',
             markdown: markdown`
-                i inherited my mom's car, a 2006 lexus rx400h with a gps named natacha — after anna karina's character in *alphaville*.
-
                 what i wanted most was the long drive home, alone, blasting music.
+
+                i was free, finally.
+
+                i was also profoundly broken.
+            `,
+        },
+        {
+            type: 'video',
+            file: require('./magnolia.mp4')
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                the san fernando valley, bounded by the santa monica mountains in the south, the santa susanas in the northwest, the simi hills to the west, the verdugos to the east, and the san gabriels to the northeast, is naturally dry.
+
+                the tongva lived there for generations before spanish colonizers arrived in the 1770s and established their first settlement — rancho encino, after the oaks that populated so much of the valley.
+
+                a century later, in-laws j.b. lankershim and isaac van nuys built an empire on dry crops, transporting wheat from encino to san pedro, san pedro to europe.
+            `,
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                in the early 1900s, a group of landholders — including harrison otis, the publisher of the *los angeles times*; henry huntington, executive of the southern pacific railroad; fred eaton, former mayor of los angeles; and william mulholland, a civil engineer — started buying up parcels in the valley.
+
+                otis used his paper to stoke fear that los angeles would soon run dry, championing an aqueduct built by mulholland to bring water to the city from the owens valley, over 400 miles away.
+
+                when the aqueduct's final route was revealed, it ran directly through the land that otis, huntington, eaton, and mulholland had purchased.
+            `,
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                the san fernando valley, rich with irrigated orange groves, was incorporated into the city of los angeles in 1915.
+
+                after the aqueduct, los angeles exploded in acreage and populatation.
+
+                the owens valley never recovered.
+            `,
+        },
+        {
+            type: 'quote',
+            markdown: markdown`
+                "In the West, it is said, water flows uphill toward money. And it literally does."
+                – Mark Reisner, *Cadillac Desert* (1986)
             `,
         },
         {
@@ -94,7 +138,7 @@ module.exports = {
 
                 a spiral staircase took us up above the 101, each passing car a blast of wind that buckled our knees.
 
-                we  played frogger, darting back and forth to dodge the shadows of every car that passed below.
+                we played frogger, darting back and forth to dodge the shadows of every car that passed below.
             `,
         },
         {
@@ -123,6 +167,12 @@ module.exports = {
                 as i was finishing this record, cleaning out my childhood bedroom, i found a note from a high school classmate.
 
                 "somehow, being your passenger was the closest i'd gotten to achieving a deeper conversation with you," they wrote.
+            `,
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                i realized how much of myself i'd routed through my car, through the freeway system, through the music i played when i had no other way to feel.
             `,
         },
         {
