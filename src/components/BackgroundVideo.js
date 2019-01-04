@@ -110,6 +110,7 @@ export default class BackgroundVideo extends Component {
                 }
             }
             & canvas {
+                display: block;
                 height: 100vh;
                 image-rendering: auto;
                 image-rendering: crisp-edges;
