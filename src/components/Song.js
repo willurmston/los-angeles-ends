@@ -279,7 +279,7 @@ export default class Song extends Component {
                 cursor: none;
                 user-select: none;
                 @media screen and (min-width: 600px) {
-                    height: 100%;
+                    height: calc(100vh - 70px);
                     transition: transform 0.4s cubic-bezier(.23,.23,.36,.95), top 0.2s cubic-bezier(.23,.23,.36,.95);
                     top: 0;
                 }
@@ -295,7 +295,7 @@ export default class Song extends Component {
                 }
             }
             @media screen and (min-width: 600px) {
-                height: calc(100vh - 70px);
+                height: 100%;
                 box-sizing: border-box;
                 & .HomeButton {
                     position: absolute;
