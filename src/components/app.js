@@ -175,16 +175,13 @@ export default class App extends Component {
 
         return (
             <div class={cx('App', style)} ontouchstart={e => {return true}}>
-                <DelayUnmount
-                    mount={this.state.currentSong === null}
-                    unmountDelay={800}
-                >
+                {this.state.currentSong === null &&
                     <Header
                         onLinerNotesButtonClick={this.scrollToLinerNotes}
                         songs={this.state.songs}
                         onPinClick={this.scrollToSong}
                     />
-                </DelayUnmount>
+                }
                 <div
                     class="songs"
                     ref={element => this.songsElement = element}
@@ -221,10 +218,7 @@ export default class App extends Component {
                         />
                     }
                 </div>
-                <DelayUnmount
-                    mount={this.state.currentSong === null}
-                    unmountDelay={800}
-                >
+                {this.state.currentSong === null &&
                     <LinerNotes
                         color={'blue'}
                         accentColor={'pink'}
@@ -232,7 +226,7 @@ export default class App extends Component {
                         socialLinks={content.socialLinks}
                         credits={content.credits}
                     />
-                </DelayUnmount>
+                }
                 <Router onChange={this.handleRoute}>
                     <div path="/:songSlug"></div>
                     <div default></div>
