@@ -7,12 +7,6 @@ export default class LyricsSlide extends Component {
         this.element.querySelectorAll('p').forEach(p => {
             const innerHTML = '<span>' + p.innerHTML.replace(/\n/g, '</span><span>') + '</span>'
             p.innerHTML = innerHTML
-            if (!bigScreen) {
-                p.querySelectorAll('span').forEach((span, index) => {
-                    span.style.transformOrigin = '20% 50%'
-                    span.style.transform = `rotateZ(${ (Math.random() * 8) - 4 }deg)`
-                })
-            }
         })
     }
 
@@ -46,8 +40,7 @@ export default class LyricsSlide extends Component {
                     white-space: pre-wrap;
                     & span {
                         background: var(--off-white);
-                        padding: 10px 16px;
-                        margin-top: -2px;
+                        padding: 9px 12px;
                         display: inline-block;
                         @media screen and (min-width: 600px) {
                             padding: 10px 20px;
