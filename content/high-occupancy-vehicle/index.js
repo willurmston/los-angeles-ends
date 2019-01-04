@@ -27,7 +27,7 @@ module.exports = {
 
                 its pylons lift us up and above the city, banking 15 degrees from south to west.
 
-                los angeles pans out as if in cinemascope, windshield as the camera lens.
+                los angeles pans out as if in [cinemascope](https://www.youtube.com/watch?v=aTx0RJr2Agc), windshield as the camera lens.
             `
         },
         {
@@ -41,7 +41,7 @@ module.exports = {
             markdown: markdown`
                 when i was growing up, my mom commuted three or four days a week to irvine, where she taught critical theory and film history.
 
-                she took the 5 to and from orange county, and i internalized its landmarks in relation to their ETA.
+                she took the 5 to and from orange county. the drive framed her first book, *window shopping*. i internalized its landmarks in relation to her ETA.
 
                 john wayne airport meant she was just leaving work, disneyland meant an hour away, the citadel outlet mall meant 45 minutes, get the table set for dinner.
             `
@@ -49,17 +49,17 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                i listened to *the suburbs* for the first time while tracing her commute, on the way to an angels game in anaheim.
+                i listened to *the suburbs* for the first time while tracing the same commute.
 
-                isaac and i were in the diamond lane on the 5, zipping past congestion in norwalk.
+                isaac and i were in the diamond lane on the 5, on the way to an angels game in anaheim, zipping past congestion in norwalk.
 
-                it was summer 2010, and for the first time i opened up about the flood of blue that colored every day.
+                it was summer 2010, the first time i tried to put words to the pain that i was certain no peer could understand.
             `
         },
         {
             type: 'narration',
             markdown: markdown`
-                in 2010 and 2011, i drove *the suburbs* endlessly.
+                in 2010 and 2011, i drove *the suburbs* endlessly, [mapping myself into the songs](http://www.thewildernessdowntown.com/).
 
                 when i was most frozen by grief, it was the only way i could thaw into tears.
 
@@ -69,7 +69,7 @@ module.exports = {
         {
             type: 'quote',
             markdown: markdown`
-                "...While writing this book, the freeways that encircle and bisect Los Angeles were under constant construction; the topography of the road reconfigured itself daily. As the new 'Century Freeway' loomed apocalyptically into the future, one could not help but draw parallels between the end of this century and the end of the last." 
+                "...While writing this book, the freeways that encircle and bisect Los Angeles were under constant construction; the topography of the road reconfigured itself daily. As the new 'Century Freeway' loomed apocalyptically into the future, one could not help but draw parallels between the end of this century and the end of the last."
                 — Anne Friedberg, *Window Shopping* (1993)
             `
         },
@@ -80,20 +80,13 @@ module.exports = {
                 Compressed on a tiny screen
                 A dead star collapsing and we could see
                 Something was ending*
-                — Arcade Fire, "Deep Blue," (*The Suburbs*, 2010)
+                — Arcade Fire, "Deep Blue," *The Suburbs* (2010)
 
                 *Let's go for a drive, see the town tonight
                 There's nothing to do but I don't mind when I'm with you
                 This town’s so strange they built it to change
                 And while we sleep we know the streets get rearranged*
-                — Arcade Fire, "Suburban War," (*The Suburbs*, 2010)
-            `
-        },
-        {
-            type: 'quote',
-            markdown: markdown`
-                "...While writing this book, the freeways that encircle and bisect Los Angeles were under constant construction; the topography of the road reconfigured itself daily. As the new 'Century Freeway' loomed apocalyptically into the future, one could not help but draw parallels between the end of this century and the end of the last." 
-                — Anne Friedberg, *Window Shopping* (1993)
+                — Arcade Fire, "Suburban War," *The Suburbs* (2010)
             `
         },
         {
@@ -101,19 +94,19 @@ module.exports = {
             markdown: markdown`
                 the 105, finished in october 1993, five months after i was born, is technically named the glenn anderson freeway, for a democratic representative from san pedro who died shortly after its completion.
 
-                or the el segundo freeway, for its western terminus. or the norwalk freweay, for county at its eastern edge.
-
                 most often, it's called the century freeway, a name pregnant with modernism, expansion, progress.
+
+                when it finally opened, the los angeles freeway system was declared complete.
             `
         },
         {
             type: 'narration',
             markdown: markdown`
-                when the century freeway opened, the los angeles freeway system was declared complete.
+                drafted at the peak of the 20th century, the 105 was finished during the same cultural moment in which frederic jameson published *postmodernism, or, the cultural logic of late capitalism*.
 
-                drafted at the peak of the 20th century, the 105 was finished exactly at the moment frederic jameson published *postmodernism, or, the cultural logic of late capitalism*.
+                in it, he argues that the built environments of los angeles and orange county facilitate new modes of viewing that break from 20th century tradition.
 
-                in it, he argues that ________.
+                from disneyland to the [bonaventure hotel](https://vimeo.com/140975476), these spaces mirror a new mutation in capitalism — a celebration of collapsed time and space.
             `
         },
         {
@@ -121,9 +114,7 @@ module.exports = {
             markdown: markdown`
                 construction of the 105 displaced over 25,000 people.
 
-                the route, drafted at the peak of the 20th century, was finished exactly at the moment frederic jameson put language to the transition between modernism and its post–.
-
-                its construction displaced over 25,000 people and demolished the childhood homes of both the beach boys and the carpenters.
+                it also demolished the childhood homes of both brian wilson and karen carpenter.
             `
         },
         {
@@ -135,29 +126,17 @@ module.exports = {
             markdown: markdown`
                 in *speed*, the 1994 keanu reeves vehicle, a bus cannot go any slower than 50 miles per hour or it will explode.
 
-                it was filmed during the century freeway's construction and ushers in the third by having the bus jump a gap between unfinished sections of suspended highway.
-            `
-        },
-        {
-            type: 'video',
-            file: require('./speed.mp4')
-        },
-        {
-            type: 'narration',
-            markdown: markdown`
-                in *speed*, the 1994 keanu reeves vehicle, a bus cannot go any slower than 50 miles per hour or it will explode.
-
-                it was filmed during the century freeway's construction and ushers in the third act by having the bus jump a gap between unfinished sections of suspended highway.
+                it was filmed during the century freeway's construction and ushers in the third act by having the bus jump a gap between unfinished sections of the judge harry pregerson interchange.
             `
         },
         {
             type: 'narration',
             markdown: markdown`
-                *speed* is a movie about the act of driving los angeles, where each drive is a narrative and each freeway named for a peripheral character.
+                read a certain way, *speed* is a movie about the act of traversing los angeles, where each drive is a narrative arc and each freeway named for a peripheral character.
 
-                think of o.j. simpson, the shot from above. that was in 1994, when i was 1. 
+                it's shot like a police chase, with cinematography alarmingly similar to the aerial coverage of o.j. simpson's ford bronco driving the 5 up from orange county to brentwood.
 
-                i remember watching car chases on local news, then watching *nightcrawler* fictionalize that world. mediated back and forth between modes of capturing reality and modes of representing reality. the windshield does both! 
+                the shots are deeply familiar to me, born to a century where the jump cut between the view through the windshield and the view from above reads like natural language.
             `
         },
         {
@@ -172,9 +151,9 @@ module.exports = {
             markdown: markdown`
                 i drop my partner off at LAX and drive home, eastward, sun setting both in the rearview mirror and in reflection across the library tower.
 
-                i rinse the windshield and turn the wipers on. i'm too shut off to cry.
+                forbidden from the diamond lane, i rinse the windshield and turn the wipers on. i'm too shut off to cry.
 
-                i merge to the right lane, take the directional ramp from I-105 EB to I-110 NB, and wind my way north towards a reconfigured feeling of home.
+                the camera pans out and i see myself take the directional ramp from I-105 EB to I-110 NB, winding my way towards a constantly rearranged feeling of home.
             `
         },
         {

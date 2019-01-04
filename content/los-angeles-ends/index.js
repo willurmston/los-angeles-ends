@@ -13,6 +13,7 @@ module.exports = {
             type: 'narration',
             markdown: markdown`
                 december 2016 and the sun, set but still glowing over glendale, radiates off the hood of my car.
+
                 a pulsating orange rips through the sky, indexing every time i’ve seen los angeles play the apocalypse’s backdrop.
             `,
         },
@@ -22,7 +23,7 @@ module.exports = {
                 i think about childhood nightmares of nuclear bombs exploding on the horizon, of knowing the end is soon and near but not right now or quite yet here.
 
                 i think about *miracle mile*, a movie that my parents showed me when i was too young to process death properly, where missiles come flying over the santa monica mountains and land in the la brea tar pits.
-                
+
                 i think about the episode of *24* where jack bauer cries as a mushroom cloud rises over valencia.
             `,
         },
@@ -39,10 +40,10 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                my mom died in october 2009, while the station fire burned in the san gabriels, and ever since i've had nightmares of los angeles disappearing in a single orange blast.
+                my mom died in october 2009, while the [station fire](https://www.youtube.com/watch?v=vCkRccwAr7Y) burned in the san gabriels, and ever since i've had nightmares of los angeles disappearing in a single orange blast...
 
-                i'll be atop elysian park, where i can see a third of the playing field at dodger stadium. i’ve taken a picnic and a transistor radio to follow the game. santa ana winds cut the air.
-                
+                i'll be sitting atop elysian park, where i can see a third of the playing field at dodger stadium. i’ve taken a picnic and a transistor radio to hear vin scully call the game. i feel santa ana winds cut the air.
+
                 then i turn my head and watch as the light grows closer, warmer, brighter.
             `
         },
@@ -51,9 +52,9 @@ module.exports = {
             markdown: markdown`
                 “i guess that’s it,” i think.
 
-                i wake up in a sweat.
+                i always wake up in a sweat.
 
-                it's my fault — it wouldn’t have happened if i hadn’t looked.   
+                it's my fault — it wouldn’t have happened if i hadn’t looked.
             `
         },
         {
@@ -68,26 +69,19 @@ module.exports = {
                 in 2015, my dad underwent an eye surgery that split his vision, temporarily, in two.
 
                 afterwards, he wrote a short story in which one eye witnesses los angeles ending, downtown disappearing in a single orange blast.
-        },
-        {
-            type: 'quote',
-            markdown: markdown`
-                "...I know what happened to downtown and I know what that means. The only thing I do not know is why I, perhaps alone, was given the privilege – if one might call it that – of seeing it before it occurred."
-                
-                – Howard A. Rodman, "BANG", *Black Clock No. 21* (2016)
             `
         },
         {
             type: 'narration',
             markdown: markdown`
-                to that point, we had never spoken about our shared apparitions.
+                it was impossible for us to reconcile two realities that each felt so true: one in which my mom was still alive, another in which she was irretrievably gone.
             `
         },
         {
             type: 'quote',
             markdown: markdown`
                 "...I know what happened to downtown and I know what that means. The only thing I do not know is why I, perhaps alone, was given the privilege – if one might call it that – of seeing it before it occurred."
-                
+
                 – Howard A. Rodman, "BANG", *Black Clock No. 21* (2016)
             `
         },
@@ -95,10 +89,6 @@ module.exports = {
             type: 'video',
             file: require('./woolsey-fire-small-portrait.mov')
         }*/,
-        {
-            type: 'video',
-            file: require('./woolsey-fire-small-portrait.mov')
-        },
         {
             type: 'narration',
             markdown: markdown`
@@ -131,10 +121,10 @@ module.exports = {
         },
         {
             type: 'quote',
-            markdown: markdown`                
-            “The city burning is Los Angeles’s deepest image of itself... at the time of the 1965 Watts riots what struck the imagination most indelibly were the fires. For days one could drive the Harbor Freeway and see the city on fire, just as we had always known it would be in the end.”
-            
-            – Joan Didion, *Slouching Towards Bethlehem* (1968)
+            markdown: markdown`
+            "It is hard for people who have not lived in Los Angeles to realize how radically the Santa Ana figures in the local imagination. The city burning is Los Angeles's deepest image of itself; Nathanael West perceived that, in *The Day of the Locust*; and at the time of the 1965 Watts riots what struck the imagination most indelibly were the fires. For days one could drive the Harbor Freeway and see the city on fire, just as we had always known it would be in the end."
+
+            – Joan Didion, "Los Angeles Notebook", *Slouching Towards Bethlehem* (1968)
             `
         },
         {
@@ -161,7 +151,11 @@ module.exports = {
                 with an exhale, i try to let go
                 listen to vin tell me what the sky looks like
                 as the pitch comes in at 3 - 0
-                
+
+                [ah yes, thank you mr. sun for your warmth](https://www.youtube.com/watch?v=YKKyDqaM_xI)
+                [look forward to seeing you in the morning](https://www.youtube.com/watch?v=YKKyDqaM_xI)
+                [you have certainly done your job in keeping us warm](https://www.youtube.com/watch?v=YKKyDqaM_xI)
+
                 this is the light that will take us with it
 
                 [i can see clearly now the rain is gone](https://en.wikipedia.org/wiki/I_Can_See_Clearly_Now)

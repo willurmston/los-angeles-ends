@@ -24,7 +24,7 @@ module.exports = {
             type: 'narration',
             markdown: markdown`
                 isaac and i are driving home from shatto lanes in my dad’s sedan. it’s 1am and we want tacos al pastor.
-                
+
                 we’re stopped at the red light going north on western, in the left turn lane waiting for green.
             `
         },
@@ -67,7 +67,7 @@ module.exports = {
             markdown: markdown`
                 i try to accelerate, pull over. but the engine doesn't work and the steering shaft is jammed. we're immobile.
 
-                the cops come, see my zankou t-shirt, and ask if i work there. they like the shawarma.
+                the cops come, see my [zankou](https://www.lamag.com/longform/the-zankou-chicken-murders/) t-shirt, and ask if i work there. they like the shawarma.
             `
         },
         {
@@ -77,9 +77,34 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
+                completed in 1904, sunset boulevard traces a 1780s cattle route along base of the santa monica mountains.
+
+                it begins near the [zanja madre](https://www.youtube.com/watch?v=O3vKQNIsADQ), an aqueduct built by spanish colonizers to carry water from the los angeles river, and ends at the pacific ocean.
+
+                it winds, sometimes violently, lined by palm trees and other non-native plants.
+            `
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                originally called cahuenga road no. 2, in 1885 western avenue was re-named for a cardinal boundary of the city's development.
+
+                it runs in a straight line, uninterrupted from los feliz boulevard in the hollywood hills to the pacific ocean in san pedro, the second-longest north-south street in the city.
+            `
+        },
+        {
+            type: 'quote',
+            markdown: markdown`
+                "First, there was Hollywood, the former village turned suburb turned part of Los Angeles — a specific place with geographic boundaries, constantly changing and contested. Then there was Hollywood as a generally accepted name for the homeland of the American movie industry... a shorthand for the stars and the films. Then, allied to that sense of phsyical place was yet another Hollywood, a more or less intangible place on earth or in the atmosphere above it, to which aspiraants to fame could come and be recognized."
+                — Leo Braudy, *The Hollywood Sign* (2011)
+            `
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
                 like so many before me, i came to los angeles to play myself.
 
-                but then there i was, stalled out at the corner of sunset boulevard and western avenue, an intersection loaded with the poetry of westward expansion, cast in a reboot.
+                but then there i was, stalled out at the corner of sunset boulevard and western avenue, cast in a reboot.
 
                 and i couldn't even break the frame.
             `
@@ -97,7 +122,7 @@ module.exports = {
                 right hand scans the AM bands
                 but this time i hit traffic
                 and the radio went static
-                
+
                 car stalled, engine silent
             `,
         }

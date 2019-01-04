@@ -13,7 +13,7 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                april 2017 and i'm at the hollywood forever cemetery. phil elverum walks on stage, alone save for his acoustic guitar and a small potted plant. 
+                april 2017 and i'm at the hollywood forever cemetery. phil elverum walks on stage, alone save for his acoustic guitar and a small potted plant.
             `,
         },
         {
@@ -32,7 +32,7 @@ module.exports = {
                 on *a crow looked at me*, released in march 2017, elverum writes about his wife, genevieve castree, passing away of cancer.
 
                 her death was sudden — violent and destructive with little regard for processing the end.
-                
+
                 their daughter was two.
             `,
         },
@@ -115,9 +115,9 @@ module.exports = {
             type: 'narration',
             markdown: markdown`
                 in the conclusion to *the virtual window*, my mom writes about the death of french philosopher gilles deleuze, who threw himself from the window of his apartment.
-                
+
                 deleuze wrote frequently about the distinction between the space of the screen and the space outside of it — what he called the *hors-champ*, “a more radical elsewhere, outside homogenous space and time.”
-                
+
                 in his death, my mom ends, deleuze found a way to move out of the frame.
             `,
         },
@@ -125,12 +125,12 @@ module.exports = {
             type: 'quote',
             markdown: markdown`
                 *After life, I think I saw what happens next
-                It was just a glimpse of you, like looking through a window 
+                It was just a glimpse of you, like looking through a window
                 Or a shallow sea
                 Could you see me?*
                 – Arcade Fire, “Afterlife," *Reflektor* (2013)
 
-                
+
             `,
         },
         {
@@ -138,7 +138,7 @@ module.exports = {
             markdown: markdown`
                 "While writing this book, the freeways that encircle and bisect Los Angeles were under constant construction; the topography of the road reconfigured itself daily."
                 — Anne Friedberg, *Window Shopping* (1993)
-                
+
                 *Let's go for a drive, see the town tonight
                 There's nothing to do but I don't mind when I'm with you
                 This town's so strange they built it to change

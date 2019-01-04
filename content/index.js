@@ -37,7 +37,7 @@ module.exports = {
     ],
     // Use asterisks around *someone's name* to make it pink
     credits: markdown`
-        All research, writing, arrangement, engineering, production, and mixing by *Tristan Rodman* unless noted otherwise.
+        All research, writing, arrangement, engineering, production, and mixing by [*Tristan Rodman*](www.tristanrodman.com) unless noted otherwise.
 
         Tracks 2, 3, 4, and 5 contain material sampled from master recordings mixed by *Seth Manchester* at *[Machines With Magnets](http://www.machineswithmagnets.com)* in Pawtucket, RI
         & mastered by *Heba Kadry* at *[Timeless Mastering](http://www.timelessmastering.com/hebakadry/)* in Brooklyn, NY.
@@ -51,7 +51,7 @@ module.exports = {
         *[Will Urmston](http://urmston.xyz)* designed and developed this website.
 
         Jesenya Maldonado drew the homepage map.
-        
+
         *[David Anthony King](http://davidanthonyking.com/)* designed the Simulcast logo.
 
         Dedicated to my mother, *Anne Friedberg*, who is listening, somewhere, on the other side.
