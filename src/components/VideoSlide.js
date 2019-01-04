@@ -45,6 +45,7 @@ export default class VideoSlide extends Component {
         this.setState({
             muted: !this.state.muted
         })
+        if (this.video) this.video.volume = this.props.slide.volume || 1
     }
 
     muteButton() {
@@ -113,6 +114,7 @@ export default class VideoSlide extends Component {
                     bottom: 0;
                     right: 0;
                     cursor: pointer !important;
+                    display: ${this.props.slide.volume && this.props.slide.volume !== 0 ? 'block' : 'none'};
                     & svg {
                         display: block;
                         position: absolute;
