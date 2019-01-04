@@ -183,7 +183,7 @@ export default class Song extends Component {
 
     onclick = e => {
         if (this.props.onclick) this.props.onclick()
-        if (this.props.isOpen && e.target.tagName !== 'A') {
+        if (this.props.isOpen && e.target.tagName !== 'A' && e.target.parentNode.tagName !== 'A') {
             e.pageX < window.innerWidth / 2 ? this.prevSlide() : this.nextSlide()
         }
     }
