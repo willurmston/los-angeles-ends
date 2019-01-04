@@ -52,7 +52,7 @@ export default class App extends Component {
         }
     }
 
-    // Animate into song
+    // Scroll to song and open it
     enterSong = (song) => {
         const songElement = document.querySelector(`.Song#${song.slug}`)
         TweenLite.to( document.scrollingElement, 0.4, {
@@ -74,37 +74,22 @@ export default class App extends Component {
         document.scrollingElement.scrollTop = bigScreen ? offsetTop : offsetTop - (window.innerHeight / 4)
     }
 
-    enterNextSong() {
+    enterNearestSong() {
         const songSections = Array.from(document.querySelectorAll('div.songs > .Song'))
         const scrollTop = document.scrollingElement.scrollTop
-        var accumulatedHeight = 0
-        const next = songSections.find(section => {
-            if (accumulatedHeight >= scrollTop) {
-                return true
-            } else {
-                accumulatedHeight += section.getBoundingClientRect().height
-                return false
-            }
-        })
-        if (next) {
-            route(`/${next.getAttribute('id')}#1`)
-        }
+        const offsetTops = songSections.map(section => utils.offset(section).top)
+        const nearestSong = songSections[utils.nearestNumber(offsetTops, scrollTop)]
+        route(`/${nearestSong.getAttribute('id')}`)
     }
 
-    scrollToSong = (target, duration = 0.4) => {
+    scrollToSection = (target, duration = 0.4) => {
         if (target === 'next') {
-            // Get array of all sections
-            const sections = Array.from(document.querySelectorAll('.Header, div.songs > .Song, .LinerNotes'))
+            // Get array of all sections except Header
+            const sections = Array.from(document.querySelectorAll('div.songs > .Song, .LinerNotes'))
             // cache scrollTop (causes reflow)
             const scrollTop = document.scrollingElement.scrollTop
-            var accumulatedHeight = 0
             target = sections.find(section => {
-                if (accumulatedHeight >= scrollTop) {
-                    return true
-                } else {
-                    accumulatedHeight += section.getBoundingClientRect().height
-                    return false
-                }
+                return utils.offset(section).top - 1 > scrollTop
             })
         } else if (target === 'prev') {
             // Get array of all sections
@@ -112,7 +97,7 @@ export default class App extends Component {
             // cache scrollTop (causes reflow)
             const scrollTop = document.scrollingElement.scrollTop
             target = sections.reverse().find(section => {
-                return section.offsetTop < scrollTop
+                return utils.offset(section).top < scrollTop
             })
         } else if (target.slug) {
             // It's a song object, not a DOM node
@@ -120,17 +105,9 @@ export default class App extends Component {
         }
 
         if (target) {
-            this.setState({
-                pauseBackgrounds: true
-            })
             TweenLite.to( document.scrollingElement, duration, {
-                scrollTop: target.offsetTop,
-                ease: Power1.easeOut,
-                onComplete: (e) => {
-                    this.setState({
-                        pauseBackgrounds: false
-                    })
-                }
+                scrollTop: utils.offset(target).top,
+                ease: Power1.easeOut
             })
         }
     }
@@ -179,7 +156,6 @@ export default class App extends Component {
                     <Header
                         onLinerNotesButtonClick={this.scrollToLinerNotes}
                         songs={this.state.songs}
-                        onPinClick={this.scrollToSong}
                     />
                 }
                 <div
@@ -232,9 +208,10 @@ export default class App extends Component {
                     <div default></div>
                 </Router>
                 <KeyboardListener
-                    onUp={() => {
+                    onUp={e => {
+                        e.preventDefault()
                         if(this.state.currentSong === null) {
-                            this.scrollToSong('prev')
+                            this.scrollToSection('prev')
                         } else {
                             const cycleAmount = this.state.songs.indexOf(this.state.currentSong) - 1
                             // First, animate home
@@ -242,12 +219,13 @@ export default class App extends Component {
                             // Then, scroll to next project
                             setTimeout(() => {
                                 route(`/${utils.cycleArray(this.state.songs, cycleAmount )[0].slug}`, true)
-                            }, 700)
+                            }, 500)
                         }
                     }}
-                    onDown={() => {
+                    onDown={e => {
+                        e.preventDefault()
                         if(this.state.currentSong === null) {
-                            this.scrollToSong('next')
+                            this.scrollToSection('next')
                         } else {
                             const cycleAmount = this.state.songs.indexOf(this.state.currentSong) + 1
                             // First, animate home
@@ -258,7 +236,12 @@ export default class App extends Component {
                             }, 500)
                         }
                     }}
-                    onRight={this.state.currentSong === null ? () => this.enterNextSong() : null}
+                    onRight={e => {
+                        if (this.state.currentSong === null) {
+                            e.preventDefault()
+                            this.enterNearestSong()
+                        }
+                    }}
                     onEsc={() => route('/')}
                 />
             </div>

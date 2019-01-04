@@ -141,7 +141,6 @@ export default class Header extends Component {
 				{bigScreen &&
 					<Map
 						pins={this.props.songs}
-						onPinClick={this.props.onPinClick}
 					/>
 				}
 				{!bigScreen &&
