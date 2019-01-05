@@ -56,7 +56,7 @@ module.exports = {
 
         *[David Anthony King](http://davidanthonyking.com/)* designed the Simulcast logo.
 
-        Endless thanks to Howard A. Rodman, Jay Mamana, Matthew Marsico, Isaac Schneider, and Jesenya Maldonado for their love, collaboration, and support.
+        Endless thanks to Howard A. Rodman, Jay Mamana, Matthew Marsico, Connor McGuigan, Isaac Schneider, and Jesenya Maldonado for their love, collaboration, and support.
 
         Dedicated to my mother, *Anne Friedberg*, who is listening, somewhere, on the other side.
 
