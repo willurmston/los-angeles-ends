@@ -12,6 +12,7 @@ import HomeButton from './HomeButton'
 import ArrowCursor from './ArrowCursor'
 import KeyboardListener from './KeyboardListener'
 import Curtain from './Curtain'
+import DelayUnmount from './DelayUnmount'
 
 // Script is loaded in HTML head
 window.SC.initialize({
@@ -156,6 +157,12 @@ export default class Song extends Component {
             }
         }
 
+        if (!this.props.isOpen && prevProps.isOpen) {
+            this.setState({
+                currentSlideIndex: 0
+            })
+        }
+
         if (this.state.currentSlideIndex !== prevState.currentSlideIndex) {
             this.element.querySelectorAll(`.slide`)[this.state.currentSlideIndex].scrollTop = 0
         }
@@ -183,7 +190,7 @@ export default class Song extends Component {
 
     onclick = e => {
         if (this.props.onclick) this.props.onclick()
-        if (this.props.isOpen && e.target.tagName !== 'A') {
+        if (this.props.isOpen && e.target.tagName !== 'A' && e.target.parentNode.tagName !== 'A') {
             e.pageX < window.innerWidth / 2 ? this.prevSlide() : this.nextSlide()
         }
     }
@@ -259,6 +266,7 @@ export default class Song extends Component {
 
     render() {
         const style = css`
+            display: ${this.props.isVisible ? 'block' : 'none'};
             --song-color: var(--${this.props.song.color});
             background: var(--song-color);
             height: ${this.props.isOpen ? '100vh' : '100vw' };
@@ -266,7 +274,6 @@ export default class Song extends Component {
             position: relative;
             width: 100vw;
             color: var(--off-white);
-            z-index: ${this.props.isOpen ? 10 : 0};
             & .slider {
                 display: flex;
                 position: absolute;
@@ -279,7 +286,7 @@ export default class Song extends Component {
                 cursor: none;
                 user-select: none;
                 @media screen and (min-width: 600px) {
-                    height: 100%;
+                    height: calc(100vh - 70px);
                     transition: transform 0.4s cubic-bezier(.23,.23,.36,.95), top 0.2s cubic-bezier(.23,.23,.36,.95);
                     top: 0;
                 }
@@ -295,7 +302,7 @@ export default class Song extends Component {
                 }
             }
             @media screen and (min-width: 600px) {
-                height: calc(100vh - 70px);
+                height: 100%;
                 box-sizing: border-box;
                 & .HomeButton {
                     position: absolute;
@@ -360,7 +367,20 @@ export default class Song extends Component {
                         })
                     }
                 >
-                    {this.state.slides.map( this.renderSlide )}
+                    {this.state.slides.map( slide => {
+                        if (slide.type === 'title') {
+                            return this.renderSlide(slide)
+                        } else {
+                            return (
+                                <DelayUnmount
+                                    unmountDelay={400}
+                                    mount={this.props.isOpen}
+                                >
+                                    {this.renderSlide(slide)}
+                                </DelayUnmount>
+                            )
+                        }
+                    })}
                 </div>
                 {bigScreen && this.props.isOpen &&
                     <HomeButton

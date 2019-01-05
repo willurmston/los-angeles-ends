@@ -11,7 +11,7 @@ const style = css`
     color: var(--song-color);
     width: 100%;
     z-index: 100;
-    transition: transform 0.4s 0.2s;
+    transition: transform 0.7s;
     will-change: transform;
     @media screen and (min-width: 600px) {
         display: flex;
