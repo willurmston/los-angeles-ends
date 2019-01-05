@@ -5,7 +5,7 @@ module.exports = {
     trackSecret: 's-I6dWk',
     titleLayout: 'center',
     backgroundVideo: require('./hov.mov.mp4'),
-    backgroundPlaybackRate: 0.5,
+    backgroundPlaybackRate: 0.75,
     color: 'red',
     pinX: '65.5%',
     pinY: '49%',

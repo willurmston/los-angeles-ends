@@ -5,7 +5,7 @@ module.exports = {
     trackSecret: 's-zoQ5b',
     titleLayout: 'center',
     backgroundVideo: require('./horizon-2.mov.mp4'),
-    backgroundPlaybackRate: 1,
+    backgroundPlaybackRate: 0.75,
     color: 'pink',
     pinX: '64%',
     pinY: '89%',
