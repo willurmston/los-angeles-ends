@@ -166,21 +166,18 @@ export default class App extends Component {
                         })
                     }
                 >
-                    { content.songs.map( (song, index) => {
-                            return (
-                                <Song
-                                    song={song}
-                                    index={index}
-                                    isOpen={song === this.state.currentSong}
-                                    isVisible={this.state.currentSong === null || song === this.state.currentSong}
-                                    onclick={() => route(`/${song.slug}`)}
-                                    pauseBackground={this.state.pauseBackgrounds}
-                                    showArrowCursor={this.state.showArrowCursor}
-                                    key={song.slug}
-                                />
-                            )
-                        })
-                    }
+                    { content.songs.map( (song, index) => (
+                        <Song
+                            song={song}
+                            index={index}
+                            isOpen={song === this.state.currentSong}
+                            isVisible={this.state.currentSong === null || song === this.state.currentSong}
+                            onclick={() => route(`/${song.slug}`)}
+                            pauseBackground={this.state.pauseBackgrounds}
+                            showArrowCursor={this.state.showArrowCursor}
+                            key={song.slug}
+                        />
+                    ))}
                     {bigScreen && this.state.currentSong === null &&
                         <ArrowCursor
                             visible={this.state.showArrowCursor}
