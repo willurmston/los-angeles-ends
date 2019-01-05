@@ -19,13 +19,21 @@ GAMMA=1.4
 RATE=12
 # The height of the output video, in pixels
 SIZE=320
+# Crossfade Length (seconds)
+FADE_LENGTH=1
+
+# Scale down and set framerate
+#                              Scale down, stay pixelated     auto-levels             pixel format (for browser compat)
+ffmpeg -i $INPUT -r $RATE -vf "scale=-2:$SIZE:flags=neighbor, pp=al, eq=gamma=$GAMMA, format=yuv420p" -y $INPUT-scaled.mp4
+
+# Add a crossfade to video so it loops smoothly
+sh crossfade.sh -o $INPUT-faded.mp4 -f $FADE_LENGTH $INPUT-scaled.mp4
 
 # Make temporary directory to put frames in
 mkdir frames
 
-# Export frames as .png images at the given size
-#                              Scale down, stay pixelated     auto-levels             pixel format (for browser compat)
-ffmpeg -i $INPUT -r $RATE -vf "scale=-2:$SIZE:flags=neighbor, pp=al, eq=gamma=$GAMMA, format=yuv420p" -f image2 frames/img%5d.png
+# Export frames as .png images
+ffmpeg -i $INPUT-faded.mp4 -r $RATE -f image2 frames/img%5d.png
 
 cd frames
 
@@ -51,7 +59,13 @@ done;
 # -tune Optimizes the codec for different media. `stillimage` is optimized for unique frames
 
 cd ..
-ffmpeg -i frames/pimg%5d.png -i frames/palette.png -lavfi "paletteuse=dither=floyd_steinberg:alpha_threshold=0" -preset veryslow -codec:v h264 -pix_fmt yuv420p -b:v 20M -maxrate 30M -bufsize 1M -r $RATE -tune stillimage -sws_flags neighbor -y $INPUT.mp4
+# ffmpeg -r $RATE -i frames/pimg%5d.png -i frames/palette.png -lavfi "paletteuse=dither=floyd_steinberg:alpha_threshold=0" -preset veryslow -codec:v h264 -pix_fmt yuv420p -b:v 20M -maxrate 30M -bufsize 1M -r $RATE -tune stillimage -sws_flags neighbor -movflags faststart -y $INPUT.mp4
+# ffmpeg -r $RATE -thread_queue_size 512 -i frames/pimg%5d.png -i frames/palette.png -lavfi "paletteuse=dither=floyd_steinberg:alpha_threshold=0" -preset veryslow -codec:v h264 -pix_fmt yuv420p -b:v 10M -maxrate 26M -bufsize 1M -r $RATE -tune stillimage -sws_flags neighbor -movflags faststart -y $INPUT.mp4
 
-# Delete frame files
+# CBR, pretty damn good
+ffmpeg -r $RATE -thread_queue_size 512 -i frames/pimg%5d.png -i frames/palette.png -lavfi "paletteuse=dither=floyd_steinberg:alpha_threshold=0" -preset veryslow -codec:v h264 -profile:v high -level:v 4.0 -pix_fmt yuv420p -crf 22 -r $RATE -tune grain -sws_flags neighbor -movflags +faststart -y $INPUT.mp4
+
+# Delete temporary files
+rm "$INPUT-scaled.mp4"
+rm "$INPUT-faded.mp4"
 rm -rf frames
