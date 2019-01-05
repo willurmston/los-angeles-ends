@@ -87,7 +87,6 @@ export default class Song extends Component {
     }
 
     componentDidMount() {
-        this.onhashchange()
         window.addEventListener('hashchange', this.onhashchange)
 
         // Play or pause the video when it enters or leaves the viewport
@@ -148,12 +147,16 @@ export default class Song extends Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if (this.player && this.props.isOpen !== prevProps.isOpen) {
+        if (this.props.isOpen !== prevProps.isOpen) {
+            if (this.player) {
+                if (this.props.isOpen) {
+                    this.player.play()
+                } else {
+                    this.player.pause()
+                }
+            }
             if (this.props.isOpen) {
                 setTimeout(() => this.onhashchange(), 400)
-                this.player.play()
-            } else {
-                this.player.pause()
             }
         }
 
@@ -177,6 +180,7 @@ export default class Song extends Component {
     componentWillUnmount() {
         if (this.player) this.player.pause()
         if (this.observer) this.observer.disconnect()
+        window.removeEventListener('hashchange', this.onhashchange)
     }
 
     onhashchange = () => {
