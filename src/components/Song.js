@@ -156,6 +156,12 @@ export default class Song extends Component {
             }
         }
 
+        if (!this.props.isOpen && prevProps.isOpen) {
+            this.setState({
+                currentSlideIndex: 0
+            })
+        }
+
         if (this.state.currentSlideIndex !== prevState.currentSlideIndex) {
             this.element.querySelectorAll(`.slide`)[this.state.currentSlideIndex].scrollTop = 0
         }
