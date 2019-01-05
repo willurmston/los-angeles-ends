@@ -8,9 +8,8 @@ import content from '../../content/index.js'
 import Router, {route}  from 'preact-router'
 import Match from 'preact-router/match'
 import utils from '../utils'
-// import TweenLite from 'gsap/TweenLite'
-// import { TweenLite } from 'gsap/TweenLite'
-// import TweenLite from '../../node_modules/gsap/TweenLite'
+
+// TweenLite has to be loaded in /src/template.html
 const TweenLite = window.TweenLite
 
 import DelayUnmount from './DelayUnmount'
@@ -43,35 +42,37 @@ export default class App extends Component {
                     route('/')
                     // Then, scroll to next project
                     setTimeout(() => {
-                        this.enterSong(matchingSong)
+                        const songElement = document.querySelector(`.Song#${matchingSong.slug}`)
+                        this.scrollToElement(songElement, () => {
+                            this.setState({
+                                currentSong: matchingSong
+                            })
+                        })
                     }, 500)
                 } else {
-                    this.enterSong(matchingSong)
+                    const songElement = document.querySelector(`.Song#${matchingSong.slug}`)
+                    this.scrollToElement(songElement, () => {
+                        this.setState({
+                            currentSong: matchingSong
+                        })
+                    })
                 }
             }
         }
     }
 
-    // Scroll to song and open it
-    enterSong = (song) => {
-        const songElement = document.querySelector(`.Song#${song.slug}`)
-        TweenLite.to( document.scrollingElement, 0.4, {
-            scrollTop: utils.offset(songElement).top,
-            ease: Power2.easeOut,
-            onComplete: () => {
-                this.setState({
-                    currentSong: song
-                })
-            }
-        })
-    }
+    // Reusable method to scroll to an element at a constant speed
+    scrollToElement(element, onComplete, pixelsPerSec = 1500, maxDuration = 2) {
+        const currentScroll = document.scrollingElement.scrollTop
+        const targetScroll = utils.offset(element).top
+        const delta = Math.abs(targetScroll - currentScroll)
+        const duration = Math.min(delta / pixelsPerSec, maxDuration)
 
-    exitSong = (prevSong) => {
-        const songElement = document.querySelector(`.Song#${prevSong.slug}`)
-        const offsetTop = utils.offset(songElement).top
-        const bigScreen = window.matchMedia('screen and (min-width: 600px)').matches
-        // First, immediately scroll to top of element
-        document.scrollingElement.scrollTop = bigScreen ? offsetTop : offsetTop - (window.innerHeight / 4)
+        TweenLite.to( document.scrollingElement, duration, {
+            scrollTop: targetScroll,
+            ease: Sine.easeInOut,
+            onComplete: onComplete
+        })
     }
 
     enterNearestSong() {
@@ -105,33 +106,24 @@ export default class App extends Component {
         }
 
         if (target) {
-            TweenLite.to( document.scrollingElement, duration, {
-                scrollTop: utils.offset(target).top,
-                ease: Power1.easeOut
-            })
+            this.scrollToElement(target)
         }
-    }
-
-    scrollToLinerNotes = () => {
-        this.setState({
-            pauseBackgrounds: true
-        }, () => {
-            TweenLite.to(document.scrollingElement, 1, {
-        		scrollTop: document.querySelector('footer.LinerNotes').offsetTop,
-        		ease: Power1.easeOut,
-                onComplete: (e) => {
-                    this.setState({
-                        pauseBackgrounds: false
-                    })
-                }
-        	})
-        })
     }
 
     componentDidUpdate(prevProps, prevState) {
         if (this.state.currentSong !== prevState.currentSong) {
             if (this.state.currentSong === null) {
-                this.exitSong(prevState.currentSong)
+                // Immediately scroll to the song we just exited
+                const songElement = document.querySelector(`.Song#${prevState.currentSong.slug}`)
+                const offsetTop = utils.offset(songElement).top
+                const bigScreen = window.matchMedia('screen and (min-width: 600px)').matches
+
+                if (bigScreen) {
+                    document.scrollingElement.scrollTop = offsetTop
+                } else {
+                    // On small screens, center song vertically
+                    document.scrollingElement.scrollTop = offsetTop - (window.innerHeight / 4)
+                }
             }
         }
     }
@@ -154,7 +146,9 @@ export default class App extends Component {
             <div class={cx('App', style)} ontouchstart={e => {return true}}>
                 {this.state.currentSong === null &&
                     <Header
-                        onLinerNotesButtonClick={this.scrollToLinerNotes}
+                        onLinerNotesButtonClick={() => {
+                            this.scrollToElement(document.querySelector('.LinerNotes'))
+                        }}
                         songs={this.state.songs}
                     />
                 }
