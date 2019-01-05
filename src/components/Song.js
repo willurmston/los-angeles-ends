@@ -12,6 +12,7 @@ import HomeButton from './HomeButton'
 import ArrowCursor from './ArrowCursor'
 import KeyboardListener from './KeyboardListener'
 import Curtain from './Curtain'
+import DelayUnmount from './DelayUnmount'
 
 // Script is loaded in HTML head
 window.SC.initialize({
@@ -366,7 +367,20 @@ export default class Song extends Component {
                         })
                     }
                 >
-                    {this.props.isOpen ? this.state.slides.map( this.renderSlide ) : this.renderSlide(this.state.slides[0]) }
+                    {this.state.slides.map( slide => {
+                        if (slide.type === 'title') {
+                            return this.renderSlide(slide)
+                        } else {
+                            return (
+                                <DelayUnmount
+                                    unmountDelay={400}
+                                    mount={this.props.isOpen}
+                                >
+                                    {this.renderSlide(slide)}
+                                </DelayUnmount>
+                            )
+                        }
+                    })}
                 </div>
                 {bigScreen && this.props.isOpen &&
                     <HomeButton
