@@ -29,17 +29,27 @@ const style = css`
             transform: translateY(100%);
         }
     }
+    & button.title {
+        display: block;
+        text-decoration: none;
+        flex-shrink: 0;
+        color: var(--song-color);
+        cursor: pointer;
+    }
+    & button.title:active {
+        opacity: 0.5;
+    }
     & h2 {
         margin: 14px 10px 6px 10px;
         letter-spacing: 0.05em;
         @media screen and (min-width: 600px) {
             flex-shrink: 0;
             font-size: 30px;
-            margin: 0 16px 0 20px;
+            margin: 6px 16px 0 20px;
         }
         @media screen and (min-width: 1000px) {
             font-size: 33px;
-            margin: 0 20px 0 24px;
+            margin: 6px 20px 0 24px;
         }
     }
     & nav {
@@ -128,12 +138,17 @@ export default class Toolbar extends Component {
                         progress={this.props.playerProgress}
                         onclick={this.props.onPlayButtonClick}
                     />
-                    <h2>{this.props.song.title.toUpperCase()}</h2>
+                    <button
+                        class={'title'}
+                        onclick={() => this.props.onSegmentClick(0)}
+                    >
+                        <h2>{this.props.song.title.toUpperCase()}</h2>
+                    </button>
                     <nav>
                         {this.props.song.slides.map( (slide, index) =>
                             <button
-                                class={index < this.props.currentSlideIndex && 'past'}
-                                onclick={() => this.props.onSegmentClick(index)}
+                                class={index + 1 < this.props.currentSlideIndex && 'past'}
+                                onclick={() => this.props.onSegmentClick(index + 1)}
                             ></button>
                         )}
                     </nav>
@@ -144,11 +159,16 @@ export default class Toolbar extends Component {
                 <div
                     class={cx('Toolbar', style, this.props.isOpen ? '' : 'hidden' )}
                 >
-                    <h2>{this.props.song.title.toUpperCase()}</h2>
+                    <button
+                        class={'title'}
+                        onclick={() => this.props.onSegmentClick(0)}
+                    >
+                        <h2>{this.props.song.title.toUpperCase()}</h2>
+                    </button>
                     <nav>
                         {this.props.song.slides.map( (slide, index) =>
                             <button
-                                class={index < this.props.currentSlideIndex && 'past'}
+                                class={index + 1 < this.props.currentSlideIndex && 'past'}
                                 tabindex={-1}
                             ></button>
                         )}
