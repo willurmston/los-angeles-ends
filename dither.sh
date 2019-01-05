@@ -14,7 +14,9 @@ INPUT=$1
 # Color that will replace black in each frame
 BLACK_COLOR=$2
 # Adjust gamma of output (1-2, 2 = very bright)
-GAMMA=1.4
+GAMMA=1
+# Adjust contrast (0-2)
+CONTRAST=1
 # Target framerate
 RATE=12
 # The height of the output video, in pixels
@@ -24,7 +26,7 @@ FADE_LENGTH=1
 
 # Scale down and set framerate
 #                              Scale down, stay pixelated     auto-levels             pixel format (for browser compat)
-ffmpeg -i $INPUT -r $RATE -vf "scale=-2:$SIZE:flags=neighbor, pp=al, eq=gamma=$GAMMA, format=yuv420p" -y $INPUT-scaled.mp4
+ffmpeg -i $INPUT -r $RATE -vf "scale=-2:$SIZE:flags=neighbor, pp=al, eq=gamma=$GAMMA:contrast=$CONTRAST, format=yuv420p" -y $INPUT-scaled.mp4
 
 # Add a crossfade to video so it loops smoothly
 sh crossfade.sh -o $INPUT-faded.mp4 -f $FADE_LENGTH $INPUT-scaled.mp4
