@@ -37,7 +37,9 @@ module.exports = {
     ],
     // Use asterisks around *someone's name* to make it pink
     credits: markdown`
-        All research, writing, arrangement, engineering, production, and mixing by [*Tristan Rodman*](www.tristanrodman.com) unless noted otherwise.
+        *END CREDITS*
+
+        All research, writing, performance, arrangement, engineering, production, and mixing by *[Tristan Rodman](www.tristanrodman.com)* unless noted here.
 
         Tracks 2, 3, 4, and 5 contain material sampled from master recordings mixed by *Seth Manchester* at *[Machines With Magnets](http://www.machineswithmagnets.com)* in Pawtucket, RI
         & mastered by *Heba Kadry* at *[Timeless Mastering](http://www.timelessmastering.com/hebakadry/)* in Brooklyn, NY.
@@ -54,8 +56,10 @@ module.exports = {
 
         *[David Anthony King](http://davidanthonyking.com/)* designed the Simulcast logo.
 
+        Endless thanks to Howard A. Rodman, Jay Mamana, Matthew Marsico, Connor McGuigan, Isaac Schneider, and Jesenya Maldonado for their love, collaboration, and support.
+
         Dedicated to my mother, *Anne Friedberg*, who is listening, somewhere, on the other side.
 
-        Endless thanks to Howard A. Rodman, J. Mamana, Matthew Marsico, Connor McGuigan, Isaac Schneider, and Jesenya Maldonado for their love, collaboration, and support.
+        📡 – *[Simulcast](http://www.simulcast.fm)*
     `
 }

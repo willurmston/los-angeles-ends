@@ -121,7 +121,7 @@ module.exports = {
 
                 after the aqueduct, los angeles exploded in acreage and populatation.
 
-                the owens valley never recovered.
+                [the owens valley never recovered](https://www.latimes.com/local/california/la-me-owens-valley-eminent-domain-20170712-story.html).
             `,
         },
         {
@@ -159,7 +159,10 @@ module.exports = {
         },
         {
             type: 'video',
-            file: require('./magnolia.mp4')
+            file: require('./nightcrawler-volume.mp4'),
+            markdown: markdown`
+                *Nightcrawler* (2014)
+            `,
         },
         {
             type: 'narration',
