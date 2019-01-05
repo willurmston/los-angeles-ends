@@ -23,7 +23,7 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                on the plane i watch as brian wilson borrows the words of leonard cohen, dead five months prior, to describe a united states military strike against syria.
+                on the plane i watch as brian williams borrows the words of leonard cohen, dead five months prior, to describe a united states military strike against syria.
 
                 "i'm guided by the beauty of our weapons," he says.
 
