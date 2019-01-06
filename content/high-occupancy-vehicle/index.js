@@ -39,9 +39,9 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                when i was growing up, my mom commuted three or four days a week to irvine, where she taught critical theory and film history.
+                when i was growing up, my mom commuted three or four days a week to irvine, where she taught critical theory and visual studies.
 
-                she took the 5 to and from orange county. the drive framed her first book, *window shopping*. i internalized its landmarks in relation to her ETA.
+                she took the 5 to and from orange county, a drive that framed her first book, *window shopping*. i internalized its landmarks in relation to her ETA.
 
                 john wayne airport meant she was just leaving work, disneyland meant an hour away, the citadel outlet mall meant 45 minutes, get the table set for dinner.
             `
@@ -144,6 +144,9 @@ module.exports = {
             markdown: markdown`
                 "Some people learn Italian so they can read Dante in the original; I learned to drive so I could read Los Angeles in the original."
                 — Reyner Banham, *Los Angeles: An Architecture of Four Ecologies* (1971)
+
+                "Driving is a spectacular form of amnesia. Everything is to be discovered, everything to be obliterated."
+                – Jean Baudrillard, *America* (1986)
             `
         },
         {

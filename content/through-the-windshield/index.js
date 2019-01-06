@@ -33,7 +33,7 @@ module.exports = {
             markdown: markdown`
                 as the light on sunset turns from yellow to red, a car swerves through the intersection and into the driver-side door.
 
-                they speed away, pushing off the side panel. i see only headlights.
+                it speeds away, pushing off the side panel. i see only headlights.
 
                 my turn signal blinks off leo's taco truck sign.
             `
@@ -47,11 +47,29 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                right before my mom moved to los angeles, she was in a car crash too. it was 1985, seven years before i was born.
+                right before my mom moved to los angeles, she was in a car crash too.
 
-                on the way back from her father’s funeral, her mother stopped the car short. not wearing a seatbelt, my mom flew through the windshield.
+                it was 1985, seven years before i was born.
+            `
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                she was on the way back from her father’s *yahrzeit*, a jewish tradition honoring the one-year anniversary of a parent's death.
 
-                it's been told to me by family and friends that, before this accident, my mom never have wanted to have children. i'm told, also, that she very nearly died there and then.
+                her mother stopped the car short.
+
+                not wearing a seatbelt, my mom flew through the windshield.
+            `
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                it's been told to me by family and friends that, before this accident, my mom never have wanted to have children.
+
+                i'm told, also, that she very nearly died there and then.
+
+                each of the 24 years that followed were, for her, a bonus.
             `
         },
         {

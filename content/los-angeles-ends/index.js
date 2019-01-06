@@ -68,7 +68,7 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                in 2015, my dad underwent an eye surgery that split his vision, temporarily, in two.
+                in 2015, my dad underwent surgery to correct his vision, which had split, temporarily, in two.
 
                 afterwards, he wrote a short story in which one eye witnesses los angeles ending, downtown disappearing in a single orange blast.
             `

@@ -50,7 +50,7 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                on *a crow looked at me*, released in march 2017, phil elverum writes about his wife, [genevieve castree](https://www.drawnandquarterly.com/bubble), dying of cancer.
+                on *a crow looked at me*, the mount eerie record released in march 2017, phil elverum writes about his wife, [genevieve castree](https://www.drawnandquarterly.com/bubble), dying of cancer.
 
                 her death was sudden — violent and destructive with little regard for processing the end.
 
