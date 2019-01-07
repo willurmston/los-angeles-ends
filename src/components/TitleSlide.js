@@ -42,6 +42,8 @@ export default class TitleSlide extends Component {
                 cursor: none;
                 -webkit-tap-highlight-color: transparent;
                 @media screen and (min-width: 600px) {
+                    position: relative;
+                    top: 35px;
                     pointer-events: none;
                 }
             }

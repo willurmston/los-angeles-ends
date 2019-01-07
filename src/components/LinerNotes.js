@@ -124,6 +124,7 @@ const style = css`
         background: var(--off-white);
         padding: 20px 20px;
         line-height: 1.45;
+        overflow-x: hidden;
         @media screen and (min-width: 600px) {
             width: 50%;
             padding: 32px 32px;
@@ -134,17 +135,49 @@ const style = css`
             border-right: 2px solid var(--color);
             border-bottom: 2px solid var(--color);
         }
-        & h2 {
+        & h1 {
             letter-spacing: 1px;
-            color: var(--color);
+            color: var(--accent-color);
+            margin-top: 2em;
             @media screen and (min-width: 600px) {
                 margin-top: 0;
                 letter-spacing: 4px;
             }
         }
+        & h2 {
+            letter-spacing: 1px;
+            color: var(--color);
+            margin-top: 0;
+            @media screen and (min-width: 600px) {
+                margin-top: 2em;
+                letter-spacing: 4px;
+            }
+        }
+        & h2:nth-child(1) {
+            margin-top: 0;
+        }
+        & h2.header {
+            border-top: none;
+            margin-top: 1em;
+            color: var(--accent-color);
+        }
         & div {
+            & h2:not(:first-child)::before {
+                content: '';
+                display: block;
+                width: 3000px;
+                position: relative;
+                left: -64px;
+                background: var(--color);
+                height: 2px;
+                margin-bottom: 2em;
+            }
             max-width: 550px;
             color: var(--color);
+            & p {
+                white-space: pre-wrap;
+                font-size: 18px;
+            }
             & em {
                 font-style: normal;
                 color: var(--accent-color);
@@ -194,7 +227,7 @@ export default class LinerNotes extends Component {
                     </a>
                 </section>
                 <section class="credits">
-                    <h2>LOS ANGELES ENDS</h2>
+                    <h1 class="header">END CREDITS</h1>
                     <div dangerouslySetInnerHTML={{__html: this.props.credits}}></div>
                 </section>
             </footer>

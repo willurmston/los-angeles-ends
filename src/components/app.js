@@ -166,7 +166,7 @@ export default class App extends Component {
                         })
                     }
                 >
-                    { content.songs.map( (song, index) => (
+                    {content.songs.map( (song, index) => (
                         <Song
                             song={song}
                             index={index}
