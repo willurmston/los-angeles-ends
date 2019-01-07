@@ -37,7 +37,7 @@ module.exports = {
     ],
     // Use asterisks around *someone's name* to make it pink
     credits: markdown`
-        *END CREDITS*
+        ## MUSIC
 
         All research, writing, performance, arrangement, engineering, production, and mixing by *[Tristan Rodman](www.tristanrodman.com)* unless noted here.
 
@@ -50,13 +50,17 @@ module.exports = {
 
         Tracks 2 and 4 feature recordings of the ARP 2500 at Brown University sequenced using *[Braid](http://braid.live/)*, written in Python by *[Brian House](https://brianhouse.net/)*.
 
-        *[Will Urmston](http://urmston.xyz)* designed and developed this website.
+        ## WEBSITE
+
+        *[Will Urmston](http://urmston.website)* designed and developed this website. [View source.](https://github.com/simulcast/los-angeles-ends)
 
         Jesenya Maldonado drew the homepage map.
 
         *[David Anthony King](http://davidanthonyking.com/)* designed the Simulcast logo.
 
-        Endless thanks to Howard A. Rodman, Jay Mamana, Matthew Marsico, Connor McGuigan, Isaac Schneider, and Jesenya Maldonado for their love, collaboration, and support.
+        ## ACKNOWLEDGEMENTS
+
+        Endless thanks to Howard A. Rodman, Jay Mamana, Matthew Marsico, Isaac Schneider, and Jesenya Maldonado for their love, collaboration, and support.
 
         Dedicated to my mother, *Anne Friedberg*, who is listening, somewhere, on the other side.
 
