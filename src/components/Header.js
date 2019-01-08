@@ -3,7 +3,6 @@ import {css, cx} from 'emotion'
 import Logo from './Logo'
 import ArrowCursor from './ArrowCursor'
 import Map from './Map'
-import RadialBackground from './RadialBackground'
 
 const headerStyle = css`
 	position: relative;
@@ -22,7 +21,8 @@ const headerStyle = css`
 		font-size: 24px;
 		overflow: hidden;
 		margin-bottom: 20px;
-		background: var(--song-color);
+		background-color: var(--song-color);
+		background-image: repeating-radial-gradient(circle at 80% 50%, transparent, transparent 9px, var(--off-white) 10px, transparent 11px);
 		border-bottom: 2px solid var(--song-color);
 	}
 	& .title {
@@ -135,9 +135,6 @@ export default class Header extends Component {
 				class={cx('Header', headerStyle)}
 				ref={element => this.element = element}
 			>
-				{bigScreen &&
-					<RadialBackground />
-				}
 				{bigScreen &&
 					<Map
 						pins={this.props.songs}

@@ -1,7 +1,6 @@
 import {h, Component} from 'preact'
 import {css, cx} from 'emotion'
 import Logo from './Logo'
-import RadialBackground from './RadialBackground'
 import getLatestCommit from './getLatestCommit'
 
 const style = css`
@@ -24,21 +23,22 @@ const style = css`
         color: var(--off-white);
         padding: 30px 20px;
         overflow: hidden;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.5;
+            background-image: repeating-radial-gradient(circle at 130% -20%, transparent, transparent 8px, var(--off-white) 9px, transparent 10px);
+        }
         & .content {
             position: relative;
             width: 100%;
             flex-direction: column;
-        }
-        & .RadialBackground {
-            position: absolute;
-            opacity: 0.7;
-            & svg {
-                min-height: 100%;
-                right: -140%;
-                @media screen and (min-width: 1000px) {
-                    right: -100%;
-                }
-            }
         }
         & h2 {
             width: 100%;
@@ -273,7 +273,6 @@ export default class LinerNotes extends Component {
                 ref={element => this.element = element}
             >
                 <section class="links">
-                    <RadialBackground />
                     <div class="content">
                         <h2>LISTEN</h2>
                         <ul>
