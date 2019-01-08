@@ -90,7 +90,7 @@ module.exports = {
         /*{
             type: 'video',
             file: require('./woolsey-fire-small-portrait.mov')
-        }*/,
+        },*/
         {
             type: 'narration',
             markdown: markdown`

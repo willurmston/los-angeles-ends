@@ -38,7 +38,7 @@ module.exports = {
     // Use asterisks around *someone's name* to make it pink
     credits: markdown`
 
-        All research, writing, performance, arrangement, engineering, production, and mixing by *[Tristan Rodman](www.tristanrodman.com)* unless noted here.
+        Research, writing, performance, arrangement, engineering, production, and re-mixing by *[Tristan Rodman](www.tristanrodman.com)*.
 
         ## SOUND
 
