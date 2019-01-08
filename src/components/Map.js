@@ -5,9 +5,9 @@ const style = css`
     width: auto;
     height: 100%;
     position: absolute;
-    right: -20%;
+    right: -20vh;
     overflow: visible;
-    @media screen and (min-width: 1500px) {
+    @media screen and (min-width: 1800px) {
         right: 0;
     }
     & img {
