@@ -13,7 +13,7 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                octboer 2010 and i feel like i'm sinking. i stumble out of bed, wander into the living room.
+                october 2010 and i feel like i'm sinking. i stumble out of bed, wander into the living room.
 
                 my mom is sitting down, sipping a cappuccino, word document open on her titanium powerbook g4. light floods the windows.
 

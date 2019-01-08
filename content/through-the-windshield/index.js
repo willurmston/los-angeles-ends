@@ -113,7 +113,7 @@ module.exports = {
         {
             type: 'quote',
             markdown: markdown`
-                "First, there was Hollywood, the former village turned suburb turned part of Los Angeles — a specific place with geographic boundaries, constantly changing and contested. Then there was Hollywood as a generally accepted name for the homeland of the American movie industry... a shorthand for the stars and the films. Then, allied to that sense of phsyical place was yet another Hollywood, a more or less intangible place on earth or in the atmosphere above it, to which aspiraants to fame could come and be recognized."
+                "First, there was Hollywood, the former village turned suburb turned part of Los Angeles — a specific place with geographic boundaries, constantly changing and contested. Then there was Hollywood as a generally accepted name for the homeland of the American movie industry... a shorthand for the stars and the films. Then, allied to that sense of phsyical place was yet another Hollywood, a more or less intangible place on earth or in the atmosphere above it, to which aspirants to fame could come and be recognized."
                 — Leo Braudy, *The Hollywood Sign* (2011)
             `
         },
