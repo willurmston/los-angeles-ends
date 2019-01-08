@@ -305,6 +305,31 @@ export default class Song extends Component {
                     }
                 }
             }
+            & button.play-song {
+                display: block;
+                position: absolute;
+                padding: 11px 19px 10px 20px;
+                font-size: 20px;
+                letter-spacing: 0.1em;
+                background: var(--song-color);
+                color: var(--off-white);
+                & .ay {
+                    letter-spacing: 0;
+                }
+                bottom: 90px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                cursor: pointer;
+                z-index: 1;
+                transition: transform 0.4s, opacity 0.1s;
+                opacity: ${this.props.isOpen ? 0 : 1};
+                transform: ${this.props.isOpen ? 'translateY(80px)' : 'translateY(0)'};
+                &:hover {
+                    background: var(--off-white);
+                    color: var(--song-color);
+                }
+            }
             @media screen and (min-width: 600px) {
                 height: 100%;
                 box-sizing: border-box;
@@ -387,6 +412,14 @@ export default class Song extends Component {
                         }
                     })}
                 </div>
+                {bigScreen &&
+                    <button
+                        class="play-song"
+                        onclick={() => route(`/${this.props.song.slug}`)}
+                    >
+                        <span>PL<span class="ay">AY</span> SONG</span>
+                    </button>
+                }
                 {bigScreen && this.props.isOpen &&
                     <HomeButton
                         onclick={() => route('/')}
