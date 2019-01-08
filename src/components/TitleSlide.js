@@ -41,10 +41,11 @@ export default class TitleSlide extends Component {
                 text-decoration: none;
                 cursor: none;
                 -webkit-tap-highlight-color: transparent;
+                transition: transform 0.4s;
                 @media screen and (min-width: 600px) {
                     position: relative;
-                    top: 35px;
                     pointer-events: none;
+                    transform: ${this.props.songIsOpen ? 'none' : 'translateY(35px)'};
                 }
             }
             & .play-song-button {

@@ -22,7 +22,7 @@ window.SC.initialize({
 const arrowButtonStyle = css`
     position: absolute;
     top: 0;
-    bottom: 0;
+    bottom: 70px;
     margin: auto 0;
     width: 50px;
     height: 50px;
