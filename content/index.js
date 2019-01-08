@@ -52,9 +52,9 @@ module.exports = {
 
         ## DESIGN
 
-        *[Will Urmston](http://urmston.website)* designed and developed this website. [View source.](https://github.com/simulcast/los-angeles-ends)
         Jesenya Maldonado drew the homepage map.
         *[David Anthony King](http://davidanthonyking.com/)* drew the Simulcast logo.
+        *[Will Urmston](http://urmston.website)* designed and developed this website. [View source.](https://github.com/simulcast/los-angeles-ends)
 
         ## ACKNOWLEDGEMENTS
 
