@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "npm run -s dev",
-    "build": "preact build --template src/template.html --no-prerender && cp src/.htaccess build",
+    "build": "preact build --template src/template.html --no-prerender && cp src/_redirects build",
     "serve": "preact build --template src/template.html && preact serve",
     "dev": "preact watch --template src/template.html",
     "lint": "eslint src",
