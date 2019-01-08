@@ -1,4 +1,5 @@
 import path from 'path'
+import asyncPlugin from 'preact-cli-plugin-async'
 
 export default function(config, env, helpers) {
     // Use custom markdown-loader for scripts in content folder
@@ -29,4 +30,6 @@ export default function(config, env, helpers) {
             name: 'assets/[name].[ext]'
         }
     }
+
+    asyncPlugin(config)
 }

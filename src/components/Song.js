@@ -344,6 +344,7 @@ export default class Song extends Component {
                     currentSlideIndex={this.state.currentSlideIndex}
                     isOpen={this.props.isOpen}
                     song={this.props.song}
+                    slides={this.state.slides}
                     playerState={this.state.playerState}
                     playerProgress={this.state.playerProgress}
                     onPlayButtonClick={this.onPlayButtonClick}
