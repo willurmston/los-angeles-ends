@@ -2,6 +2,7 @@ import {h, Component} from 'preact'
 import {css, cx} from 'emotion'
 import Logo from './Logo'
 import RadialBackground from './RadialBackground'
+import getLatestCommit from './getLatestCommit'
 
 const style = css`
     --color: var(--blue);
@@ -161,6 +162,39 @@ const style = css`
             margin-top: 1em;
             color: var(--accent-color);
         }
+        & .latest-commit {
+            display: block;
+            background: var(--off-white);
+            color: var(--color);
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 0.8em;
+            border-radius: 2px;
+            overflow: hidden;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 1em;
+            background: var(--color);
+            color: var(--off-white);
+            & header {
+                border-bottom: 1px solid var(--off-white);
+                padding: 6px 6px 2px;
+            }
+            & main {
+                position: relative;
+                display: flex;
+            }
+            & main > * {
+                padding: 6px 6px 2px;
+            }
+            & .hash {
+                border-right: 1px solid var(--off-white);
+                display: block;
+            }
+            &:hover, &:active {
+                --color: var(--accent-color);
+                --off-white: var(--color;)
+            }
+        }
         & div {
             & h2:not(:first-child)::before {
                 content: '';
@@ -199,12 +233,44 @@ export default class LinerNotes extends Component {
         return false
     }
 
+    async componentDidMount() {
+        const githubLink = this.element.querySelector('a[href="https://github.com/simulcast/los-angeles-ends"]')
+        if (githubLink) {
+            const commit = await getLatestCommit('simulcast','los-angeles-ends','development')
+            if (commit) {
+                const date = new Date(commit.author.date)
+                const day = date.toLocaleDateString({
+                    month: 'short',
+                    day: 'numeric',
+                    year: 'numeric'
+                })
+                const time = date.toLocaleTimeString({
+                    hour: 'numeric',
+                    minute: 'numeric',
+                    second: 'numeric'
+                })
+
+                const widget = document.createElement('a')
+                widget.setAttribute('href', commit.html_url)
+                widget.setAttribute('target', '_blank')
+
+                widget.classList.add('latest-commit')
+
+                widget.innerHTML = `<header>Latest commit by ${commit.author.name} on ${day} at ${time}</header>`
+                widget.innerHTML += `<main><span class="hash">${commit.sha.substring(0,7)}</span> <span>"${commit.message.replace(/\n/g, ' ')}"</span></main>`
+
+                githubLink.parentNode.replaceChild(widget, githubLink)
+            }
+        }
+    }
+
     render() {
         const bigScreen = window.matchMedia('screen and (min-width: 600px)').matches
 
         return (
             <footer
                 class={cx('LinerNotes', style, this.props.class)}
+                ref={element => this.element = element}
             >
                 <section class="links">
                     <RadialBackground />
