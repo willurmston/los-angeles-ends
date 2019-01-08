@@ -236,7 +236,7 @@ export default class LinerNotes extends Component {
     async componentDidMount() {
         const githubLink = this.element.querySelector('a[href="https://github.com/simulcast/los-angeles-ends"]')
         if (githubLink) {
-            const commit = await getLatestCommit('simulcast','los-angeles-ends','development')
+            const commit = await getLatestCommit('simulcast','los-angeles-ends','master')
             if (commit) {
                 const date = new Date(commit.author.date)
                 const day = date.toLocaleDateString({
