@@ -145,10 +145,10 @@ export default class Toolbar extends Component {
                         <h2>{this.props.song.title.toUpperCase()}</h2>
                     </button>
                     <nav>
-                        {this.props.song.slides.map( (slide, index) =>
+                        {this.props.slides.map( (slide, index) =>
                             <button
-                                class={index + 1 < this.props.currentSlideIndex && 'past'}
-                                onclick={() => this.props.onSegmentClick(index + 1)}
+                                class={index - 1 < this.props.currentSlideIndex && 'past'}
+                                onclick={() => this.props.onSegmentClick(index)}
                             ></button>
                         )}
                     </nav>
@@ -166,9 +166,9 @@ export default class Toolbar extends Component {
                         <h2>{this.props.song.title.toUpperCase()}</h2>
                     </button>
                     <nav>
-                        {this.props.song.slides.map( (slide, index) =>
+                        {this.props.slides.map( (slide, index) =>
                             <button
-                                class={index + 1 < this.props.currentSlideIndex && 'past'}
+                                class={index - 1 < this.props.currentSlideIndex && 'past'}
                                 tabindex={-1}
                             ></button>
                         )}
