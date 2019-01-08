@@ -19,6 +19,38 @@ window.SC.initialize({
     client_id: 'e247c5d6731ba617c24462912ff16e29'
 })
 
+const arrowButtonStyle = css`
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 50px;
+    height: 50px;
+    & svg {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+    }
+    &.left {
+        left: 20px;
+        transform: rotate(180deg);
+    }
+    &.right {
+        right: 20px;
+    }
+`
+
+const ArrowButton = ({...props}) => (
+    <button
+        onclick={props.onclick}
+        class={cx('ArrowButton', arrowButtonStyle, props.direction)}
+    >
+        <svg  viewBox="-4 -4 86 104" version="1.1">
+            <polygon fill-rule="evenodd" points="82 50 0 100 1.16529009e-14 0" fill="var(--off-white)" stroke="transparent" stroke-width="4px" />
+        </svg>
+    </button>
+)
+
 export default class Song extends Component {
     constructor(props) {
         super(props)
@@ -375,6 +407,24 @@ export default class Song extends Component {
                     onPlayButtonClick={this.onPlayButtonClick}
                     onSegmentClick={this.setCurrentSlide}
                 />
+                {bigScreen && this.state.currentSlideIndex > 0 &&
+                    <ArrowButton
+                        direction={'left'}
+                        onclick={e => {
+                            e.stopPropagation()
+                            this.prevSlide()
+                        }}
+                    />
+                }
+                {bigScreen &&
+                    <ArrowButton
+                        direction={'right'}
+                        onclick={e => {
+                            e.stopPropagation()
+                            this.nextSlide()
+                        }}
+                    />
+                }
                 {bigScreen &&
                     <ArrowCursor
                         visible={this.props.isOpen && this.props.showArrowCursor && this.state.showArrowCursor}
