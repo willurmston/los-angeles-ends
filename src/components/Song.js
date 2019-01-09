@@ -339,16 +339,18 @@ export default class Song extends Component {
             }
             & button.play-song {
                 display: block;
+                width: 170px;
                 position: absolute;
-                padding: 11px 19px 10px 20px;
+                padding: 11px 0px 10px 2px;
                 font-size: 20px;
+                text-align: center;
                 letter-spacing: 0.1em;
                 background: var(--song-color);
                 color: var(--off-white);
                 & .ay {
                     letter-spacing: 0;
                 }
-                bottom: 90px;
+                bottom: 84px;
                 left: 0;
                 right: 0;
                 margin: 0 auto;
