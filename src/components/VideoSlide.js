@@ -76,36 +76,33 @@ export default class VideoSlide extends Component {
             justify-content: center;
             flex-direction: center;
             align-items: flex-start;
+            align-content: center;
             @media screen and (min-width: 600px) {
                 align-items: center;
             }
             & .content {
                 position: relative;
                 margin-top: 56px;
-                width: 100%;
                 max-width: calc(100% - 30px);
                 height: auto;
-                border: 10px solid var(--off-white);
+                border: 8px solid var(--off-white);
                 overflow: hidden;
                 background: var(--off-white);
                 @media screen and (min-width: 600px) {
-                    margin-top: -50px;
+                    border: 10px solid var(--off-white);
+                    margin-top: 0;
                     height: auto;
-                    width: 100%;
-                    max-width: 70vw;
+                    max-width: calc(100vw - 300px);
+                    max-height: 70vh;
                 }
                 & .video-wrapper {
                     position: relative;
                     & video {
                         display: block;
                         width: 100%;
+                        height: auto;
                         opacity: ${!this.state.firstView && this.state.loaded ? 1 : 0};
                         transition: opacity 0.3s 0.3s ease-out;
-                        @media screen and (min-width: 600px) {
-                            width: 100%;
-                            max-width: 70vw;
-                            max-height: 70vh;
-                        }
                     }
                 }
                 & .caption {
@@ -116,17 +113,25 @@ export default class VideoSlide extends Component {
                 }
                 & button.mute {
                     position: absolute;
-                    width: 80px;
-                    height: 80px;
+                    width: 60px;
+                    height: 60px;
                     bottom: 0;
                     right: 0;
                     cursor: pointer !important;
                     display: ${(this.props.slide.volume || this.props.slide.volume !== 0) ? 'block' : 'none'};
+                    @media screen and (min-width: 600px) {
+                        width: 80px;
+                        height: 80px;
+                    }
                     & svg {
                         display: block;
                         position: absolute;
-                        bottom: 20px;
-                        right: 20px;
+                        bottom: 10px;
+                        right: 10px;
+                        @media screen and (min-width: 600px) {
+                            bottom: 20px;
+                            right: 20px;
+                        }
                     }
                 }
             }
