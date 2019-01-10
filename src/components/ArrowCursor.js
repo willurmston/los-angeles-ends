@@ -1,5 +1,11 @@
 import {h, Component} from 'preact'
-import {css, cx} from 'emotion'
+import {css, cx, injectGlobal} from 'emotion'
+
+injectGlobal`
+    html[data-whatintent="touch"] .ArrowCursor {
+        display: none;
+    }
+`
 
 const style = css`
     position: fixed;
