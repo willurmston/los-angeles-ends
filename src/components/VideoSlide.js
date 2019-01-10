@@ -75,36 +75,43 @@ export default class VideoSlide extends Component {
             display: flex;
             justify-content: center;
             flex-direction: center;
+            align-items: flex-start;
             @media screen and (min-width: 600px) {
                 align-items: center;
             }
             & .content {
                 position: relative;
-                margin-top: 30px;
-                height: calc(100vh - 240px);
-                width: calc(100% - 60px);
+                margin-top: 56px;
+                width: 100%;
+                max-width: calc(100% - 30px);
+                height: auto;
                 border: 10px solid var(--off-white);
                 overflow: hidden;
                 background: var(--off-white);
                 @media screen and (min-width: 600px) {
                     margin-top: -50px;
-                    width: auto;
                     height: auto;
                     width: 100%;
                     max-width: 70vw;
                 }
-                & video {
-                    display: block;
-                    height: 100%;
-                    width: 100%;
-                    object-fit: cover;
-                    opacity: ${!this.state.firstView && this.state.loaded ? 1 : 0};
-                    transition: opacity 0.3s 0.3s ease-out;
-                    @media screen and (min-width: 600px) {
-                        height: 100%;
+                & .video-wrapper {
+                    position: relative;
+                    & video {
+                        display: block;
                         width: 100%;
-                        max-width: 70vw;
-                        max-height: 70vh;
+                        opacity: ${!this.state.firstView && this.state.loaded ? 1 : 0};
+                        transition: opacity 0.3s 0.3s ease-out;
+                        @media screen and (min-width: 600px) {
+                            width: 100%;
+                            max-width: 70vw;
+                            max-height: 70vh;
+                        }
+                    }
+                }
+                & .caption {
+                    color: var(--song-color);
+                    & p {
+                        margin: 0.6em 0 0 0;
                     }
                 }
                 & button.mute {
@@ -128,18 +135,23 @@ export default class VideoSlide extends Component {
         return (
             <div class={cx('slide', 'VideoSlide', style)}>
                 <div class="content">
-                    <video
-                        ref={video => this.video = video}
-                        src={this.props.slide.file}
-                        onplay={this.onplay}
-                        onpause={this.onpause}
-                        onloadeddata={this.onload}
-                        muted={this.state.muted}
-                        playsinline
-                        preload
-                        loop
-                    ></video>
-                    {this.muteButton()}
+                    <div class="video-wrapper">
+                        <video
+                            ref={video => this.video = video}
+                            src={this.props.slide.file}
+                            onplay={this.onplay}
+                            onpause={this.onpause}
+                            onloadeddata={this.onload}
+                            muted={this.state.muted}
+                            playsinline
+                            preload
+                            loop
+                        ></video>
+                        {this.muteButton()}
+                    </div>
+                    {this.props.slide.caption &&
+                        <div class="caption" dangerouslySetInnerHTML={{__html: this.props.slide.caption}}></div>
+                    }
                 </div>
             </div>
         )

@@ -37,7 +37,10 @@ module.exports = {
         },
         {
             type: 'video',
-            file: require('./miracle-mile-volume.mp4')
+            file: require('./miracle-mile-volume.mp4'),
+            caption: markdown`
+                *Miracle Mile*, 1989
+            `
         },
         {
             type: 'narration',
