@@ -45,7 +45,7 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                my mom died in october 2009, while the [station fire](https://www.youtube.com/watch?v=vCkRccwAr7Y) burned in the san gabriels, and ever since i've had nightmares of los angeles disappearing in a single orange blast...
+                my mom died in october 2009, while the [station fire](https://www.youtube.com/watch?v=vCkRccwAr7Y) burned in the san gabriels, and ever since i've had nightmares of los angeles disappearing in a single orange blast.
 
                 i'll be sitting atop elysian park, where i can see a third of the playing field at dodger stadium. i’ve taken a picnic and a transistor radio to hear vin scully call the game. i feel santa ana winds cut the air.
 
@@ -71,9 +71,11 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                in 2015, my dad underwent surgery to correct his vision, which had split, temporarily, in two.
+                in 2015 my dad underwent surgery to correct his vision.
 
-                afterwards, he wrote a short story in which one eye witnesses los angeles ending, downtown disappearing in a single orange blast.
+                it had split, temporarily, in two.
+
+                afterwards, he wrote a short story in which one eye witnesses los angeles ending, sees downtown disappear in a single orange blast.
             `
         },
         {
@@ -109,7 +111,7 @@ module.exports = {
             markdown: markdown`
                 but as i write this it's 2018 and malibu and the west valley are on fire, uncontained.
 
-                i drove the 134 as the woolsey fire burned, sun blaring orange through the haze – radiant, beautiful, terrifying.
+                i drive the 134 as the woolsey fire burns, sun blaring orange through the haze – radiant, beautiful, terrifying.
 
                 the exact shade that ends the city in my song, in my dreams, in my dad's left eye.
             `
@@ -117,9 +119,9 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                there was nothing exciting about it at all.
+                there is nothing exciting about it at all.
 
-                i felt instead a sorrow, deep and painful, ripping me from myself.
+                i feel instead a sorrow, deep and painful, ripping me from myself.
 
                 i no longer want this.
             `
