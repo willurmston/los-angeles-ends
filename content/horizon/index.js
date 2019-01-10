@@ -16,8 +16,6 @@ module.exports = {
                 april 2017 and i'm coming home to help my dad clean out the house.
 
                 jerry brown declares california's drought over on the day i arrive.
-
-                the state had gone dry in the six years i was away.
             `,
         },
         {
@@ -100,7 +98,10 @@ module.exports = {
         },
         {
             type: 'video',
-            file: require('./charlies-angels-volume.mp4')
+            file: require('./charlies-angels-volume.mp4'),
+            caption: markdown`
+                *Charlie's Angels*, 2000
+            `
         },
         {
             type: 'narration',
@@ -127,9 +128,9 @@ module.exports = {
             markdown: markdown`
                 in college, i published [an essay](https://www.theindy.org/175) processing my mom's death by reading her book together with two arcade fire records she didn't live to hear — *the suburbs* and *reflektor.*
 
-                i'd started to view my mom's death as virtual, through a window. *almost* real, but *not quite*.
+                i'd started to view my mom's death as virtual, through a window.
 
-                like the horizon, just-out-of-reach.
+                *almost* real, but *not quite*. like the horizon, always just-out-of-reach.
             `,
         },
         {

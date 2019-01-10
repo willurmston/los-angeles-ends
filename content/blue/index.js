@@ -86,13 +86,14 @@ module.exports = {
                 what i wanted most was the long drive home, alone, blasting music.
 
                 i was free, finally.
-
-                i was also profoundly broken.
             `,
         },
         {
             type: 'video',
-            file: require('./magnolia-volume.mp4')
+            file: require('./magnolia-volume.mp4'),
+            caption: markdown`
+                *Magnolia*, 1999
+            `
         },
         {
             type: 'narration',
@@ -170,20 +171,6 @@ module.exports = {
                 as i was finishing this record, cleaning out my childhood bedroom, i found a note from a high school classmate.
 
                 "somehow, being your passenger was the closest i'd gotten to achieving a deeper conversation with you," they wrote.
-            `,
-        },
-        {
-            type: 'narration',
-            markdown: markdown`
-                i realized how much of myself i'd routed through my car, through the freeway system, through the music i played when i had no other way to feel.
-            `,
-        },
-        {
-            type: 'narration',
-            markdown: markdown`
-                i live back in los angeles now, habitually driving the san diego to the harbor, the harbor up to hollywood, the hollywood to the golden state.
-
-                there's no destination, i'm just moving towards the vanishing point.
             `,
         },
         {
