@@ -25,21 +25,23 @@ module.exports = {
             markdown: markdown`
                 we hit the judge harry pregerson interchange, where the 110 intersects the 105, and take the carpool ramp.
 
-                its pylons lift us up and above the city, banking 15 degrees from south to west.
+                its pylons lift us up and above the city, banking 15 degrees as we arc from south to west.
 
-                los angeles pans out as if in cinemascope, windshield as the camera lens.
+                i watch los angeles pan out as if in cinemascope, windshield as the camera lens.
             `
         },
         {
             type: 'quote',
             markdown: markdown`
                 "Everyday life is a fuel for thought: the private mobility of driving transforms the windshield into a synoptic vista, and the fifty-two-mile commute between the sprawling transurban metropolis of Los Angeles and the university-as-theme-park of the University of California at Irvine became, for me, a consistently speculative hour..."
+
+                — Anne Friedberg, *Window Shopping* (1993)
             `
         },
         {
             type: 'narration',
             markdown: markdown`
-                when i was growing up, my mom commuted three or four days a week to irvine, where she taught critical theory and visual studies.
+                while i was growing up, my mom commuted three or four days a week to irvine, where she taught critical theory and visual studies.
 
                 she took the 5 to and from orange county, a drive that framed her first book, *window shopping*. i internalized its landmarks in relation to her ETA.
 
@@ -59,17 +61,18 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                in 2010 and 2011, i drove *the suburbs* endlessly, [mapping myself into the songs](http://www.thewildernessdowntown.com/).
+                from then on i drove *the suburbs* endlessly, [mapping myself into the songs](http://www.thewildernessdowntown.com/).
 
                 when i was most frozen by grief, it was the only way i could thaw into tears.
 
-                it made me feel like a character, a protagonist in my own story shot through the windshield.
+                it gave my grief meaning, made me feel like a character, a protagonist in my own story shot through the windshield.
             `
         },
         {
             type: 'quote',
             markdown: markdown`
                 "...While writing this book, the freeways that encircle and bisect Los Angeles were under constant construction; the topography of the road reconfigured itself daily. As the new 'Century Freeway' loomed apocalyptically into the future, one could not help but draw parallels between the end of this century and the end of the last."
+
                 — Anne Friedberg, *Window Shopping* (1993)
             `
         },
@@ -119,7 +122,10 @@ module.exports = {
         },
         {
             type: 'video',
-            file: require('./speed-volume.mp4')
+            file: require('./speed-volume.mp4'),
+            caption: markdown`
+                *Speed*, 1994
+            `
         },
         {
             type: 'narration',
@@ -134,7 +140,7 @@ module.exports = {
             markdown: markdown`
                 read a certain way, *speed* is a movie about the act of traversing los angeles, where each drive is a narrative arc and each freeway named for a peripheral character.
 
-                it's shot like a police chase, with cinematography alarmingly similar to the aerial coverage of o.j. simpson's ford bronco driving the 5 up from orange county to brentwood.
+                it's shot like a police chase, with cinematography alarmingly similar to the aerial coverage of o.j. simpson as he drove his ford bronco up the 5 from orange county to brentwood.
 
                 the shots are deeply familiar to me, born to a century where the jump cut between the view through the windshield and the view from above reads like natural language.
             `
@@ -145,7 +151,7 @@ module.exports = {
                 "Some people learn Italian so they can read Dante in the original; I learned to drive so I could read Los Angeles in the original."
                 — Reyner Banham, *Los Angeles: An Architecture of Four Ecologies* (1971)
 
-                "Driving is a spectacular form of amnesia. Everything is to be discovered, everything to be obliterated."
+                "Driving is a spectacular form of amnesia. Everything is to be discovered, everything to be obliterated. Admittedly, there is the primal shock of the deserts and the dazzle of California, but when this is gone, the secondary brilliance of the journey begins, that of the excessive, pitiless distance."
                 – Jean Baudrillard, *America* (1986)
             `
         },
@@ -156,7 +162,7 @@ module.exports = {
 
                 forbidden from the diamond lane, i rinse the windshield and turn the wipers on. i'm too shut off to cry.
 
-                the camera pans out and i see myself take the directional ramp from I-105 EB to I-110 NB, winding my way towards a constantly rearranged feeling of home.
+                i watch as the camera pans out and a silver lexus takes the directional ramp from I-105 EB to I-110 NB, winding its way through a constantly rearranging feeling of home.
             `
         },
         {

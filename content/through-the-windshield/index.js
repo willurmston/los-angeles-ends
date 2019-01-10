@@ -108,7 +108,10 @@ module.exports = {
         },
         {
             type: 'video',
-            file: require('./sb-volume.mp4')
+            file: require('./sb-volume.mp4'),
+            caption: markdown`
+                *Sunset Boulevard*, 1950
+            `
         },
         {
             type: 'narration',
