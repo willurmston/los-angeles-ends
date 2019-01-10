@@ -115,9 +115,9 @@ module.exports = {
             markdown: markdown`
                 completed in 1904, sunset boulevard traces a 1780s cattle route along base of the santa monica mountains.
 
-                it begins near the [zanja madre](https://www.youtube.com/watch?v=O3vKQNIsADQ), an aqueduct built by spanish colonizers to carry water from the los angeles river, and ends at the pacific ocean.
+                it begins near the [zanja madre](https://www.youtube.com/watch?v=O3vKQNIsADQ), an aqueduct built by spanish colonizers to carry water from the los angeles river, and ends in the pacific palisades, where it hits the ocean.
 
-                it winds, sometimes violently, lined by palm trees and other non-native plants.
+                sunset winds, sometimes violently, lined by palm trees and other non-native plants.
             `
         },
         {
@@ -147,7 +147,7 @@ module.exports = {
             markdown: markdown`
                 like so many before me, i came to los angeles to play myself.
 
-                but then there i was, stalled out at the corner of sunset boulevard and western avenue, cast in a reboot.
+                but then there i was, stalled out at the corner of sunset and western, cast in a reboot.
 
                 and i couldn't even break the frame.
             `
