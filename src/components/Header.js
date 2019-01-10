@@ -9,6 +9,7 @@ const headerStyle = css`
 	height: 200px;
 	font-size: 20px;
 	letter-spacing: 1px;
+	--ease-out-cubic: cubic-bezier(0.215, 0.610, 0.355, 1.000);
 	--song-color: var(--orange);
 	@media screen and (min-width: 600px) {
 		display: flex;
@@ -17,13 +18,28 @@ const headerStyle = css`
 		justify-content: flex-end;
 		text-align: left;
 		padding-left: 20px;
-		height: 82vh;
+		height: 100vh;
+		width: 100vw;
 		font-size: 24px;
 		overflow: hidden;
 		margin-bottom: 20px;
 		background-color: var(--song-color);
 		background-image: repeating-radial-gradient(circle at 80% 50%, transparent, transparent 9px, var(--off-white) 10px, transparent 11px);
 		border-bottom: 2px solid var(--song-color);
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: var(--off-white);
+			opacity: 1;
+		}
+		&.map-loaded::after {
+			opacity: 0;
+			transition: opacity 0.2s 0.2s var(--ease-out-cubic);
+		}
 	}
 	& .title {
 		bottom: 8px;
@@ -94,28 +110,11 @@ const headerStyle = css`
 			top: 30px;
 		}
 	}
-	& button {
-		background: none;
-		border: none;
-		cursor: pointer;
-		color: var(--song-color);
-		text-decoration: underline;
-		top: 12px;
-		letter-spacing: inherit;
-		padding: 16px 16px;
-		position: absolute;
-		right: 0;
-		@media screen and (min-width: 600px) {
-			top: auto;
-			bottom: 14px;
-			right: 20px;
-		}
-	}
 `
 
 export default class Header extends Component {
-	shouldComponentUpdate() {
-		return false
+	shouldComponentUpdate(nextProps, nextState) {
+		if (nextState.mapLoaded !== this.state.mapLoaded) return true
 	}
 
 	scrollDown(e) {
@@ -132,14 +131,9 @@ export default class Header extends Component {
 
 		return (
 			<header
-				class={cx('Header', headerStyle)}
+				class={cx('Header', this.state.mapLoaded ? 'map-loaded' : 'map-not-loaded', headerStyle)}
 				ref={element => this.element = element}
 			>
-				{bigScreen &&
-					<Map
-						pins={this.props.songs}
-					/>
-				}
 				{!bigScreen &&
 					<Logo />
 				}

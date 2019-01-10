@@ -3,7 +3,7 @@ import 'intersection-observer'
 import '../request-idle-callback'
 import whatInput from 'what-input'
 import {h, Component} from 'preact'
-import {css, cx} from 'emotion'
+import {css, cx, injectGlobal} from 'emotion'
 import content from '../../content/index.js'
 import Router, {route}  from 'preact-router'
 import Match from 'preact-router/match'
@@ -13,6 +13,7 @@ import utils from '../utils'
 const TweenLite = window.TweenLite
 
 import DelayUnmount from './DelayUnmount'
+import Loader from './Loader'
 import Header from './Header'
 import Song from './Song'
 import ArrowCursor from './ArrowCursor'
@@ -26,12 +27,15 @@ export default class App extends Component {
         this.state.currentSong = null
         this.state.initialRender = true
         this.state.playBackgrounds = true
+        this.state.allowScroll = true
     }
 
     handleRoute = (e) => {
         if (e.url === '/') {
+            const bigScreen = window.matchMedia('screen and (min-width: 600px)').matches
             this.setState({
-                currentSong: null
+                currentSong: null,
+                allowScroll: !bigScreen
             })
         } else {
             const matchingSong = this.state.songs.find(song => song.slug === e.current.attributes.songSlug)
@@ -110,6 +114,13 @@ export default class App extends Component {
         }
     }
 
+    onLoaderClick = () => {
+        this.scrollToElement(document.querySelector('.Song'))
+        this.setState({
+            allowScroll: true
+        })
+    }
+
     componentDidUpdate(prevProps, prevState) {
         if (this.state.currentSong !== prevState.currentSong) {
             if (this.state.currentSong === null) {
@@ -125,6 +136,8 @@ export default class App extends Component {
                     document.scrollingElement.scrollTop = offsetTop - (window.innerHeight / 4)
                 }
             }
+        } else if (this.state.allowScroll !== prevState.allowScroll) {
+            document.documentElement.style['overflow-y'] = this.state.allowScroll === false ? 'hidden' : 'auto'
         }
     }
 
@@ -144,11 +157,14 @@ export default class App extends Component {
 
         return (
             <div class={cx('App', style)} ontouchstart={e => {return true}}>
-                {this.state.currentSong === null &&
+                {this.state.currentSong === null && bigScreen &&
+                    <Loader
+                        onclick={this.onLoaderClick}
+                        songs={this.state.songs}
+                    />
+                }
+                {this.state.currentSong === null && !bigScreen &&
                     <Header
-                        onLinerNotesButtonClick={() => {
-                            this.scrollToElement(document.querySelector('.LinerNotes'))
-                        }}
                         songs={this.state.songs}
                     />
                 }
@@ -198,43 +214,45 @@ export default class App extends Component {
                     <div path="/:songSlug"></div>
                     <div default></div>
                 </Router>
-                <KeyboardListener
-                    onUp={e => {
-                        e.preventDefault()
-                        if(this.state.currentSong === null) {
-                            this.scrollToSection('prev')
-                        } else {
-                            const cycleAmount = this.state.songs.indexOf(this.state.currentSong) - 1
-                            // First, animate home
-                            route('/')
-                            // Then, scroll to next project
-                            setTimeout(() => {
-                                route(`/${utils.cycleArray(this.state.songs, cycleAmount )[0].slug}`, true)
-                            }, 500)
-                        }
-                    }}
-                    onDown={e => {
-                        e.preventDefault()
-                        if(this.state.currentSong === null) {
-                            this.scrollToSection('next')
-                        } else {
-                            const cycleAmount = this.state.songs.indexOf(this.state.currentSong) + 1
-                            // First, animate home
-                            route('/')
-                            // Then, scroll to next project
-                            setTimeout(() => {
-                                route(`/${utils.cycleArray(this.state.songs, cycleAmount )[0].slug}`, true)
-                            }, 500)
-                        }
-                    }}
-                    onRight={e => {
-                        if (this.state.currentSong === null) {
+                {this.state.allowScroll !== false &&
+                    <KeyboardListener
+                        onUp={e => {
                             e.preventDefault()
-                            this.enterNearestSong()
-                        }
-                    }}
-                    onEsc={() => route('/')}
-                />
+                            if(this.state.currentSong === null) {
+                                this.scrollToSection('prev')
+                            } else {
+                                const cycleAmount = this.state.songs.indexOf(this.state.currentSong) - 1
+                                // First, animate home
+                                route('/')
+                                // Then, scroll to next project
+                                setTimeout(() => {
+                                    route(`/${utils.cycleArray(this.state.songs, cycleAmount )[0].slug}`, true)
+                                }, 500)
+                            }
+                        }}
+                        onDown={e => {
+                            e.preventDefault()
+                            if(this.state.currentSong === null) {
+                                this.scrollToSection('next')
+                            } else {
+                                const cycleAmount = this.state.songs.indexOf(this.state.currentSong) + 1
+                                // First, animate home
+                                route('/')
+                                // Then, scroll to next project
+                                setTimeout(() => {
+                                    route(`/${utils.cycleArray(this.state.songs, cycleAmount )[0].slug}`, true)
+                                }, 500)
+                            }
+                        }}
+                        onRight={e => {
+                            if (this.state.currentSong === null) {
+                                e.preventDefault()
+                                this.enterNearestSong()
+                            }
+                        }}
+                        onEsc={() => route('/')}
+                    />
+                }
             </div>
         )
     }
