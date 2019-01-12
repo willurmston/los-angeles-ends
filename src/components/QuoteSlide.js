@@ -48,6 +48,21 @@ export default class QuoteSlide extends Component {
                         }
                     }
                 }
+                /* ATTRIBUTION */
+                & h1 {
+                    background: var(--off-white);
+                    color: var(--song-color);
+                    position: relative;
+                    margin: -10px -10px 30px 20px;
+                    display: table;
+                    font-size: 16px;
+                    padding: 5px 16px;
+                    line-height: 1.5;
+                    @media screen and (min-width: 600px) {
+                        font-size: 20px;
+                        line-height: 1.7
+                    }
+                }
                 & p:first-child {
                     margin-top: 0;
                 }
