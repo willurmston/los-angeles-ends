@@ -44,10 +44,10 @@ module.exports = {
                 *In the suburbs, I, I learned to drive
                 And you told me we'd never survive
                 Grab your mother's keys, we're leaving*
-                – Arcade Fire, "The Suburbs", *The Suburbs* (2010)
+                # – Arcade Fire, "The Suburbs", *The Suburbs* (2010)
 
                 "To be in L.A. without a car is to be at the mercy of whoever will give you a ride. In this way, it both is and isn’t a teenager’s town."
-                – Dayna Tortorici, ["Los Angeles Plays Itself"](https://nplusonemag.com/online-only/city-by-city/los-angeles-plays-itself/), *n+1* (2015)
+                # – Dayna Tortorici, ["Los Angeles Plays Itself"](https://nplusonemag.com/online-only/city-by-city/los-angeles-plays-itself/), *n+1* (2015)
             `,
         },
         {
@@ -129,7 +129,7 @@ module.exports = {
             type: 'quote',
             markdown: markdown`
                 "In the West, it is said, water flows uphill toward money. And it literally does."
-                – Mark Reisner, *Cadillac Desert* (1986)
+                # – Mark Reisner, *Cadillac Desert* (1986)
             `,
         },
         {

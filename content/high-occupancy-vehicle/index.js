@@ -35,7 +35,7 @@ module.exports = {
             markdown: markdown`
                 "Everyday life is a fuel for thought: the private mobility of driving transforms the windshield into a synoptic vista, and the fifty-two-mile commute between the sprawling transurban metropolis of Los Angeles and the university-as-theme-park of the University of California at Irvine became, for me, a consistently speculative hour..."
 
-                — Anne Friedberg, *Window Shopping* (1993)
+                # — Anne Friedberg, *Window Shopping* (1993)
             `
         },
         {
@@ -73,7 +73,7 @@ module.exports = {
             markdown: markdown`
                 "...While writing this book, the freeways that encircle and bisect Los Angeles were under constant construction; the topography of the road reconfigured itself daily. As the new 'Century Freeway' loomed apocalyptically into the future, one could not help but draw parallels between the end of this century and the end of the last."
 
-                — Anne Friedberg, *Window Shopping* (1993)
+                # — Anne Friedberg, *Window Shopping* (1993)
             `
         },
         {
@@ -83,13 +83,13 @@ module.exports = {
                 Compressed on a tiny screen
                 A dead star collapsing and we could see
                 Something was ending*
-                — Arcade Fire, "Deep Blue," *The Suburbs* (2010)
+                # — Arcade Fire, "Deep Blue," *The Suburbs* (2010)
 
                 *Let's go for a drive, see the town tonight
                 There's nothing to do but I don't mind when I'm with you
                 This town’s so strange they built it to change
                 And while we sleep we know the streets get rearranged*
-                — Arcade Fire, "Suburban War," *The Suburbs* (2010)
+                # — Arcade Fire, "Suburban War," *The Suburbs* (2010)
             `
         },
         {
@@ -149,10 +149,10 @@ module.exports = {
             type: 'quote',
             markdown: markdown`
                 "Some people learn Italian so they can read Dante in the original; I learned to drive so I could read Los Angeles in the original."
-                — Reyner Banham, *Los Angeles: An Architecture of Four Ecologies* (1971)
+                # — Reyner Banham, *Los Angeles: An Architecture of Four Ecologies* (1971)
 
                 "Driving is a spectacular form of amnesia. Everything is to be discovered, everything to be obliterated. Admittedly, there is the primal shock of the deserts and the dazzle of California, but when this is gone, the secondary brilliance of the journey begins, that of the excessive, pitiless distance."
-                – Jean Baudrillard, *America* (1986)
+                # – Jean Baudrillard, *America* (1986)
             `
         },
         {

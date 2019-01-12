@@ -89,7 +89,7 @@ module.exports = {
             markdown: markdown`
                 "...I know what happened to downtown and I know what that means. The only thing I do not know is why I, perhaps alone, was given the privilege – if one might call it that – of seeing it before it occurred."
 
-                – Howard A. Rodman, "BANG", *Black Clock No. 21* (2016)
+                # – Howard A. Rodman, "BANG", *Black Clock No. 21* (2016)
             `
         },
         /*{
@@ -131,7 +131,7 @@ module.exports = {
             markdown: markdown`
             "It is hard for people who have not lived in Los Angeles to realize how radically the Santa Ana figures in the local imagination. The city burning is Los Angeles's deepest image of itself; Nathanael West perceived that, in *The Day of the Locust*; and at the time of the 1965 Watts riots what struck the imagination most indelibly were the fires. For days one could drive the Harbor Freeway and see the city on fire, just as we had always known it would be in the end."
 
-            – Joan Didion, "Los Angeles Notebook", *Slouching Towards Bethlehem* (1968)
+            # – Joan Didion, "Los Angeles Notebook", *Slouching Towards Bethlehem* (1968)
             `
         },
         {
