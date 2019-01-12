@@ -178,13 +178,28 @@ export default class Song extends Component {
         }
     }
 
+    fadeVolume(targetVolume, duration = duration || 1.5, onComplete) {
+        const proxyObj = {volume: this.player.getVolume()}
+        TweenLite.to(proxyObj, 0.5, {
+            volume: targetVolume,
+            onUpdate: () => {
+                this.player.setVolume(proxyObj.volume)
+            },
+            onComplete: onComplete
+        })
+    }
+
     componentDidUpdate(prevProps, prevState) {
         if (this.props.isOpen !== prevProps.isOpen) {
             if (this.player) {
                 if (this.props.isOpen) {
-                    this.player.play()
+                    this.player.play().then(() => {
+                        this.fadeVolume(1)
+                    })
                 } else {
-                    this.player.pause()
+                    this.fadeVolume(0, 1.5, () => {
+                        this.player.pause()
+                    })
                 }
             }
             if (this.props.isOpen) {
