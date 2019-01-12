@@ -30,12 +30,19 @@ export default class App extends Component {
         this.state.allowScroll = true
     }
 
+    componentDidMount() {
+        const bigScreen = window.matchMedia('screen and (min-width: 600px)').matches
+        if (bigScreen) {
+            this.setState({
+                loaderActive: true
+            })
+        }
+    }
+
     handleRoute = (e) => {
         if (e.url === '/') {
-            const bigScreen = window.matchMedia('screen and (min-width: 600px)').matches
             this.setState({
-                currentSong: null,
-                allowScroll: !bigScreen
+                currentSong: null
             })
         } else {
             const matchingSong = this.state.songs.find(song => song.slug === e.current.attributes.songSlug)
@@ -115,9 +122,12 @@ export default class App extends Component {
     }
 
     onLoaderClick = () => {
-        this.scrollToElement(document.querySelector('.Song'))
         this.setState({
-            allowScroll: true
+            loaderActive: false
+        }, () => {
+            setTimeout(() => {
+                this.scrollToElement(document.querySelector('.Song'), null, 1000)
+            }, 200)
         })
     }
 
@@ -136,8 +146,10 @@ export default class App extends Component {
                     document.scrollingElement.scrollTop = offsetTop - (window.innerHeight / 4)
                 }
             }
-        } else if (this.state.allowScroll !== prevState.allowScroll) {
-            document.documentElement.style['overflow-y'] = this.state.allowScroll === false ? 'hidden' : 'auto'
+        } else if (this.state.loaderActive !== prevState.loaderActive) {
+            console.log(this.state.loaderActive)
+            // Prevent scrolling when loader is active
+            document.documentElement.style['overflow-y'] = this.state.loaderActive && document.scrollingElement.scrollTop === 0 ? 'hidden' : ''
         }
     }
 
@@ -161,6 +173,11 @@ export default class App extends Component {
                     <Loader
                         onclick={this.onLoaderClick}
                         songs={this.state.songs}
+                        onload={() => {
+                            this.setState({
+                                loaderLoaded: true
+                            })
+                        }}
                     />
                 }
                 {this.state.currentSong === null && !bigScreen &&
@@ -214,7 +231,7 @@ export default class App extends Component {
                     <div path="/:songSlug"></div>
                     <div default></div>
                 </Router>
-                {this.state.allowScroll !== false &&
+                {!this.state.loaderActive || this.state.loaderLoaded &&
                     <KeyboardListener
                         onUp={e => {
                             e.preventDefault()
@@ -232,6 +249,7 @@ export default class App extends Component {
                         }}
                         onDown={e => {
                             e.preventDefault()
+                            console.log('frog')
                             if(this.state.currentSong === null) {
                                 this.scrollToSection('next')
                             } else {

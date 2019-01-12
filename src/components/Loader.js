@@ -35,11 +35,11 @@ const loaderStyle = css`
 		font-size: 24px;
 		overflow: hidden;
 		margin-bottom: 20px;
-		background-color: var(--song-color);
+		background-color: var(--off-white);
 		image-rendering: auto;
 		image-rendering: crisp-edges;
 		image-rendering: pixelated;
-		background-image: repeating-radial-gradient(circle at 80% 30%, transparent, transparent 1px, var(--off-white) 1px, var(--off-white) 12px, transparent 12px);
+		background-image: repeating-radial-gradient(circle at 80% 30%, transparent, transparent 1px, var(--song-color) 1px, var(--song-color) 12px, transparent 12px);
 		&::before {
 			content: '';
 			display: block;
@@ -107,7 +107,7 @@ const loaderStyle = css`
 		bottom: 30px;
 		right: 50px;
 		padding: 13px 22px 8px;
-		font-size: 36px;
+		font-size: 28px;
 		text-align: center;
 		letter-spacing: 0.1em;
 		color: var(--off-white);
@@ -118,6 +118,7 @@ const loaderStyle = css`
 		&:hover {
 			background-color: var(--off-white);
 			color: var(--song-color);
+			background-image: repeating-linear-gradient(90deg, var(--song-color) 1px, var(--song-color) 2px, transparent 2px, transparent 4px);
 		}
 		& span {
 			position: relative;
@@ -131,7 +132,7 @@ const loaderStyle = css`
 		position: absolute;
 		pointer-events: none;
 		@media screen and (min-width: 600px) {
-			color: var(--song-color);
+			color: var(--off-white);
 			position: static;
 			margin-bottom: 30px;
 			line-height: 1.09;
@@ -150,10 +151,12 @@ const loaderStyle = css`
 				margin-bottom: 0;
 				margin-left: 0.8vh;
 				font-size: 20px;
-				background: var(--off-white);
+				/* background: var(--off-white); */
+				/* background: var(--song-color); */
 				display: table;
 				padding: 4px 8px;
 				color: var(--song-color);
+				color: var(--off-white);
 				z-index: 0;
 			}
 		}
@@ -187,8 +190,8 @@ const loaderStyle = css`
 
 export default class Loader extends Component {
 	shouldComponentUpdate(nextProps, nextState) {
-		if (nextState.mapLoaded) return true
-		if (nextState.exiting) return true
+		if (nextState.mapLoaded !== this.state.mapLoaded) return true
+		if (nextState.exiting !== this.state.exiting) return true
 	}
 
 	render() {
@@ -210,7 +213,10 @@ export default class Loader extends Component {
 				</div>
 				{bigScreen &&
 					<Map
-						onload={() => this.setState({mapLoaded: true})}
+						onload={() => {
+							this.setState({mapLoaded: true})
+							this.props.onload()
+						}}
 						pins={this.props.songs}
 					/>
 				}
