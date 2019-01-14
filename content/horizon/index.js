@@ -42,7 +42,7 @@ module.exports = {
             type: 'quote',
             markdown: markdown`
                 "The Hassidim tell a story about the world to come that says everything there will be just as it is here. Just as our room is now, so it will be in the world to come; where our baby sleeps now, there too it will sleep in the other world. And the clothes we wear in this world, those too we will wear there. Everything will be as it is now, just a little different."
-                – Ben Lerner, *10:04*, (2014)
+                # – Ben Lerner, *10:04*, (2014)
             `,
         },
         {
@@ -75,7 +75,7 @@ module.exports = {
                 Reaching for an idea of somewhere other than this place
                 That could fold me in clouded yearning
                 For nowhere actually reachable, the distance was the point*
-                # – Mount Eerie, "Soria Moria," (*A Crow Looked At Me*, 2017)
+                # – Mount Eerie, "Soria Moria," *A Crow Looked At Me* (2017)
             `,
         },
         {
@@ -150,7 +150,7 @@ module.exports = {
                 It was just a glimpse of you, like looking through a window
                 Or a shallow sea
                 Could you see me?*
-                – Arcade Fire, “Afterlife," *Reflektor* (2013)
+                # – Arcade Fire, “Afterlife," *Reflektor* (2013)
             `,
         },
         {
