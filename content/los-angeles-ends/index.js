@@ -65,7 +65,7 @@ module.exports = {
         {
             type: 'quote',
             markdown: markdown`
-                "I was driving east across Sunset. Here and there the familiar buildings of downtown – most prominently, the Library Tower – swung into view behind the hills and the haze. And then though left (“blue”) eye I saw downtown, all of it—  Disappear. As if it had never been.  Obliterated in a flash of light more intense than can be imagined or described. The canonical phrase only hints at what I (monocularly) saw. 'Brighter than a thousand suns...'
+                "I was driving east across Sunset. Here and there the familiar buildings of downtown – most prominently, the Library Tower – swung into view behind the hills and the haze. And then through left (“blue”) eye I saw downtown, all of it—  Disappear. As if it had never been.  Obliterated in a flash of light more intense than can be imagined or described. The canonical phrase only hints at what I (monocularly) saw. 'Brighter than a thousand suns...'"
 
                 # – Howard A. Rodman, "BANG", *Black Clock No. 21* (2016)
             `

@@ -65,7 +65,7 @@ module.exports = {
 
                 when i was most frozen by grief, it was the only way i could thaw into tears.
 
-                it gave my grief meaning, made me feel like a character, a protagonist in my own story shot through the windshield.
+                it gave my loss meaning, made me feel like a character, a protagonist in my own story shot through the windshield.
             `
         },
         {
@@ -138,7 +138,7 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                read a certain way, *speed* is a movie about the act of traversing los angeles, where each drive is a narrative arc and each freeway named for a peripheral character.
+                read a certain way, *speed* is a movie about the act of traversing los angeles itself, where each drive is a narrative arc and each freeway named for a peripheral character.
 
                 it's shot like a police chase, with cinematography alarmingly similar to the aerial coverage of o.j. simpson as he drove his ford bronco up the 5 from orange county to brentwood.
 
@@ -162,7 +162,7 @@ module.exports = {
 
                 forbidden from the diamond lane, i rinse the windshield and turn the wipers on. i'm too shut off to cry.
 
-                i watch as the camera pans out and a silver lexus takes the directional ramp from I-105 EB to I-110 NB, winding its way through a constantly rearranging feeling of home.
+                the camera pans out we see a silver lexus take directional ramp I-105 EB to I-110 NB, winding its way into the light blue night.
             `
         },
         {
