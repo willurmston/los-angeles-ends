@@ -49,11 +49,12 @@ const splashStyle = css`
 		cursor: pointer;
 	}
 	& button.start-button {
-		display: block;
+		display: flex;
 		position: absolute;
 		bottom: 30px;
 		right: 50px;
-		padding: 13px 22px 8px;
+		padding: 16px 22px;
+        line-height: 28px;
 		font-size: 28px;
 		text-align: center;
 		letter-spacing: 0.1em;
@@ -69,7 +70,8 @@ const splashStyle = css`
             border: 1px solid var(--section-color);
 		}
 		& span {
-			position: relative;
+            display: block;
+            line-height: 23px;
 		}
 	}
 	& .title {
@@ -90,7 +92,7 @@ const splashStyle = css`
 				position: relative;
 				text-rendering: optimizeSpeed;
 				font-size: 11vmin;
-				margin: 0 0 -10px 0;
+				margin: 0 0 10px 0;
 				span {
 					display: block;
 				}
