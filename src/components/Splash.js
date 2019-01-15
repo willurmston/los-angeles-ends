@@ -4,15 +4,6 @@ import Logo from './Logo'
 import ArrowCursor from './ArrowCursor'
 import Map from './Map'
 
-const scrollPoster = keyframes`
-    0% {
-        transform: translate3d(-50%,0,0);
-    }
-    to {
-        transform: translate3d(0, 0, 0);
-    }
-`
-
 const splashStyle = css`
 	position: relative;
 	z-index: 10;
@@ -20,9 +11,7 @@ const splashStyle = css`
 	height: 100%;
 	font-size: 20px;
 	letter-spacing: 1px;
-	--ease-out-cubic: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-	--song-color: var(--orange);
-	opacity: 1;
+	--section-color: var(--orange);
 	@media screen and (min-width: 600px) {
 		display: flex;
 		flex-direction: column;
@@ -39,26 +28,7 @@ const splashStyle = css`
 		image-rendering: auto;
 		image-rendering: crisp-edges;
 		image-rendering: pixelated;
-		background-image: repeating-radial-gradient(circle at 80% 30%, transparent, transparent 1px, var(--song-color) 1px, var(--song-color) 12px, transparent 12px);
-		&::before {
-			content: '';
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 200%;
-			height: 100%;
-			/* background-image: repeating-linear-gradient(90deg, transparent, transparent 5px, var(--off-white) 6px, var(--off-white) 7px); */
-			z-index: 0;
-			animation: ${keyframes`
-				from {
-					transform: translateX(0);
-				}
-				to {
-					transform: translateX(-7px);
-				}
-			`} 0.2s both infinite linear;
-		}
+		background-image: repeating-radial-gradient(circle at 80% 30%, transparent, transparent 1px, var(--section-color) 1px, var(--section-color) 12px, transparent 12px);
 		&::after {
 			content: '';
 			position: absolute;
@@ -68,34 +38,11 @@ const splashStyle = css`
 			height: 100%;
 			background: var(--off-white);
 			opacity: 1;
+            z-index: 1;
 		}
 		&.map-loaded::after {
 			opacity: 0;
 			transition: opacity 0.2s 0.2s ease-in-out;
-		}
-	}
-	& div.poster {
-		height: 100%;
-		width: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-		/* background-image: url('assets/noise.png'); */
-		background-size: auto 100%;
-		image-rendering: auto;
-		image-rendering: crisp-edges;
-		image-rendering: pixelated;
-		background-position: 50% 100%;
-		& div {
-			width: 200%;
-			height: 100%;
-			image-rendering: auto;
-			image-rendering: crisp-edges;
-			image-rendering: pixelated;
-			/* animation: ${scrollPoster} ${20}s infinite both linear; */
-			/* background-image: url('assets/noise.png'); */
-			background-position: center center;
-			background-size: auto 100%;
 		}
 	}
 	&.map-loaded {
@@ -112,13 +59,14 @@ const splashStyle = css`
 		letter-spacing: 0.1em;
 		color: var(--off-white);
 		overflow: hidden;
-		z-index: 1;
+		z-index: 2;
 		cursor: pointer;
-		background-color: var(--song-color);
+		background-color: var(--section-color);
+        border: 1px solid var(--off-white);
 		&:hover {
 			background-color: var(--off-white);
-			color: var(--song-color);
-			background-image: repeating-linear-gradient(90deg, var(--song-color) 1px, var(--song-color) 2px, transparent 2px, transparent 4px);
+			color: var(--section-color);
+            border: 1px solid var(--section-color);
 		}
 		& span {
 			position: relative;
@@ -151,13 +99,10 @@ const splashStyle = css`
 				margin-bottom: 0;
 				margin-left: 0.8vh;
 				font-size: 20px;
-				/* background: var(--off-white); */
-				/* background: var(--song-color); */
 				display: table;
-				padding: 4px 8px;
-				color: var(--song-color);
+				padding: 2px 6px;
 				color: var(--off-white);
-				z-index: 0;
+                background: var(--section-color);
 			}
 		}
 		@media screen and (min-width: 1400px) {
@@ -208,36 +153,20 @@ export default class Loader extends Component {
 					}
 				}}
 			>
-				<div class="poster">
-					<div></div>
+				<Map
+					onload={() => {
+						this.setState({mapLoaded: true})
+						this.props.onload()
+					}}
+					pins={this.props.songs}
+				/>
+				<div class="title">
+					<h1><span>LOS</span><span>ANGELES</span><span>ENDS</span></h1>
+					<h2>a record by Simulcast</h2>
 				</div>
-				{bigScreen &&
-					<Map
-						onload={() => {
-							this.setState({mapLoaded: true})
-							this.props.onload()
-						}}
-						pins={this.props.songs}
-					/>
-				}
-				{!bigScreen &&
-					<Logo />
-				}
-				{bigScreen ?
-					<div class="title">
-						<h1><span>LOS</span><span>ANGELES</span><span>ENDS</span></h1>
-						<h2>a record by Simulcast</h2>
-					</div>
-				:
-					<div class="title">
-						<h1>LOS ANGELES ENDS<br/>a record by SIMULCAST</h1>
-					</div>
-				}
-				{bigScreen &&
-					<button class="start-button">
-						<span>{this.state.mapLoaded ? 'ENTER' : 'LOADING...'}</span>
-					</button>
-				}
+				<button class="start-button">
+					<span>{this.state.mapLoaded ? 'ENTER' : 'LOADING...'}</span>
+				</button>
 			</header>
 		)
 	}
