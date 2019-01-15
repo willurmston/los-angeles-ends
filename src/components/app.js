@@ -28,11 +28,20 @@ export default class App extends Component {
         this.state.initialRender = true
         this.state.playBackgrounds = true
         this.state.allowScroll = true
+        this.state.splashActive = false
+    }
+
+    freezeScroll() {
+        document.documentElement.style['overflow-y'] = 'hidden'
+    }
+
+    allowScroll() {
+        document.documentElement.style['overflow-y'] = ''
     }
 
     componentDidMount() {
         const bigScreen = window.matchMedia('screen and (min-width: 600px)').matches
-        if (bigScreen) {
+        if (bigScreen && document.scrollingElement.scrollTop === 0) {
             this.setState({
                 splashActive: true
             })
@@ -42,7 +51,10 @@ export default class App extends Component {
     handleRoute = (e) => {
         if (e.url === '/') {
             this.setState({
-                currentSong: null
+                currentSong: null,
+                // handleRoute never gets called on the first render,
+                // so splash should never be active here
+                splashActive: false
             })
         } else {
             const matchingSong = this.state.songs.find(song => song.slug === e.current.attributes.songSlug)
@@ -51,12 +63,13 @@ export default class App extends Component {
                     // If there's already a song open
                     // First close the song
                     route('/')
-                    // Then, scroll to next project
+                    // Then, scroll to next song
                     setTimeout(() => {
                         const songElement = document.querySelector(`.Song#${matchingSong.slug}`)
                         this.scrollToElement(songElement, () => {
                             this.setState({
-                                currentSong: matchingSong
+                                currentSong: matchingSong,
+                                splashActive: false
                             })
                         })
                     }, 500)
@@ -64,7 +77,8 @@ export default class App extends Component {
                     const songElement = document.querySelector(`.Song#${matchingSong.slug}`)
                     this.scrollToElement(songElement, () => {
                         this.setState({
-                            currentSong: matchingSong
+                            currentSong: matchingSong,
+                            splashActive: false
                         })
                     })
                 }
@@ -133,6 +147,7 @@ export default class App extends Component {
 
     componentDidUpdate(prevProps, prevState) {
         if (this.state.currentSong !== prevState.currentSong) {
+            // If we exited a song
             if (this.state.currentSong === null) {
                 // Immediately scroll to the song we just exited
                 const songElement = document.querySelector(`.Song#${prevState.currentSong.slug}`)
@@ -146,9 +161,17 @@ export default class App extends Component {
                     document.scrollingElement.scrollTop = offsetTop - (window.innerHeight / 4)
                 }
             }
-        } else if (this.state.splashActive !== prevState.splashActive) {
-            // Prevent scrolling when loader is active
-            document.documentElement.style['overflow-y'] = this.state.splashActive && document.scrollingElement.scrollTop === 0 ? 'hidden' : ''
+        }
+
+        if (this.state.splashActive !== prevState.splashActive) {
+            if (window.matchMedia('screen and (min-width: 600px)').matches) {
+                // Prevent scrolling when loader is active
+                if (this.state.splashActive && document.scrollingElement.scrollTop === 0) {
+                    this.freezeScroll()
+                } else {
+                    this.allowScroll()
+                }
+            }
         }
     }
 
@@ -230,7 +253,7 @@ export default class App extends Component {
                     <div path="/:songSlug"></div>
                     <div default></div>
                 </Router>
-                {this.state.splashLoaded &&
+                {(this.state.splashLoaded || !this.state.splashActive) &&
                     <KeyboardListener
                         onUp={e => {
                             e.preventDefault()
@@ -252,6 +275,7 @@ export default class App extends Component {
                                 this.setState({
                                     splashActive: false
                                 })
+                                this.allowScroll()
                             }
 
                             if(this.state.currentSong === null) {
