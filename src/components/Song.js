@@ -208,6 +208,13 @@ export default class Song extends Component {
                 if (this.props.isOpen) {
                     this.player.play().then(() => {
                         this.fadeVolume(1)
+                        if (this.state.currentSlideIndex === 0) {
+                            setTimeout(() => {
+                                this.setState({
+                                    currentSlideIndex: 1
+                                })
+                            }, 800)
+                        }
                     })
                 } else {
                     this.fadeVolume(0, 1.5, () => {
