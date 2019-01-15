@@ -23,7 +23,7 @@ const style = css`
         position: absolute;
         text-decoration: none;
         & .label {
-            color: var(--song-color);
+            color: var(--section-color);
             padding: 6px 14px;
             font-size: 20px;
             letter-spacing: 0.03em;
@@ -40,7 +40,7 @@ const style = css`
             top: 62px;
             left: -3px;
             border-radius: 100% 100%;
-            border: 2px solid var(--song-color);
+            border: 2px solid var(--section-color);
         }
     }
     & a.through-the-windshield {
@@ -66,11 +66,6 @@ const style = css`
 export default class Map extends Component {
     componentDidMount() {
         if (this.map.complete) this.props.onload()
-        // setTimeout(() => {
-		// 	this.setState({
-		// 		loadDelayComplete: true
-		// 	})
-		// }, 1000)
     }
 
     onload = () => {
