@@ -82,27 +82,29 @@ export default class VideoSlide extends Component {
             }
             & .content {
                 position: relative;
-                margin-top: 56px;
-                max-width: calc(100% - 30px);
+                margin: 56px 10px 0;
+                width: auto;
                 height: auto;
-                border: 8px solid var(--off-white);
-                overflow: hidden;
+                padding: 8px;
                 background: var(--off-white);
                 @media screen and (min-width: 600px) {
-                    border: 10px solid var(--off-white);
+                    padding: 10px;
                     margin-top: 0;
-                    height: auto;
-                    max-width: calc(100vw - 300px);
-                    max-height: 70vh;
                 }
                 & .video-wrapper {
                     position: relative;
                     & video {
                         display: block;
-                        width: 100%;
+                        width: auto;
                         height: auto;
+                        max-width: 100%;
+                        max-height: calc(100% - 200px);
                         opacity: ${!this.state.firstView && this.state.loaded ? 1 : 0};
                         transition: opacity 0.3s 0.3s ease-out;
+                        @media screen and (min-width: 600px) {
+                            max-width: calc(100vw - 300px);
+                            max-height: 70vh;
+                        }
                     }
                 }
                 & .caption {
