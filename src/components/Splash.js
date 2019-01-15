@@ -13,7 +13,7 @@ const scrollPoster = keyframes`
     }
 `
 
-const loaderStyle = css`
+const splashStyle = css`
 	position: relative;
 	z-index: 10;
 	width: 100%;
@@ -199,7 +199,7 @@ export default class Loader extends Component {
 
 		return (
 			<header
-				class={cx('Loader', this.state.mapLoaded ? 'map-loaded' : 'map-not-loaded', this.state.exiting && 'exiting', loaderStyle)}
+				class={cx('Splash', this.state.mapLoaded ? 'map-loaded' : 'map-not-loaded', this.state.exiting && 'exiting', splashStyle)}
 				ref={element => this.element = element}
 				onclick={() => {
 					if (this.state.mapLoaded) {

@@ -13,7 +13,7 @@ import utils from '../utils'
 const TweenLite = window.TweenLite
 
 import DelayUnmount from './DelayUnmount'
-import Loader from './Loader'
+import Splash from './Splash'
 import Header from './Header'
 import Song from './Song'
 import ArrowCursor from './ArrowCursor'
@@ -34,7 +34,7 @@ export default class App extends Component {
         const bigScreen = window.matchMedia('screen and (min-width: 600px)').matches
         if (bigScreen) {
             this.setState({
-                loaderActive: true
+                splashActive: true
             })
         }
     }
@@ -105,7 +105,7 @@ export default class App extends Component {
             })
         } else if (target === 'prev') {
             // Get array of all sections
-            const sections = Array.from(document.querySelectorAll('.Header, div.songs > .Song, .LinerNotes'))
+            const sections = Array.from(document.querySelectorAll('.Splash, .Header, div.songs > .Song, .LinerNotes'))
             // cache scrollTop (causes reflow)
             const scrollTop = document.scrollingElement.scrollTop
             target = sections.reverse().find(section => {
@@ -123,7 +123,7 @@ export default class App extends Component {
 
     onLoaderClick = () => {
         this.setState({
-            loaderActive: false
+            splashActive: false
         }, () => {
             setTimeout(() => {
                 this.scrollToElement(document.querySelector('.Song'), null, 1000)
@@ -146,10 +146,9 @@ export default class App extends Component {
                     document.scrollingElement.scrollTop = offsetTop - (window.innerHeight / 4)
                 }
             }
-        } else if (this.state.loaderActive !== prevState.loaderActive) {
-            console.log(this.state.loaderActive)
+        } else if (this.state.splashActive !== prevState.splashActive) {
             // Prevent scrolling when loader is active
-            document.documentElement.style['overflow-y'] = this.state.loaderActive && document.scrollingElement.scrollTop === 0 ? 'hidden' : ''
+            document.documentElement.style['overflow-y'] = this.state.splashActive && document.scrollingElement.scrollTop === 0 ? 'hidden' : ''
         }
     }
 
@@ -170,12 +169,12 @@ export default class App extends Component {
         return (
             <div class={cx('App', style)} ontouchstart={e => {return true}}>
                 {this.state.currentSong === null && bigScreen &&
-                    <Loader
+                    <Splash
                         onclick={this.onLoaderClick}
                         songs={this.state.songs}
                         onload={() => {
                             this.setState({
-                                loaderLoaded: true
+                                splashLoaded: true
                             })
                         }}
                     />
@@ -231,7 +230,7 @@ export default class App extends Component {
                     <div path="/:songSlug"></div>
                     <div default></div>
                 </Router>
-                {!this.state.loaderActive || this.state.loaderLoaded &&
+                {this.state.splashLoaded &&
                     <KeyboardListener
                         onUp={e => {
                             e.preventDefault()
@@ -249,7 +248,12 @@ export default class App extends Component {
                         }}
                         onDown={e => {
                             e.preventDefault()
-                            console.log('frog')
+                            if (this.state.splashActive) {
+                                this.setState({
+                                    splashActive: false
+                                })
+                            }
+
                             if(this.state.currentSong === null) {
                                 this.scrollToSection('next')
                             } else {
