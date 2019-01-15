@@ -10,6 +10,9 @@ const style = css`
     @media screen and (min-width: 1800px) {
         right: 0;
     }
+    &.loaded {
+        opacity: 1;
+    }
     & img {
         height: 100%;
         position: relative;
@@ -20,27 +23,15 @@ const style = css`
         position: absolute;
         text-decoration: none;
         & .label {
-            background: var(--off-white);
-            color: var(--song-color);
-            padding: 6px 12px;
+            color: var(--section-color);
+            padding: 6px 14px;
             font-size: 20px;
             letter-spacing: 0.03em;
             text-decoration: none;
             cursor: pointer;
-            border: 2px solid var(--song-color);
+            top: 48px;
+            position: relative;
             border-left: none;
-            &:hover {
-                background: var(--song-color);
-                color: var(--off-white);
-            }
-        }
-        & .line {
-            position: absolute;
-            width: 2px;
-            height: 64px;
-            left: 0;
-            top: 0;
-            background: var(--song-color);
         }
         & .dot {
             position: absolute;
@@ -49,30 +40,48 @@ const style = css`
             top: 62px;
             left: -3px;
             border-radius: 100% 100%;
-            border: 2px solid var(--song-color);
+            border: 2px solid var(--section-color);
         }
     }
     & a.through-the-windshield {
         transform: translateY(64px);
         & .label {
             position: relative;
-            top: 23px;
+            top: -20px;
             left: -100%;
-            border-left: 2px solid var(--song-color);
             border-right: none;
         }
         & .dot {
             top: -6px;
         }
     }
+    & a.horizon {
+        & .label {
+            top: 30px;
+            left: -80px;
+        }
+    }
 `
 
 export default class Map extends Component {
+    componentDidMount() {
+        if (this.map.complete) this.props.onload()
+    }
+
+    onload = () => {
+        this.setState({loaded: true})
+        this.props.onload()
+    }
 
     render() {
         return (
-            <nav class={cx('Map', style)}>
-                <img src={'assets/map.png'} alt="Hand-drawn map of Los Angeles with labeled pins" />
+            <nav class={cx('Map', this.state.loaded && 'loaded', style)}>
+                <img
+                    src={'assets/map.png'}
+                    alt="Hand-drawn map of Los Angeles with labeled pins"
+                    onload={this.onload}
+                    ref={map => this.map = map}
+                />
                 {this.props.pins.map(song =>
                     <a
                         class={song.slug}
@@ -83,7 +92,6 @@ export default class Map extends Component {
                         href={`/${song.slug}`}
                     >
                         <div class="label">{song.title}</div>
-                        <div class="line"></div>
                         <div class="dot"></div>
                     </a>
                 )}
