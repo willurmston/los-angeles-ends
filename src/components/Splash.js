@@ -63,11 +63,9 @@ const splashStyle = css`
 		z-index: 2;
 		cursor: pointer;
 		background-color: var(--section-color);
-        border: 1px solid var(--off-white);
 		&:hover {
-			background-color: var(--off-white);
 			color: var(--section-color);
-            border: 1px solid var(--section-color);
+			background-image: repeating-radial-gradient(circle at -50% 200%,transparent,transparent 1px, var(--off-white) 1px, var(--off-white) 8px,transparent 8px);
 		}
 		& span {
             display: block;

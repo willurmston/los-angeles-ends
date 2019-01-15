@@ -6,6 +6,7 @@ import QuoteSlide from './QuoteSlide'
 import NarrationSlide from './NarrationSlide'
 import LyricsSlide from './LyricsSlide'
 import VideoSlide from './VideoSlide'
+import EndSlide from './EndSlide'
 import BackgroundVideo from './BackgroundVideo'
 import Toolbar from './Toolbar'
 import HomeButton from './HomeButton'
@@ -61,7 +62,11 @@ export default class Song extends Component {
                 layout: this.props.song.titleLayout,
                 slug: this.props.song.slug
             },
-            ...this.props.song.slides
+            ...this.props.song.slides,
+            {
+                type: 'end',
+                nextSong: this.props.nextSong
+            }
         ]
 
         this.state.currentSlideIndex = 0
@@ -107,6 +112,14 @@ export default class Song extends Component {
                 <VideoSlide
                     slide={slide}
                     isCurrent={isCurrent}
+                />
+            )
+        } else if (slide.type === 'end') {
+            return (
+                <EndSlide
+                    slide={slide}
+                    isCurrent={isCurrent}
+                    nextSong={this.props.nextSong}
                 />
             )
         }
@@ -360,12 +373,12 @@ export default class Song extends Component {
                 font-size: 20px;
                 text-align: center;
                 letter-spacing: 0.1em;
-                background: var(--song-color);
+                background-color: var(--song-color);
                 color: var(--off-white);
                 & .ay {
                     letter-spacing: 0;
                 }
-                bottom: 84px;
+                bottom: 86px;
                 left: 0;
                 right: 0;
                 margin: 0 auto;
@@ -375,14 +388,14 @@ export default class Song extends Component {
                 opacity: ${this.props.isOpen ? 0 : 1};
                 transform: ${this.props.isOpen ? 'translateY(80px)' : 'translateY(0)'};
                 &:hover {
-                    background: var(--off-white);
                     color: var(--song-color);
+                    background-image: repeating-radial-gradient(circle at -50% 200%,transparent,transparent 1px, var(--off-white) 1px, var(--off-white) 8px,transparent 8px);;
                 }
             }
             @media screen and (min-width: 600px) {
                 height: 100%;
                 box-sizing: border-box;
-                & .HomeButton {
+                & > .HomeButton {
                     position: absolute;
                     top: 30px;
                     left: 30px;

@@ -59,19 +59,14 @@ export default class App extends Component {
         } else {
             const matchingSong = this.state.songs.find(song => song.slug === e.current.attributes.songSlug)
             if (matchingSong) {
-                if (this.state.currentSong) {
+                if (this.state.currentSong && matchingSong !== this.state.currentSong) {
                     // If there's already a song open
                     // First close the song
-                    route('/')
-                    // Then, scroll to next song
+                    route('/', true)
+
                     setTimeout(() => {
-                        const songElement = document.querySelector(`.Song#${matchingSong.slug}`)
-                        this.scrollToElement(songElement, () => {
-                            this.setState({
-                                currentSong: matchingSong,
-                                splashActive: false
-                            })
-                        })
+                        // Then, go to next song
+                        route(`/${matchingSong.slug}`, true)
                     }, 500)
                 } else {
                     const songElement = document.querySelector(`.Song#${matchingSong.slug}`)
@@ -224,6 +219,7 @@ export default class App extends Component {
                     {content.songs.map( (song, index) => (
                         <Song
                             song={song}
+                            nextSong={this.state.songs[(index + 1) % this.state.songs.length]}
                             index={index}
                             isOpen={song === this.state.currentSong}
                             isVisible={this.state.currentSong === null || song === this.state.currentSong}
