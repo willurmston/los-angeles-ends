@@ -139,7 +139,6 @@ const style = css`
         & h1 {
             letter-spacing: 1px;
             color: var(--accent-color);
-            margin-top: 2em;
             @media screen and (min-width: 600px) {
                 margin-top: 0;
                 letter-spacing: 4px;
