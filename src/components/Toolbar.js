@@ -147,7 +147,7 @@ export default class Toolbar extends Component {
                     <nav>
                         {this.props.slides.map( (slide, index) =>
                             <button
-                                class={index - 1 < this.props.currentSlideIndex && 'past'}
+                                class={index < this.props.currentSlideIndex && 'past'}
                                 onclick={() => this.props.onSegmentClick(index)}
                             ></button>
                         )}
@@ -168,7 +168,7 @@ export default class Toolbar extends Component {
                     <nav>
                         {this.props.slides.map( (slide, index) =>
                             <button
-                                class={index - 1 < this.props.currentSlideIndex && 'past'}
+                                class={index < this.props.currentSlideIndex && 'past'}
                                 tabindex={-1}
                             ></button>
                         )}
