@@ -208,13 +208,14 @@ export default class Song extends Component {
                 if (this.props.isOpen) {
                     this.player.play().then(() => {
                         this.fadeVolume(1)
-                        if (this.state.currentSlideIndex === 0) {
-                            setTimeout(() => {
-                                this.setState({
-                                    currentSlideIndex: 1
-                                })
-                            }, 800)
-                        }
+                        const hashIndex = this.indexFromHash()
+                        // After song starts playing, either jump to the index in the url,
+                        // or to the first content slide
+                        setTimeout(() => {
+                            this.setState({
+                                currentSlideIndex: hashIndex || 1
+                            })
+                        }, 800)
                     })
                 } else {
                     this.fadeVolume(0, 1.5, () => {
@@ -222,8 +223,8 @@ export default class Song extends Component {
                     })
                 }
             }
-            if (this.props.isOpen) {
-                setTimeout(() => this.onhashchange(), 400)
+            if (this.state.currentSlideIndex !== prevState.currentSlideIndex && this.props.isOpen) {
+                this.onhashchange()
             }
         }
 
@@ -250,11 +251,20 @@ export default class Song extends Component {
         window.removeEventListener('hashchange', this.onhashchange)
     }
 
+    indexFromHash() {
+        const index = Number(window.location.hash.substring(1))
+        if (index !== NaN && index <= this.state.slides.length - 1) {
+            return index
+        } else {
+            return null
+        }
+    }
+
     onhashchange = () => {
-        const index = window.location.hash.substring(1)
-        if (Number(index) !== NaN && Number(index) <= this.state.slides.length - 1 ) {
+        const index = this.indexFromHash()
+        if (index) {
             this.setState({
-                currentSlideIndex: Number(index)
+                currentSlideIndex: index
             })
         }
     }
@@ -329,9 +339,9 @@ export default class Song extends Component {
 
     setHash = () => {
         if (this.state.currentSlideIndex === 0) {
-            history.replaceState({}, document.title, `/${this.props.song.slug}`)
+            history.replaceState(null, null, `/${this.props.song.slug}`)
         } else {
-            history.replaceState({}, document.title, `/${this.props.song.slug}#${this.state.currentSlideIndex}`)
+            history.replaceState(null, null, `/${this.props.song.slug}#${this.state.currentSlideIndex}`)
         }
     }
 
