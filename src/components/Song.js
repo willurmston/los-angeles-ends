@@ -389,11 +389,11 @@ export default class Song extends Component {
                 padding: 11px 0px 10px 2px;
                 font-size: 20px;
                 text-align: center;
-                letter-spacing: 0.1em;
+                letter-spacing: 0.08em;
                 background-color: var(--song-color);
                 color: var(--off-white);
-                & .ay {
-                    letter-spacing: 0;
+                & .tighter {
+                    letter-spacing: -0.001em;
                 }
                 bottom: 86px;
                 left: 0;
@@ -514,7 +514,7 @@ export default class Song extends Component {
                         class="play-song"
                         onclick={() => route(`/${this.props.song.slug}`)}
                     >
-                        <span>PL<span class="ay">AY</span> SONG</span>
+                        <span>S<span class="tighter">T</span>ART SONG</span>
                     </button>
                 }
                 {bigScreen && this.props.isOpen &&

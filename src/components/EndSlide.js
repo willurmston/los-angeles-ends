@@ -78,12 +78,12 @@ export default class EndSlide extends Component {
                         padding: 11px 0px 10px 2px;
                         font-size: 20px;
                         text-align: center;
-                        letter-spacing: 0.1em;
+                        letter-spacing: 0.08em;
                         background-color: var(--song-color);
                         color: var(--off-white);
                         border: 2px solid var(--song-color);
-                        & .ay {
-                            letter-spacing: 0;
+                        & .tighter {
+                            letter-spacing: -0.001em;
                         }
                         cursor: pointer;
                         transition: transform 0.4s, opacity 0.1s;
@@ -110,7 +110,7 @@ export default class EndSlide extends Component {
                             {this.props.nextSong.title}
                         </h3>
                         <button onclick={this.onNextSongClick}>
-                            <span>Pl<span class="ay">ay</span> SONG</span>
+                            <span>S<span class="tighter">TA</span>RT SONG</span>
                         </button>
                     </div>
                 </div>
