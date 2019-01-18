@@ -16,7 +16,11 @@ export default class EndSlide extends Component {
 
     onNextSongClick = e => {
         e.stopPropagation()
-        route(`/${this.props.nextSong.slug}`)
+        if (this.props.nextSong) {
+            route(`/${this.props.nextSong.slug}`)
+        } else {
+            route(`/end-credits`)
+        }
     }
 
     render() {
@@ -106,12 +110,21 @@ export default class EndSlide extends Component {
                         <p>
                             Next:
                         </p>
-                        <h3>
-                            {this.props.nextSong.title}
-                        </h3>
-                        <button onclick={this.onNextSongClick}>
-                            <span>S<span class="tighter">TA</span>RT SONG</span>
-                        </button>
+                        {this.props.nextSong &&
+                            <h3>
+                                {this.props.nextSong.title}
+                            </h3>
+                        }
+                        {this.props.nextSong ?
+                            <button onclick={this.onNextSongClick}>
+                                <span>S<span class="tighter">TA</span>RT SONG</span>
+                            </button>
+                        :
+                            <button onclick={this.onNextSongClick}>
+                                <span><span class="tighter"></span>END CREDITS</span>
+                            </button>
+                        }
+
                     </div>
                 </div>
             </div>

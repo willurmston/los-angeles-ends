@@ -56,6 +56,11 @@ export default class App extends Component {
                 // so splash should never be active here
                 splashActive: false
             })
+        } else if (e.url === '/end-credits') {
+            route('/', true)
+            setTimeout(() => {
+                this.scrollToElement(document.querySelector('.LinerNotes'))
+            }, 500)
         } else {
             const matchingSong = this.state.songs.find(song => song.slug === e.current.attributes.songSlug)
             if (matchingSong) {
@@ -219,7 +224,7 @@ export default class App extends Component {
                     {content.songs.map( (song, index) => (
                         <Song
                             song={song}
-                            nextSong={this.state.songs[(index + 1) % this.state.songs.length]}
+                            nextSong={index + 1 < this.state.songs.length ? this.state.songs[index + 1] : null}
                             index={index}
                             isOpen={song === this.state.currentSong}
                             isVisible={this.state.currentSong === null || song === this.state.currentSong}
