@@ -31,7 +31,7 @@ module.exports = {
             text: 'Instagram'
         },
         {
-            href: 'http://soundcloud.com/simulcast__',
+            href: 'http://soundcloud.com/simulcastsimulcast',
             text: 'Soundcloud'
         }
     ],
