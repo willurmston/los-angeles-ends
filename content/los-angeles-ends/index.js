@@ -12,7 +12,7 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                december 2016 i'm home for the holidays.
+                december 2016 and i'm home for the holidays.
 
                 the sun, set but still glowing over glendale, radiates off the hood of my car.
 
@@ -47,16 +47,22 @@ module.exports = {
             markdown: markdown`
                 my mom died in october 2009, while the [station fire](https://www.youtube.com/watch?v=vCkRccwAr7Y) burned in the san gabriels, and ever since i've had nightmares of los angeles disappearing in a single orange blast.
 
-                i'll be sitting atop elysian park, where i can see a third of the playing field at dodger stadium. i’ve taken a picnic and a transistor radio to hear vin scully call the game. i feel santa ana winds cut the air.
+                i'll be sitting atop elysian park, where i can see a third of the playing field at dodger stadium. i’ve taken a picnic and a transistor radio to hear vin scully call the game.
 
-                then i turn my head and watch as the light grows closer, warmer, brighter.
+                santa ana winds cut the air.
             `
         },
         {
             type: 'narration',
             markdown: markdown`
-                “i guess that’s it,” i think.
+                then i turn my head and watch as the light grows closer, warmer, brighter.
 
+                “i guess that’s it,” i think.
+            `
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
                 i always wake up in a sweat.
 
                 it's my fault — it wouldn’t have happened if i hadn’t looked.
@@ -65,7 +71,15 @@ module.exports = {
         {
             type: 'quote',
             markdown: markdown`
-                "I was driving east across Sunset. Here and there the familiar buildings of downtown – most prominently, the Library Tower – swung into view behind the hills and the haze. And then through left (“blue”) eye I saw downtown, all of it—  Disappear. As if it had never been.  Obliterated in a flash of light more intense than can be imagined or described. The canonical phrase only hints at what I (monocularly) saw. 'Brighter than a thousand suns...'"
+                "I was driving east across Sunset. Here and there the familiar buildings of downtown – most prominently, the Library Tower – swung into view behind the hills and the haze. And then through left (“blue”) eye I saw downtown, all of it—  Disappear. As if it had never been..."
+
+                # – Howard A. Rodman, "BANG", *Black Clock No. 21* (2016)
+            `
+        },
+        {
+            type: 'quote',
+            markdown: markdown`
+                "...Obliterated in a flash of light more intense than can be imagined or described. The canonical phrase only hints at what I (monocularly) saw. 'Brighter than a thousand suns...'"
 
                 # – Howard A. Rodman, "BANG", *Black Clock No. 21* (2016)
             `
@@ -133,7 +147,7 @@ module.exports = {
             markdown: markdown`
             "The city burning is Los Angeles's deepest image of itself; Nathanael West perceived that, in *The Day of the Locust*; and at the time of the 1965 Watts riots what struck the imagination most indelibly were the fires. For days one could drive the Harbor Freeway and see the city on fire, just as we had always known it would be in the end."
 
-            # – Joan Didion, "Los Angeles Notebook", *Slouching Towards Bethlehem* (1968)
+            # – Joan Didion, "Los Angeles Notebook," *Slouching Towards Bethlehem* (1968)
             `
         },
         {

@@ -15,8 +15,14 @@ module.exports = {
             markdown: markdown`
                 october 2010 and i feel like i'm sinking. i stumble out of bed, wander into the living room.
 
-                my mom is sitting down, sipping a cappuccino, word document open on her titanium powerbook g4. light floods the windows.
+                my mom is sitting down, sipping a cappuccino, word document open on her titanium powerbook g4.
 
+                light floods through the windows.
+            `,
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
                 i see an orange glow where the computer charger meets the chassis, floating clouds on the desktop background.
             `,
         },
@@ -159,18 +165,33 @@ module.exports = {
             `,
         },
         {
-            type: 'video',
-            file: require('./nightcrawler-volume.mp4'),
+            type: 'quote',
             markdown: markdown`
-                *Nightcrawler* (2014)
+                "The ultimate world-historical significance — and oddity — of Los Angeles is that it has come to play the double role of utopia *and* dystopia for advanced capitalism..."
+
+                # Mike Davis – *City of Quartz* (1990)
             `,
         },
         {
             type: 'narration',
             markdown: markdown`
-                as i was finishing this record, cleaning out my childhood bedroom, i found a note from a high school classmate.
+                i live back in los angeles now and every drive renders joy and terror in alternation.
 
-                "somehow, being your passenger was the closest i'd gotten to achieving a deeper conversation with you," they wrote.
+                i feel it like a sine wave, oscillating back and forth so quickly that it sustains a single tone.
+
+                first it's one, then the other, then it's both.
+            `,
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                as i was finishing this record, cleaning out my childhood bedroom, i found a note from a high school classmate...
+            `,
+        },
+        {
+            type: 'quote',
+            markdown: markdown`
+                "Somehow, being your passenger was the closest I'd gotten to achieving a deeper conversation with you."
             `,
         },
         {

@@ -109,7 +109,7 @@ module.exports = {
 
                 in it, he argues that the built environments of los angeles and orange county facilitate new modes of viewing that break from 20th century tradition.
 
-                from disneyland to the [bonaventure hotel](https://vimeo.com/140975476), these spaces mirror a new mutation in capitalism — a celebration of collapsed time and space.
+                from disneyland to the [bonaventure hotel](https://www.youtube.com/watch?v=3ZBF2ohqAAc), these spaces mirror a new mutation in capitalism — a celebration of the completed map, the view from above, the collapse between time and space.
             `
         },
         {
@@ -122,7 +122,7 @@ module.exports = {
         },
         {
             type: 'video',
-            file: require('./speed-volume.mp4'),
+            file: require('./speed-volume-sd.mp4'),
             caption: markdown`
                 *Speed*, 1994
             `
@@ -142,7 +142,7 @@ module.exports = {
 
                 it's shot like a police chase, with cinematography alarmingly similar to the aerial coverage of o.j. simpson as he drove his ford bronco up the 5 from orange county to brentwood.
 
-                the shots are deeply familiar to me, born to a century where the jump cut between the view through the windshield and the view from above reads like natural language.
+                the frames are deeply familiar to me, born to a century where the jump cut between the view through the windshield and the view from above reads like natural language.
             `
         },
         {
@@ -160,9 +160,15 @@ module.exports = {
             markdown: markdown`
                 i drop my partner off at LAX and drive home, eastward, sun setting both in the rearview mirror and in reflection across the library tower.
 
-                forbidden from the diamond lane, i rinse the windshield and turn the wipers on. i'm too shut off to cry.
+                forbidden from the diamond lane, i rinse the windshield and turn the wipers on.
 
-                the camera pans out we see a silver lexus take directional ramp I-105 EB to I-110 NB, winding its way into the light blue night.
+                i'm too shut off to cry.
+            `
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
+                the camera pans out and we see a silver lexus take directional ramp I-105 EB to I-110 NB, winding its way into the light blue night.
             `
         },
         {

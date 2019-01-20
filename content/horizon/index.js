@@ -42,7 +42,7 @@ module.exports = {
             type: 'quote',
             markdown: markdown`
                 "The Hassidim tell a story about the world to come that says everything there will be just as it is here. Just as our room is now, so it will be in the world to come; where our baby sleeps now, there too it will sleep in the other world. And the clothes we wear in this world, those too we will wear there. Everything will be as it is now, just a little different."
-                # – Ben Lerner, *10:04*, (2014)
+                # – Ben Lerner, *10:04* (2014)
             `,
         },
         {
@@ -93,7 +93,7 @@ module.exports = {
             markdown: markdown`
                 i was certain that if i could get to the edge of my field of vision — as far away as i could see, as far away as i could perceive — that i could reach her.
 
-                maybe i could bring her back.
+                that maybe i could bring her back.
             `,
         },
         {
