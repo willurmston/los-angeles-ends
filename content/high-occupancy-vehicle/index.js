@@ -122,7 +122,7 @@ module.exports = {
         },
         {
             type: 'video',
-            file: require('./speed-volume-sd.mp4'),
+            file: require('./speed-volume-540.mp4'),
             caption: markdown`
                 *Speed*, 1994
             `
