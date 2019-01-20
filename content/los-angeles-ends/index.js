@@ -131,7 +131,7 @@ module.exports = {
         {
             type: 'quote',
             markdown: markdown`
-            "It is hard for people who have not lived in Los Angeles to realize how radically the Santa Ana figures in the local imagination. The city burning is Los Angeles's deepest image of itself; Nathanael West perceived that, in *The Day of the Locust*; and at the time of the 1965 Watts riots what struck the imagination most indelibly were the fires. For days one could drive the Harbor Freeway and see the city on fire, just as we had always known it would be in the end."
+            "The city burning is Los Angeles's deepest image of itself; Nathanael West perceived that, in *The Day of the Locust*; and at the time of the 1965 Watts riots what struck the imagination most indelibly were the fires. For days one could drive the Harbor Freeway and see the city on fire, just as we had always known it would be in the end."
 
             # – Joan Didion, "Los Angeles Notebook", *Slouching Towards Bethlehem* (1968)
             `

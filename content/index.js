@@ -23,22 +23,22 @@ module.exports = {
     ],
     socialLinks: [
         {
-            href: 'http://twitter.com/thisissimulcast',
+            href: 'http://twitter.com/simulcast__',
             text: 'Twitter'
         },
         {
-            href: 'http://instagram.com/thisissimulcast',
+            href: 'http://instagram.com/simulcast__',
             text: 'Instagram'
         },
         {
-            href: 'http://soundcloud.com/thisissimulcast',
+            href: 'http://soundcloud.com/simulcast__',
             text: 'Soundcloud'
         }
     ],
     // Use asterisks around *someone's name* to make it pink
     credits: markdown`
 
-        Research, writing, performance, arrangement, engineering, production, and re-mixing by *[Tristan Rodman](http://www.tristanrodman.com)*.
+        Research, writing, performance, arrangement, engineering, production, and re-mixing by *[Tristan Friedberg Rodman](http://www.tristanrodman.com)*.
 
         ## SOUND
 
@@ -52,7 +52,6 @@ module.exports = {
 
         ## DESIGN
 
-        Jesenya Maldonado drew the homepage map.
         *[David Anthony King](http://davidanthonyking.com/)* drew the Simulcast logo.
         *[Will Urmston](http://urmston.website)* designed and developed this website. [View source.](https://github.com/simulcast/los-angeles-ends)
 
