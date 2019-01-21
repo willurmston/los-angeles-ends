@@ -216,6 +216,15 @@ export default class Song extends Component {
                                 currentSlideIndex: hashIndex || 1
                             })
                         }, 800)
+                    }).catch(() => {
+                        // If song does not play
+                        // (this happens if there has been no user interaction)
+                        window.addEventListener('click', () => {
+                            this.player.play()
+                        }, {once: true})
+                        window.addEventListener('touchstart', () => {
+                            this.player.play()
+                        }, {once: true})
                     })
                 } else {
                     this.fadeVolume(0, 1.5, () => {
