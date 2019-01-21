@@ -96,7 +96,7 @@ module.exports = {
         },
         {
             type: 'video',
-            file: require('./magnolia-volume.mp4'),
+            file: require('./magnolia-volume-540.mp4'),
             caption: markdown`
                 *Magnolia*, 1999
             `

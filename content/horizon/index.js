@@ -98,7 +98,7 @@ module.exports = {
         },
         {
             type: 'video',
-            file: require('./charlies-angels-volume.mp4'),
+            file: require('./charlies-angels-volume-540-short.mp4'),
             caption: markdown`
                 *Charlie's Angels*, 2000
             `
