@@ -56,6 +56,10 @@ export default class LyricsSlide extends Component {
                     @media screen and (min-width: 600px) {
                         line-height: 1.4;
                         margin-bottom: 40px;
+                        & a {
+                            text-decoration: underline;
+                            pointer-events: all;
+                        }
                         & a:hover {
                             color: var(--off-white);
                             background: var(--song-color);
