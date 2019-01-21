@@ -16,7 +16,11 @@ export default class EndSlide extends Component {
 
     onNextSongClick = e => {
         e.stopPropagation()
-        route(`/${this.props.nextSong.slug}`)
+        if (this.props.nextSong) {
+            route(`/${this.props.nextSong.slug}`)
+        } else {
+            route(`/end-credits`)
+        }
     }
 
     render() {
@@ -78,12 +82,12 @@ export default class EndSlide extends Component {
                         padding: 11px 0px 10px 2px;
                         font-size: 20px;
                         text-align: center;
-                        letter-spacing: 0.1em;
+                        letter-spacing: 0.08em;
                         background-color: var(--song-color);
                         color: var(--off-white);
                         border: 2px solid var(--song-color);
-                        & .ay {
-                            letter-spacing: 0;
+                        & .tighter {
+                            letter-spacing: -0.001em;
                         }
                         cursor: pointer;
                         transition: transform 0.4s, opacity 0.1s;
@@ -106,12 +110,21 @@ export default class EndSlide extends Component {
                         <p>
                             Next:
                         </p>
-                        <h3>
-                            {this.props.nextSong.title}
-                        </h3>
-                        <button onclick={this.onNextSongClick}>
-                            <span>Pl<span class="ay">ay</span> SONG</span>
-                        </button>
+                        {this.props.nextSong &&
+                            <h3>
+                                {this.props.nextSong.title}
+                            </h3>
+                        }
+                        {this.props.nextSong ?
+                            <button onclick={this.onNextSongClick}>
+                                <span>S<span class="tighter">TA</span>RT SONG</span>
+                            </button>
+                        :
+                            <button onclick={this.onNextSongClick}>
+                                <span><span class="tighter"></span>END CREDITS</span>
+                            </button>
+                        }
+
                     </div>
                 </div>
             </div>
