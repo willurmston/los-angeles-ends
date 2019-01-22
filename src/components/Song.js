@@ -215,9 +215,11 @@ export default class Song extends Component {
                         // After song starts playing, either jump to the index in the url,
                         // or to the first content slide
                         setTimeout(() => {
-                            this.setState({
-                                currentSlideIndex: hashIndex || 1
-                            })
+                            if (this.state.currentSlideIndex === 0) {
+                                this.setState({
+                                    currentSlideIndex: hashIndex || 1
+                                })
+                            }
                         }, 800)
                     }).catch(() => {
                         // If song does not play
