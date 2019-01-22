@@ -70,11 +70,16 @@ export default class EndSlide extends Component {
                         letter-spacing: 1px;
                     }
                     & h3 {
-                        font-size: 2.4em;
+                        font-size: 12vw;
+                        line-height: 1.325;
+                        letter-spacing: -1px;
                         margin-top: 0;
                         margin-bottom: 26px;
                         text-align: center;
-                        line-height: 1.2;
+                        @media screen and (min-width: 600px) {
+                            font-size: 2.4em;
+                            line-height: 1.2;
+                        }
                     }
                     & button {
                         display: block;
