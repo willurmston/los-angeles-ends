@@ -13,7 +13,7 @@ const scrollPoster = keyframes`
 export default class BackgroundVideo extends Component {
     componentDidMount() {
         this.startTime = this.lastTimeStamp
-        this.FPS = 30
+        this.FPS = 16
         this.FPSInterval = 1000 / this.FPS
         this.lastTimeStamp = window.performance.now()
 
