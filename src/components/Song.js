@@ -170,8 +170,11 @@ export default class Song extends Component {
         } else if (state === 'loading') {
             playerState = 'loading'
         } else if (state === 'ended') {
-            playerState = 'playing'
-            this.player.play()
+            // If song ends, seek back to beginning and then play again
+            playerState = 'paused'
+            this.player.seek(0).then(() => {
+                this.player.play()
+            })
         } else {
             playerState = 'paused'
         }
