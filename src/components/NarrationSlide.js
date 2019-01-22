@@ -19,6 +19,7 @@ export default class NarrationSlide extends Component {
                 }
                 /* stack left-to-right */
                 @media screen and (min-width: 1300px) {
+                    width: ${100 / children.length}% !important;
                     margin-right: -20px !important;
                     margin-left: 0 !important;
                     margin-top: ${4 * index}% !important;
@@ -63,6 +64,7 @@ export default class NarrationSlide extends Component {
                 & p {
                     display: table;
                     border: 2px solid var(--song-color);
+                    box-sizing: border-box;
                     line-height: 1.7;
                     margin: 16px 20px;
                     padding: 16px 20px;
