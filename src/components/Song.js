@@ -365,6 +365,7 @@ export default class Song extends Component {
             --song-color: var(--${this.props.song.color});
             background: var(--song-color);
             height: ${this.props.isOpen ? '100vh' : '100vw' };
+            height: ${this.props.isOpen ? 'calc(100 * var(--vh))' : '100vw' };
             overflow: hidden;
             position: relative;
             width: 100vw;

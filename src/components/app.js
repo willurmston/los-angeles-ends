@@ -7,6 +7,7 @@ import {css, cx, injectGlobal} from 'emotion'
 import content from '../../content/index.js'
 import Router, {route}  from 'preact-router'
 import Match from 'preact-router/match'
+import {debounce} from 'lodash'
 import utils from '../utils'
 
 // TweenLite has to be loaded in /src/template.html
@@ -29,6 +30,7 @@ export default class App extends Component {
         this.state.playBackgrounds = true
         this.state.allowScroll = true
         this.state.splashActive = false
+        this.cacheInnerHeight()
     }
 
     freezeScroll() {
@@ -46,6 +48,13 @@ export default class App extends Component {
                 splashActive: true
             })
         }
+        window.addEventListener('resize', debounce(this.cacheInnerHeight, 300))
+    }
+
+    cacheInnerHeight = () => {
+        // Save 1% the innerHeight to get the initial innerHeight on mobile browsers
+        const vh = window.innerHeight * 0.01
+        document.documentElement.style.setProperty('--vh', `${vh}px`)
     }
 
     handleRoute = (e) => {

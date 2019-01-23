@@ -3,7 +3,7 @@ import {css, cx} from 'emotion'
 import PlayButton from './PlayButton'
 
 const style = css`
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     background: var(--off-white);
@@ -14,6 +14,7 @@ const style = css`
     transition: transform 0.4s;
     will-change: transform;
     @media screen and (min-width: 600px) {
+        position: fixed;
         display: flex;
         justify-content: space-between;
         align-items: center;
