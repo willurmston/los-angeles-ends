@@ -99,7 +99,6 @@ export default class TitleSlide extends Component {
                 }
                 & span {
                     display: block;
-                    width: 100%;
                 }
             }
             &.center {
@@ -109,6 +108,9 @@ export default class TitleSlide extends Component {
             }
             &.cascade {
                 & h1 {
+                    & span {
+                        width: 100%;
+                    }
                     & span:first-child {
                         text-align: left;
                     }
