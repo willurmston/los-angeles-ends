@@ -424,7 +424,7 @@ export default class Song extends Component {
                 }
             }
             @media screen and (min-width: 600px) {
-                height: 100%;
+                height: 100vh;
                 box-sizing: border-box;
                 & > .HomeButton {
                     position: absolute;
