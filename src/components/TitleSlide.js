@@ -146,7 +146,7 @@ export default class TitleSlide extends Component {
         const bigScreen = window.matchMedia('screen and (min-width: 600px)').matches
 
         return (
-            <div class={cx('slide', 'TitleSlide', this.props.layout, titleSlideStyle)}>
+            <div class={cx('Slide', 'TitleSlide', this.props.layout, titleSlideStyle)}>
                 <a class="title">
                     <h1 dangerouslySetInnerHTML={{__html: this.words()}}>
                     </h1>

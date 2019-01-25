@@ -260,7 +260,7 @@ export default class Song extends Component {
         }
 
         if (this.state.currentSlideIndex !== prevState.currentSlideIndex) {
-            this.element.querySelectorAll(`.slide`)[this.state.currentSlideIndex].scrollTop = 0
+            this.element.querySelectorAll(`.Slide`)[this.state.currentSlideIndex].scrollTop = 0
         }
 
         if (this.props.pauseBackground !== prevProps.pauseBackground) {
