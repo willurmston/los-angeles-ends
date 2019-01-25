@@ -16,7 +16,6 @@ export default class LyricsSlide extends Component {
 
     render() {
         const style = css`
-            padding-top: 30px;
             @media screen and (min-width: 600px) {
                 margin: auto 0;
                 padding-top: 40px;
@@ -35,7 +34,7 @@ export default class LyricsSlide extends Component {
                     }
                 }
                 display: table;
-                margin: 40px 20px;
+                margin: 30px 20px;
                 color: var(--song-color);
                 & a {
                     text-decoration: none;
@@ -53,9 +52,6 @@ export default class LyricsSlide extends Component {
                         background: var(--song-color);
                     }
                 }
-            }
-            & p:last-child {
-                margin-bottom: 60px;
             }
         `
 
