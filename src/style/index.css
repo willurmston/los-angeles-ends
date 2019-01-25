@@ -6,11 +6,7 @@
 
 html {
     margin: 0;
-    width: 100%;
-    height: 100%;
     quotes: "\201C" "\201D";
-    overflow-x: hidden;
-    overflow-y: auto;
     position: relative;
     /* COLORS */
     --off-white: #FFE6C2;
@@ -19,6 +15,14 @@ html {
     --red: #db000b;
     --pink: #C70074;
     --blue: #0027a8;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    font-family: 'FluxisheElse', sans-serif;
+    background-color: var(--off-white);
+    font-size: 20px;
 }
 
 p, h1, h2, h3, button {
@@ -37,15 +41,6 @@ button {
 
 a {
 	color: inherit;
-}
-
-body {
-    position: relative;
-    overflow-x: hidden;
-    margin: 0;
-    font-family: 'FluxisheElse', sans-serif;
-    background-color: var(--off-white);
-    font-size: 20px;
 }
 
 ::-webkit-scrollbar {
