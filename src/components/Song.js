@@ -116,7 +116,9 @@ export default class Song extends Component {
             )
         } else if (slide.type === 'video') {
             return (
-                <Slide>
+                <Slide
+                    isCurrent={isCurrent}
+                >
                     <VideoSlide
                         slide={slide}
                         isCurrent={isCurrent}

@@ -2,6 +2,24 @@ import {h, Component} from 'preact'
 import {css, cx} from 'emotion'
 import {disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks} from 'body-scroll-lock'
 
+const style = css`
+    width: 100vw;
+    height: 100%;
+    position: relative;
+    flex-shrink: 0;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    @media screen and (min-width: 600px) {
+        font-size: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+`
+
 export default class Slide extends Component {
     componentDidMount() {
         disableBodyScroll(this.element)
@@ -12,28 +30,10 @@ export default class Slide extends Component {
     }
 
     shouldComponentUpdate(nextProps) {
-        return false
+        return nextProps.isCurrent !== this.props.isCurrent
     }
 
     render() {
-        const style = css`
-            width: 100vw;
-            height: 100%;
-            position: relative;
-            flex-shrink: 0;
-            position: relative;
-            overflow-x: hidden;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-            @media screen and (min-width: 600px) {
-                font-size: 24px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-wrap: wrap;
-            }
-        `
-
         return (
             <div
                 class={cx('Slide', style)} ref={element => this.element = element}
