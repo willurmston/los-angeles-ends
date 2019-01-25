@@ -8,6 +8,7 @@ html {
     margin: 0;
     quotes: "\201C" "\201D";
     position: relative;
+    overflow-x: hidden;
     /* COLORS */
     --off-white: #FFE6C2;
     --purple: #65008a;
