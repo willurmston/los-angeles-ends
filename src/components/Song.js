@@ -160,7 +160,6 @@ export default class Song extends Component {
                     playerProgress: time / this.player.getDuration()
                 })
             })
-            if (this.props.isOpen)  this.player.play()
         }).catch(error => console.error(`Request to stream "${this.props.song.title}" failed`, {
             ...error,
             song: {

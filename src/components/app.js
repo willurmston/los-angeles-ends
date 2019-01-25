@@ -230,7 +230,7 @@ export default class App extends Component {
                         })
                     }
                 >
-                    {content.songs.map( (song, index) => (
+                    {this.state.songs.map( (song, index) => (
                         <Song
                             song={song}
                             nextSong={index + 1 < this.state.songs.length ? this.state.songs[index + 1] : null}
