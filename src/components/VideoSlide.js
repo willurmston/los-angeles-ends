@@ -70,96 +70,84 @@ export default class VideoSlide extends Component {
 
     render() {
         const style = css`
-            width: 100vw;
             position: relative;
-            display: flex;
-            justify-content: center;
-            flex-direction: center;
-            align-items: flex-start;
-            align-content: center;
+            margin: 56px 10px 0;
+            width: auto;
+            height: auto;
+            padding: 8px;
+            background: var(--off-white);
             @media screen and (min-width: 600px) {
-                align-items: center;
+                padding: 10px;
+                margin-top: 0;
             }
-            & .content {
+            & .video-wrapper {
                 position: relative;
-                margin: 56px 10px 0;
-                width: auto;
-                height: auto;
-                padding: 8px;
-                background: var(--off-white);
-                @media screen and (min-width: 600px) {
-                    padding: 10px;
-                    margin-top: 0;
-                }
-                & .video-wrapper {
-                    position: relative;
-                    & video {
-                        display: block;
-                        width: auto;
-                        height: auto;
-                        max-width: 100%;
-                        max-height: calc(100% - 200px);
-                        opacity: ${!this.state.firstView && this.state.loaded ? 1 : 0};
-                        transition: opacity 0.3s 0.3s ease-out;
-                        @media screen and (min-width: 600px) {
-                            max-width: calc(100vw - 300px);
-                            max-height: 70vh;
-                        }
-                    }
-                }
-                & .caption {
-                    color: var(--song-color);
-                    & p {
-                        margin: 0.6em 0 0 0;
-                    }
-                }
-                & button.mute {
-                    position: absolute;
-                    width: 60px;
-                    height: 60px;
-                    bottom: 0;
-                    right: 0;
-                    cursor: pointer !important;
-                    display: ${(this.props.slide.volume || this.props.slide.volume !== 0) ? 'block' : 'none'};
+                & video {
+                    display: block;
+                    width: auto;
+                    height: auto;
+                    max-width: 100%;
+                    max-height: calc(100% - 200px);
+                    opacity: ${!this.state.firstView && this.state.loaded ? 1 : 0};
+                    transition: opacity 0.3s 0.3s ease-out;
                     @media screen and (min-width: 600px) {
-                        width: 80px;
-                        height: 80px;
+                        max-width: calc(100vw - 300px);
+                        max-height: 70vh;
                     }
-                    & svg {
-                        display: block;
-                        position: absolute;
-                        bottom: 10px;
-                        right: 10px;
-                        @media screen and (min-width: 600px) {
-                            bottom: 20px;
-                            right: 20px;
-                        }
+                }
+            }
+            & .caption {
+                color: var(--song-color);
+                & p {
+                    margin: 0.6em 0 0 0;
+                }
+            }
+            & button.mute {
+                position: absolute;
+                width: 60px;
+                height: 60px;
+                bottom: 0;
+                right: 0;
+                cursor: pointer !important;
+                display: ${(this.props.slide.volume || this.props.slide.volume !== 0) ? 'block' : 'none'};
+                @media screen and (min-width: 600px) {
+                    width: 80px;
+                    height: 80px;
+                }
+                & svg {
+                    display: block;
+                    position: absolute;
+                    bottom: 10px;
+                    right: 10px;
+                    @media screen and (min-width: 600px) {
+                        bottom: 20px;
+                        right: 20px;
                     }
                 }
             }
         `
 
         return (
-            <div class={cx('slide', 'VideoSlide', style)}>
-                <div class="content">
-                    <div class="video-wrapper">
-                        <video
-                            ref={video => this.video = video}
-                            src={this.props.slide.file}
-                            onplay={this.onplay}
-                            onpause={this.onpause}
-                            onloadeddata={this.onload}
-                            muted={this.state.muted}
-                            playsinline
-                            preload
-                            loop
-                        ></video>
-                        {this.muteButton()}
-                    </div>
-                    {this.props.slide.caption &&
-                        <div class="caption" dangerouslySetInnerHTML={{__html: this.props.slide.caption}}></div>
-                    }
+            <div
+                class={cx('VideoSlide', style)}
+            >
+                <div class="video-wrapper">
+                    <video
+                        ref={video => this.video = video}
+                        src={this.props.slide.file}
+                        onplay={this.onplay}
+                        onpause={this.onpause}
+                        onloadeddata={this.onload}
+                        muted={this.state.muted}
+                        playsinline
+                        preload
+                        loop
+                    ></video>
+                    {this.muteButton()}
                 </div>
+                {this.props.slide.caption &&
+                    <div class="caption" dangerouslySetInnerHTML={{__html: this.props.slide.caption}}></div>
+                }
             </div>
         )
     }

@@ -68,7 +68,6 @@ export default class BackgroundVideo extends Component {
     render() {
         const style = css`
             background: var(--song-color);
-            position: relative;
             top: 0;
             width: 100%;
             height: 100%;
@@ -76,9 +75,6 @@ export default class BackgroundVideo extends Component {
                 height: 100%;
                 width: 100%;
                 display: flex;
-                position: absolute;
-                top: 0;
-                left: 0;
                 background-image: url('assets/noise.png');
                 background-size: auto 100%;
                 image-rendering: auto;

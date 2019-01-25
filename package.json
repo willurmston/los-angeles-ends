@@ -25,6 +25,7 @@
     "preact-cli": "^2.1.0"
   },
   "dependencies": {
+    "body-scroll-lock": "^2.6.1",
     "emotion": "^9.2.12",
     "file-loader": "^2.0.0",
     "intersection-observer": "^0.5.1",

@@ -30,85 +30,75 @@ export default class NarrationSlide extends Component {
 
     render() {
         const style = css`
-            width: 100vw;
-            position: relative;
+            padding-top: 10px;
             @media screen and (min-width: 600px) {
-                font-size: 24px;
+                display: block;
                 display: flex;
+                flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                flex-wrap: wrap;
+                width: auto;
+                flex-shrink: 1;
+                margin: auto 0;
+                padding-top: 60px;
+                width: calc(100vw - 200px);
             }
-            & .content {
-                padding-top: 40px;
-                overflow: visible;
-                @media screen and (min-width: 600px) {
-                    display: block;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    width: auto;
-                    flex-shrink: 1;
-                    margin: auto 0;
-                    padding-top: 60px;
-                    width: calc(100vw - 200px);
-                }
-                @media screen and (min-width: 1300px) {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                    align-items: flex-start;
-                    max-width: calc(100vw - 200px);
-                }
-                & p {
-                    display: table;
-                    border: 2px solid var(--song-color);
-                    box-sizing: border-box;
-                    line-height: 1.7;
-                    margin: 16px 20px;
-                    padding: 16px 20px;
-                    background: var(--off-white);
-                    color: var(--song-color);
-                    white-space: pre-wrap;
-                    & a {
-                        text-decoration: none;
-                        pointer-events: none;
-                        @media screen and (min-width: 600px) {
-                            text-decoration: underline;
-                            pointer-events: all;
-                            &:hover {
-                                color: var(--off-white);
-                                background: var(--song-color);
-                            }
+            @media screen and (min-width: 1300px) {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-start;
+                max-width: calc(100vw - 200px);
+            }
+            & p {
+                display: table;
+                border: 2px solid var(--song-color);
+                box-sizing: border-box;
+                line-height: 1.7;
+                margin: 16px 20px;
+                padding: 16px 20px;
+                background: var(--off-white);
+                color: var(--song-color);
+                white-space: pre-wrap;
+                & a {
+                    text-decoration: none;
+                    pointer-events: none;
+                    @media screen and (min-width: 600px) {
+                        text-decoration: underline;
+                        pointer-events: all;
+                        &:hover {
+                            color: var(--off-white);
+                            background: var(--song-color);
                         }
                     }
-                    @media screen and (min-width: 600px) {
-                        display: table;
-                        padding: 24px 28px;
-                        max-width: 420px;
-                        position: relative;
-                        flex-shrink: 0;
-                        flex-grow: 0;
-                    }
-                    @media screen and (min-width: 1300px) {
-                        display: table;
-                        width: auto;
-                        max-width: 420px;
-                        flex-shrink: 1;
-                        margin-bottom: 60px;
-                    }
                 }
-                & p:last-child {
+                @media screen and (min-width: 600px) {
+                    display: table;
+                    padding: 24px 28px;
+                    max-width: 420px;
+                    position: relative;
+                    flex-shrink: 0;
+                    flex-grow: 0;
+                }
+                @media screen and (min-width: 1300px) {
+                    display: table;
+                    width: auto;
+                    max-width: 420px;
+                    flex-shrink: 1;
                     margin-bottom: 60px;
                 }
+            }
+            & p:last-child {
+                margin-bottom: 30px;
             }
         `
 
         return (
-            <div class={cx('slide', 'NarrationSlide', style)} ref={element => this.element = element}>
-                <div class='content' dangerouslySetInnerHTML={{__html: this.props.slide.markdown}}></div>
-            </div>
+            <div
+                ref={element => this.element = element}
+                class={cx('NarrationSlide', style)}
+                dangerouslySetInnerHTML={{__html: this.props.slide.markdown}}
+            ></div>
         )
     }
 }

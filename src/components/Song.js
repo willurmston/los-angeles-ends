@@ -1,6 +1,7 @@
 import {h, Component} from 'preact'
 import {css, cx} from 'emotion'
 import {route} from 'preact-router'
+import Slide from './Slide'
 import TitleSlide from './TitleSlide'
 import QuoteSlide from './QuoteSlide'
 import NarrationSlide from './NarrationSlide'
@@ -88,39 +89,49 @@ export default class Song extends Component {
             )
         } else if (slide.type === 'quote') {
             return (
-                <QuoteSlide
-                    slide={slide}
-                    isCurrent={isCurrent}
-                />
+                <Slide>
+                    <QuoteSlide
+                        slide={slide}
+                        isCurrent={isCurrent}
+                    />
+                </Slide>
             )
         } else if (slide.type === 'narration') {
             return (
-                <NarrationSlide
-                    slide={slide}
-                    isCurrent={isCurrent}
-                />
+                <Slide>
+                    <NarrationSlide
+                        slide={slide}
+                        isCurrent={isCurrent}
+                    />
+                </Slide>
             )
         } else if (slide.type === 'lyrics') {
             return (
-                <LyricsSlide
-                    slide={slide}
-                    isCurrent={isCurrent}
-                />
+                <Slide>
+                    <LyricsSlide
+                        slide={slide}
+                        isCurrent={isCurrent}
+                    />
+                </Slide>
             )
         } else if (slide.type === 'video') {
             return (
-                <VideoSlide
-                    slide={slide}
-                    isCurrent={isCurrent}
-                />
+                <Slide>
+                    <VideoSlide
+                        slide={slide}
+                        isCurrent={isCurrent}
+                    />
+                </Slide>
             )
         } else if (slide.type === 'end') {
             return (
-                <EndSlide
-                    slide={slide}
-                    isCurrent={isCurrent}
-                    nextSong={this.props.nextSong}
-                />
+                <Slide>
+                    <EndSlide
+                        slide={slide}
+                        isCurrent={isCurrent}
+                        nextSong={this.props.nextSong}
+                    />
+                </Slide>
             )
         }
     }
@@ -385,16 +396,6 @@ export default class Song extends Component {
                     height: calc(100vh - 70px);
                     transition: transform 0.4s cubic-bezier(.23,.23,.36,.95), top 0.2s cubic-bezier(.23,.23,.36,.95);
                     top: 0;
-                }
-                & .slide {
-                    max-height: 100%;
-                    position: relative;
-                    flex-shrink: 0;
-                    overflow-y: auto;
-                    -webkit-overflow-scrolling: touch;
-                    & .content > * {
-                        cursor: default;
-                    }
                 }
             }
             & button.play-song {

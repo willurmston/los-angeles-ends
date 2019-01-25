@@ -37,6 +37,8 @@ export default class TitleSlide extends Component {
             justify-content: center;
             position: relative;
             width: 100vw;
+            height: 100%;
+            overflow: hidden;
             & a.title {
                 text-decoration: none;
                 cursor: none;

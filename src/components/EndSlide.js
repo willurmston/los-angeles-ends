@@ -25,84 +25,73 @@ export default class EndSlide extends Component {
 
     render() {
         const endSlideStyle = css`
+            width: calc(100% - 40px);
             display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            position: relative;
-            width: 100vw;
+            justify-content: space-between;
+            margin: 60px 52px;
+            flex-shrink: 1;
+            overflow: hidden;
+            -webkit-tap-highlight-color: transparent;
             @media screen and (min-width: 600px) {
-                justify-content: center;
+                width: 550px;
             }
-            & div.content {
-                width: calc(100% - 40px);
+            & svg {
+                fill: var(--off-white);
+                &:active {
+                    fill: var(--song-color);
+                }
+            }
+            & .next-song-message {
+                width: 100%;
                 display: flex;
-                justify-content: space-between;
-                margin: 60px 52px;
-                flex-shrink: 1;
-                overflow: hidden;
-                -webkit-tap-highlight-color: transparent;
-                @media screen and (min-width: 600px) {
-                    width: 550px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 2em;
+                margin: auto;
+                background: var(--off-white);
+                color: var(--song-color);
+                cursor: pointer;
+                & p {
+                    font-size: 20px;
+                    margin-top: 0;
+                    margin-bottom: 18px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
                 }
-                & svg {
-                    fill: var(--off-white);
-                    &:active {
-                        fill: var(--song-color);
+                & h3 {
+                    font-size: 12vw;
+                    line-height: 1.325;
+                    letter-spacing: -1px;
+                    margin-top: 0;
+                    margin-bottom: 26px;
+                    text-align: center;
+                    @media screen and (min-width: 600px) {
+                        font-size: 2.4em;
+                        line-height: 1.2;
                     }
                 }
-                & .next-song-message {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    padding: 2em;
-                    margin: auto;
-                    background: var(--off-white);
-                    color: var(--song-color);
+                & button {
+                    display: block;
+                    width: 170px;
+                    padding: 11px 0px 10px 2px;
+                    font-size: 20px;
+                    text-align: center;
+                    letter-spacing: 0.08em;
+                    background-color: var(--song-color);
+                    color: var(--off-white);
+                    border: 2px solid var(--song-color);
+                    & .tighter {
+                        letter-spacing: -0.001em;
+                    }
                     cursor: pointer;
-                    & p {
-                        font-size: 20px;
-                        margin-top: 0;
-                        margin-bottom: 18px;
-                        text-transform: uppercase;
-                        letter-spacing: 1px;
-                    }
-                    & h3 {
-                        font-size: 12vw;
-                        line-height: 1.325;
-                        letter-spacing: -1px;
-                        margin-top: 0;
-                        margin-bottom: 26px;
-                        text-align: center;
-                        @media screen and (min-width: 600px) {
-                            font-size: 2.4em;
-                            line-height: 1.2;
-                        }
-                    }
-                    & button {
-                        display: block;
-                        width: 170px;
-                        padding: 11px 0px 10px 2px;
-                        font-size: 20px;
-                        text-align: center;
-                        letter-spacing: 0.08em;
-                        background-color: var(--song-color);
-                        color: var(--off-white);
-                        border: 2px solid var(--song-color);
-                        & .tighter {
-                            letter-spacing: -0.001em;
-                        }
-                        cursor: pointer;
-                        transition: transform 0.4s, opacity 0.1s;
-                        opacity: ${this.props.isOpen ? 0 : 1};
-                        transform: ${this.props.isOpen ? 'translateY(80px)' : 'translateY(0)'};
-                        text-transform: uppercase;
-                        &:hover, :active {
-                            color: var(--song-color);
-                            background-image: repeating-radial-gradient(circle at -50% 200%,transparent,transparent 1px, var(--off-white) 1px, var(--off-white) 8px,transparent 8px);
-                        }
+                    transition: transform 0.4s, opacity 0.1s;
+                    opacity: ${this.props.isOpen ? 0 : 1};
+                    transform: ${this.props.isOpen ? 'translateY(80px)' : 'translateY(0)'};
+                    text-transform: uppercase;
+                    &:hover, :active {
+                        color: var(--song-color);
+                        background-image: repeating-radial-gradient(circle at -50% 200%,transparent,transparent 1px, var(--off-white) 1px, var(--off-white) 8px,transparent 8px);
                     }
                 }
             }
