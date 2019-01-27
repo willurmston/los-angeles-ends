@@ -23,7 +23,6 @@ const style = css`
         color: var(--off-white);
         padding: 30px 20px;
         overflow: hidden;
-
         &::before {
             content: '';
             display: block;
@@ -203,7 +202,11 @@ const style = css`
                 left: -64px;
                 background: var(--color);
                 height: 2px;
-                margin-bottom: 2em;
+                margin-top: 2em;
+                margin-bottom: 1.5em;
+                @media screen and (min-width: 600px) {
+                    margin-bottom: 2em;
+                }
             }
             max-width: 550px;
             color: var(--color);
