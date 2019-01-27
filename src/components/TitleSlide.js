@@ -39,7 +39,7 @@ export default class TitleSlide extends Component {
             width: 100vw;
             height: 100%;
             overflow: hidden;
-            & a.title {
+            & div.title {
                 text-decoration: none;
                 cursor: none;
                 -webkit-tap-highlight-color: transparent;
@@ -147,10 +147,10 @@ export default class TitleSlide extends Component {
 
         return (
             <div class={cx('Slide', 'TitleSlide', this.props.layout, titleSlideStyle)}>
-                <a class="title">
+                <div class="title">
                     <h1 dangerouslySetInnerHTML={{__html: this.words()}}>
                     </h1>
-                </a>
+                </div>
                 { !bigScreen && !this.props.songIsOpen &&
                     <div class="play-song-button">
                         {this.rightButton()}
