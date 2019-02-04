@@ -178,8 +178,6 @@ module.exports = {
                 i live back in los angeles now and every drive renders joy and terror in alternation.
 
                 i feel it like a sine wave, oscillating back and forth so quickly that it sustains a single tone.
-
-                first it's one, then the other, then it's both.
             `,
         },
         {

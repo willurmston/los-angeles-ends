@@ -165,12 +165,14 @@ module.exports = {
                 i'm too shut off to cry.
             `
         },
+        /*
         {
             type: 'narration',
             markdown: markdown`
                 the camera pans out and we see a silver lexus take directional ramp I-105 EB to I-110 NB, winding its way into the light blue night.
             `
         },
+        */
         {
             type: 'lyrics',
             markdown: markdown`

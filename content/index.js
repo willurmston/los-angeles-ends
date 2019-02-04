@@ -38,7 +38,7 @@ module.exports = {
     // Use asterisks around *someone's name* to make it pink
     credits: markdown`
 
-        Research, writing, performance, arrangement, engineering, production, and re-mixing by *[Tristan Friedberg Rodman](http://www.tristanrodman.com)*.
+        Research, writing, performance, arrangement, engineering, production, and re-mixing by *[Tristan Friedberg Rodman](http://www.instagram.com/simulcast__)*.
 
         ## SOUND
 
@@ -59,7 +59,7 @@ module.exports = {
 
         Endless thanks to *Howard A. Rodman*, *Jay Mamana*, *Matthew Marsico*, *Noah Klein*, *Carly Eiseman*, *Isaac Schneider*, and *Jesenya Maldonado* for their love, collaboration, and support.
 
-        Dedicated to my mother, *Anne Friedberg*, who is listening, somewhere, on the other side.
+        Dedicated to my mother, *Anne Friedberg*, who is still tuning in, somewhere, out of frame.
 
         📡 – *[Simulcast](http://www.simulcast.fm)*
     `

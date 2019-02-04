@@ -126,7 +126,7 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                originally called cahuenga road no. 2, in 1885 western avenue was re-named for a what was then cardinal boundary of the city's development.
+                originally called cahuenga road no. 2, in 1885 western avenue was re-named for a what was then a cardinal boundary of the city's development.
 
                 it runs in a straight line, uninterrupted from los feliz boulevard in the hollywood hills to the pacific ocean in san pedro, the second-longest north-south street in the city.
             `

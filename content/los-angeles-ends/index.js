@@ -127,7 +127,7 @@ module.exports = {
             markdown: markdown`
                 but as i write this it's 2018 and malibu and the west valley are on fire, uncontained.
 
-                i drive the 134 as the woolsey fire burns, sun blaring orange through the haze – radiant, beautiful, terrifying.
+                i drive the 134 and the woolsey fire burns, sun blaring orange through the haze – radiant, beautiful, terrifying.
 
                 the exact shade that ends the city in my song, in my dreams, in my dad's left eye.
             `
