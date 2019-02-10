@@ -183,7 +183,9 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                as i was finishing this record, cleaning out my childhood bedroom, i found a note from a high school classmate...
+                as i was finishing this record, i cleaned out my childhood bedroom, readying the house for a new chapter.
+
+                amidst the clutter, i found this note from a high school classmate.
             `,
         },
         {
