@@ -58,7 +58,7 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                the record unfurls like a real-time document of elverum's grief, written and recorded in the fallout, in oscillation between acceptance and refusal.
+                the record unfurls like a real-time document of elverum's grief, written and recorded in the fallout, an oscillation between acceptance and refusal.
 
                 its songwriting devastates with specifics: the loneliness of taking out the garbage at night, the chill of proximity when the deceased show up in our dreams, the melancholy that sets in when looking out at the horizon.
 
@@ -140,7 +140,7 @@ module.exports = {
 
                 deleuze wrote frequently about the distinction between the space of the screen and the space outside of it — what he called the *hors-champ*, “a more radical elsewhere, outside homogenous space and time.”
 
-                in his death, my mom ends, deleuze found a way to move out of the frame.
+                in death, my mom ends, deleuze found a way to move out of the frame.
             `,
         },
         {

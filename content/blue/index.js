@@ -40,20 +40,24 @@ module.exports = {
             type: 'narration',
             markdown: markdown`
                 "it's good to have you back," i tell her.
-
+            `,
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
                 then i wake up.
             `,
         },
         {
             type: 'quote',
             markdown: markdown`
+                "To be in L.A. without a car is to be at the mercy of whoever will give you a ride. In this way, it both is and isn’t a teenager’s town."
+                # – Dayna Tortorici, ["Los Angeles Plays Itself"](https://nplusonemag.com/online-only/city-by-city/los-angeles-plays-itself/), *n+1* (2015)
+
                 *In the suburbs, I, I learned to drive
                 And you told me we'd never survive
                 Grab your mother's keys, we're leaving*
                 # – Arcade Fire, "The Suburbs", *The Suburbs* (2010)
-
-                "To be in L.A. without a car is to be at the mercy of whoever will give you a ride. In this way, it both is and isn’t a teenager’s town."
-                # – Dayna Tortorici, ["Los Angeles Plays Itself"](https://nplusonemag.com/online-only/city-by-city/los-angeles-plays-itself/), *n+1* (2015)
             `,
         },
         {
@@ -63,7 +67,7 @@ module.exports = {
 
                 growing up in beachwood canyon, there was nowhere in the neighborhood to walk and only one bus that could take me into the city.
 
-                it stopped ten minutes away, came every half hour, and took twenty minutes to get down the hill. driving was the only way out.
+                driving was the only way out.
             `,
         },
         {
@@ -183,9 +187,9 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                as i was finishing this record, i cleaned out my childhood bedroom, readying the house for a new chapter.
+                as i was finishing this record, i cleaned out my childhood bedroom.
 
-                amidst the clutter, i found this note from a high school classmate.
+                amidst the clutter, i found a note i'd kept from a high school classmate.
             `,
         },
         {
