@@ -75,11 +75,9 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                it's been told to me by family and friends that, before this accident, my mom never have wanted to have children.
+                at her memorial service, i learned that before this accident my mom never have wanted to have children.
 
-                i'm told, also, that she very nearly died there and then.
-
-                each of the 24 years that followed were, for her, a bonus.
+                if she had crashed and not lived — or lived and not crashed — i would never have entered the world.
             `
         },
         {

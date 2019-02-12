@@ -162,7 +162,7 @@ export default class Loader extends Component {
 				/>
 				<div class="title">
 					<h1><span>LOS</span><span>ANGELES</span><span>ENDS</span></h1>
-					<h2>a record by Simulcast</h2>
+					<h2>a hypertext record by Simulcast</h2>
 				</div>
 				<button class="start-button">
 					<span>{this.state.mapLoaded ? 'ENTER' : 'LOADING...'}</span>
