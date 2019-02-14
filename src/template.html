@@ -8,7 +8,7 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta property="og:title" content="Los Angeles Ends">
 		<meta property="og:author" content="Simulcast">
-		<meta property="og:description" content="A record of grief, freeways, and returning home.">
+		<meta property="og:description" content="a hypertext record by Simulcast.">
 		<meta property="og:url" content="http://losangelesends.com">
 		<meta property="og:image" content="assets/og-image.png">
 
@@ -39,6 +39,16 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenLite.min.js" charset="utf-8"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/easing/EasePack.min.js" charset="utf-8"></script>
 
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131760158-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-131760158-1');
+		</script>
+		
 		<% if (htmlWebpackPlugin.options.manifest.theme_color) { %>
 			<meta name="theme-color" content="<%= htmlWebpackPlugin.options.manifest.theme_color %>">
 		<% } %>

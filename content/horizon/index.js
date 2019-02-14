@@ -10,6 +10,7 @@ module.exports = {
     pinX: '64%',
     pinY: '89%',
     slides: [
+      /*
         {
             type: 'narration',
             markdown: markdown`
@@ -28,13 +29,20 @@ module.exports = {
                 the next night, i go to the hollywood forever cemetery.
             `,
         },
+        */
         {
             type: 'narration',
             markdown: markdown`
+                april 2017 and i'm at the hollywood forever cemetery.
+
                 phil elverum walks on stage, alone save for his acoustic guitar and a small potted plant.
 
                 "death is real," he strums. "someone's there and then they're not. it's not for singing about, it's not for making into art."
-
+            `,
+        },
+        {
+            type: 'narration',
+            markdown: markdown`
                 the room, entirely silent, reverberates every word.
             `,
         },
