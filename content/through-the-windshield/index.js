@@ -132,6 +132,14 @@ module.exports = {
         {
             type: 'quote',
             markdown: markdown`
+                “Much more than other national cinemas, American film was thus self-consciously aware of the influence of place on character... Geography became thematic and plot became destiny.”
+                # – Leo Braudy, *The Hollywood Sign* (2011)
+            `
+        },
+        /*
+        {
+            type: 'quote',
+            markdown: markdown`
                 "First, there was Hollywood, the former village turned suburb turned part of Los Angeles — a specific place with geographic boundaries, constantly changing and contested. Then there was Hollywood as a generally accepted name for the homeland of the American movie industry..."
                 # — Leo Braudy, *The Hollywood Sign* (2011)
             `
@@ -143,6 +151,7 @@ module.exports = {
                 # — Leo Braudy, *The Hollywood Sign* (2011)
             `
         },
+        */
         {
             type: 'narration',
             markdown: markdown`

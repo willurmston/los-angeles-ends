@@ -160,9 +160,9 @@ module.exports = {
             markdown: markdown`
                 i drop my partner off at LAX and drive home, eastward, sun setting both in the rearview mirror and in reflection across the library tower.
 
-                forbidden from the diamond lane, i rinse the windshield and turn the wipers on.
+                disallowed from the diamond lane, i rinse the windshield and turn the wipers on.
 
-                i'm too shut off to cry.
+                it's easier than summoning tears.
             `
         },
         /*
