@@ -97,7 +97,7 @@ module.exports = {
         {
             type: 'narration',
             markdown: markdown`
-                it was impossible for us to reconcile two realities that each felt so true: one in which my mom was still alive, another in which she was irretrievably gone.
+                it was impossible for us to reconcile two realities that each felt so true: one in which my mom was still alive, another in which she was irretrievable.
             `
         },
         {
